@@ -119,6 +119,147 @@ Plot $d_r(t_k)$ and $d_m(t_k)$ as functions of aligned training time, with confi
     \item Diagnostics of singular value gaps to identify unstable rank transitions.
 \end{itemize}
 
+\subsection{Rank computation}
+We estimate the numerical rank of a matrix $A \in \mathbb{R}^{m\times n}$ using two complementary notions. 
+First, the \emph{relative-threshold rank} is defined as
+\[
+r_\varepsilon(A) \;=\; \#\{ i : \sigma_i(A) > \varepsilon \,\sigma_1(A) \},
+\]
+where $\sigma_1(A) \geq \cdots \geq \sigma_{\min(m,n)}(A)$ are the singular values and $\varepsilon>0$ is a fixed threshold. 
+This definition is invariant under global rescaling $A \mapsto cA$, since both $\sigma_i$ and $\sigma_1$ scale linearly in $c$, so the inequality $\sigma_i > \varepsilon \sigma_1$ is unchanged. 
+Such scale invariance is essential in deep linear networks, where norms of partial products may vary substantially during training while their spectral \emph{shape} (relative magnitudes) carries the structural information of interest. 
+The threshold $\varepsilon$ should be chosen above the effective noise floor of the pipeline: singular values below this scale are dominated by non-structural perturbations arising from (i) stochastic gradient noise in SGD, which induces diffusion-like fluctuations in the weights, (ii) finite-sample effects that lift small modes through sampling variability, and (iii) floating-point roundoff, which limits reliable resolution to $O(u\|A\|)$, where $u$ is machine precision. 
+In practice, $\varepsilon$ is selected so that modes counted by $r_\varepsilon$ are stable across seeds and checkpoints, while smaller singular values exhibit variance comparable to their magnitude.
+
+Second, we track an \emph{effective rank}, defined for example via the entropy of the normalized singular values
+\[
+r_{\mathrm{eff}}(A) \;=\; \exp\!\Big(-\sum_i p_i \log p_i\Big),
+\qquad 
+p_i = \frac{\sigma_i(A)}{\sum_j \sigma_j(A)},
+\]
+or alternatively through a participation ratio such as 
+\[
+r_{\mathrm{PR}}(A) \;=\; \frac{\big(\sum_i \sigma_i^2(A)\big)^2}{\sum_i \sigma_i^4(A)}.
+\]
+These quantities are also invariant under global scaling and provide a continuous measure of spectral complexity. 
+Although they do not reproduce the discrete rank pattern required for inclusion--exclusion multiplicity analyses, they vary smoothly with the spectrum and are therefore more robust to small perturbations or near-degenerate singular value gaps. 
+Tracking effective rank alongside $r_\varepsilon$ allows us to distinguish genuine structural rank transitions from gradual spectral reshaping or noise-dominated fluctuations.
+
+\subsection*{Protocol: Calibration of Numerical Rank Estimation}
+
+The goal of this protocol is to calibrate the numerical rank estimator
+\[
+r_\varepsilon(A) = \#\{ i : \sigma_i(A) > \varepsilon \,\sigma_1(A) \},
+\]
+by validating it in controlled settings where the ground-truth rank behavior is known. 
+We perform two complementary calibration experiments and a systematic sensitivity analysis over $\varepsilon$.
+
+\paragraph{I. Synthetic Perturbation Model: $A = M + N$.}
+
+\textbf{Objective.} Determine how well $r_\varepsilon$ recovers a known rank $r$ in the presence of controlled noise, and estimate a practical noise floor.
+
+\textbf{Setup.}
+\begin{enumerate}
+    \item Fix dimensions $d_{\mathrm{out}}, d_{\mathrm{in}}$.
+    \item Construct a rank-$r$ signal matrix
+    \[
+    M = U \,\mathrm{diag}(s_1,\dots,s_r,0,\dots,0)\, V^\top,
+    \]
+    where $U,V$ are orthogonal and $s_1 \ge \dots \ge s_r > 0$.
+    \item Generate noise matrices $N$ under different models:
+    \begin{itemize}
+        \item \emph{Additive Gaussian noise:} $N_{ij} \sim \mathcal{N}(0,\sigma^2)$, with $\sigma$ chosen to match empirically observed SGD-induced perturbations.
+        \item \emph{Finite-sample proxy:} construct $M$ via empirical covariance from $n$ samples and vary $n$ i.e. $\hat{M} = \frac{1}{n}\sum_{k=1}^n y_k x_k^\top$ with $x_k,y_k$ such that $y_k = Mx_k$ and $x_k$ i.i.d. from a standard distribution and whitened.
+        \item \emph{Precision stress test:} repeat computations in float32 and float64.
+    \end{itemize}
+    \item Form $A = M + N$.
+\end{enumerate}
+
+\textbf{Procedure.}
+\begin{enumerate}
+    \item Compute singular values $\{\sigma_i(A)\}$.
+    \item For a grid of thresholds $\varepsilon \in \mathcal{E}$ (log-spaced), compute $r_\varepsilon(A)$ and compute effective rank $r_{\mathrm{eff}}(A)$.
+    \item Repeat over multiple noise realizations.
+\end{enumerate}
+
+\textbf{Diagnostics.}
+\begin{itemize}
+    \item Recovery rate: $\mathbb{P}(r_\varepsilon(A) = r)$ over noise draws.
+    \item Stability: variance of $r_\varepsilon(A)$ across draws.
+    \item Gap analysis: record $\sigma_r/\sigma_{r+1}$.
+\end{itemize}
+
+\textbf{Outcome.} 
+Identify a range of $\varepsilon$ such that:
+(i) $r_\varepsilon(A)$ recovers $r$ with high probability, and 
+(ii) the estimated rank is stable across noise realizations.
+This determines a lower bound on $\varepsilon$ consistent with the effective noise floor.
+
+\paragraph{II. DLN Calibration in Saddle-to-Saddle Regime.}
+
+\textbf{Objective.} Validate that $r_\varepsilon$ reproduces the expected stagewise rank growth in deep linear networks.
+
+\textbf{Setup.}
+\begin{enumerate}
+    \item Consider a depth-$L=3$ deep linear network.
+    \item Choose a teacher matrix $M$ of rank $r$ with ordered singular values $s_1 > \dots > s_r$.
+    \item Train using:
+    \begin{itemize}
+        \item Full-batch gradient descent (GD).
+        \item $S$ independent SGD runs (same initialization, different data orderings).
+    \end{itemize}
+    \item Work in the saddle-to-saddle regime (small initialization, balanced weights).
+\end{enumerate}
+
+\textbf{Procedure.}
+\begin{enumerate}
+    \item At loss plateaus (e.g.\ fixed loss values or escape events), compute the end-to-end matrix $W(t)$.
+    \item Compute singular values and $r_\varepsilon(W(t))$ for each $\varepsilon \in \mathcal{E}$.
+\end{enumerate}
+
+\textbf{Expected behavior.}
+Under stagewise learning dynamics:
+\begin{itemize}
+    \item The numerical rank should start at $0$ (up to noise).
+    \item Rank should increase approximately one unit at a time.
+\end{itemize}
+
+\textbf{Diagnostics.}
+\begin{itemize}
+    \item Cross-seed stability: variance of $r_\varepsilon$ across SGD runs.
+    \item Gap monitoring: $\sigma_r/\sigma_{r+1}$ at each transition.
+\end{itemize}
+
+\textbf{Outcome.}
+Select $\varepsilon$ values for which rank growth is:
+(i) monotone up to rare transition noise,
+(ii) predominantly unit-step
+(iii) stable across SGD seeds.
+
+\paragraph{III. Sensitivity Sweep over $\varepsilon$.}
+
+\textbf{Procedure.}
+\begin{enumerate}
+    \item Define a log-spaced grid $\mathcal{E}$ (e.g.\ $10^{-7}$ to $10^{-3}$ in float64).
+    \item Repeat previous analyses for each $\varepsilon$.
+\end{enumerate}
+
+\textbf{Report.}
+\begin{itemize}
+    \item Plot rank trajectories for multiple $\varepsilon$.
+    \item Report regions where qualitative conclusions are invariant to $\varepsilon$.
+    \item Identify a plateau of $\varepsilon$ values yielding stable and interpretable rank patterns.
+\end{itemize}
+
+\paragraph{Interpretation.}
+A well-calibrated numerical rank estimator should:
+\begin{enumerate}
+    \item Correctly recover known rank under controlled perturbations.
+    \item Exhibit stable stagewise growth in DLN training.
+    \item Remain qualitatively unchanged across a nontrivial interval of $\varepsilon$.
+\end{enumerate}
+If no such $\varepsilon$ plateau exists, then discrete rank is intrinsically ambiguous in the regime under study, and conclusions should rely more heavily on continuous spectral measures (e.g.\ effective rank).
+
 \subsection{Experimental Protocol: Singular-Value Patterns (Top--$K$) under GD vs.\ SGD.}
 We can also check the singular values of the individual layers for GD and SGD and check that they are approximately, or eventually become approximately the same throughout training.
 We compare GD and SGD by tracking the singular values of all contiguous partial products in a deep linear network of depth $L$. Fix a target truncation level $K$ (e.g.\ $K=5$ or $10$) and a numerical floor $\delta>0$ (e.g.\ $\delta=10^{-30}$) used to avoid taking $\log(0)$. Use the \emph{same} initialization $W_\ell(0)$ for GD and for every SGD run; vary only the mini-batch shuffling/permutation seed across SGD runs.

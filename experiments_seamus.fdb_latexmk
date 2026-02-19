@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1771508836.90434 "/Users/guime/projects/deep_linear_networks/geometry_dln_notes/experiments_seamus.tex" "experiments_seamus.pdf" "experiments_seamus" 1771508837.56014 0
-  "/Users/guime/projects/deep_linear_networks/geometry_dln_notes/experiments_seamus.tex" 1771508834.34812 19613 293c09714f66fd1686068b675540872e ""
+["pdflatex"] 1771512424.04677 "/Users/guime/projects/deep_linear_networks/geometry_dln_notes/experiments_seamus.tex" "experiments_seamus.pdf" "experiments_seamus" 1771512424.72012 0
+  "/Users/guime/projects/deep_linear_networks/geometry_dln_notes/experiments_seamus.tex" 1771512422.70156 27104 08ac2e8d96fb1af0041ed4b33fb1b9b4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -181,9 +181,9 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1749050915 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1749050869 3345728 6e9d6b4ca934c854c1520d15fef27576 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "experiments_seamus.aux" 1771508837.48688 2157 903afb7d0ef902672c3d9f6849b1c45e "pdflatex"
-  "experiments_seamus.out" 1771508837.48748 1164 7c522c47bcb2fb000b9ebfa2e6a35f31 "pdflatex"
-  "experiments_seamus.tex" 1771508834.34812 19613 293c09714f66fd1686068b675540872e ""
+  "experiments_seamus.aux" 1771512424.64682 2782 dbe036cc85c4d981bd649cf89ef1439e "pdflatex"
+  "experiments_seamus.out" 1771512424.64749 1304 797caa2d9fc250929537e3d011241854 "pdflatex"
+  "experiments_seamus.tex" 1771512422.70156 27104 08ac2e8d96fb1af0041ed4b33fb1b9b4 ""
   (generated)
   "experiments_seamus.aux"
   "experiments_seamus.log"
