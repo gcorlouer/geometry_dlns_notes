@@ -1,8 +1,8 @@
-PWD /Users/guime/projects/deep_linear_networks
+PWD /Users/guime/projects/deep_linear_networks/geometry_dln_notes
 INPUT /usr/local/texlive/2025/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/guime/projects/deep_linear_networks/geometry_dlns.tex
+INPUT /Users/guime/projects/deep_linear_networks/geometry_dln_notes/geometry_dlns.tex
 OUTPUT geometry_dlns.log
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls
