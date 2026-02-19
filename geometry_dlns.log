@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.4)  19 FEB 2026 11:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.4)  19 FEB 2026 12:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -771,6 +771,11 @@ Overfull \hbox (48.04968pt too wide) detected at line 1113
 [27]
 
 [28]
+Overfull \hbox (21.42809pt too wide) in paragraph at lines 1638--1642
+\OT1/cmr/m/n/10 be the ori-ented path of length $\OML/cmm/m/it/10 L$ \OT1/cmr/m/n/10 go-ing once around the cy-cle and omit-ting $\OML/cmm/m/it/10 a[]$\OT1/cmr/m/n/10 . Set $\OML/cmm/m/it/10 A \OT1/cmr/m/n/10 := \OML/cmm/m/it/10 kQ=\OMS/cmsy/m/n/10 h\OML/cmm/m/it/10 p[]; [] ; p[]\OMS/cmsy/m/n/10 i$\OT1/cmr/m/n/10 .
+ []
+
+
 Overfull \hbox (8.20834pt too wide) in paragraph at lines 1664--1665
 [][]\OT1/cmr/bx/n/10 Lemma 9.31 \OT1/cmr/m/n/10 (En-do-mor-phisms of $\OML/cmm/m/it/10 M\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 i; `\OT1/cmr/m/n/10 )$)\OT1/cmr/bx/n/10 . []\OT1/cmr/m/n/10 For ev-ery $\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 Q[]$ \OT1/cmr/m/n/10 and $1 \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/it/10 ` \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/it/10 L$\OT1/cmr/m/n/10 , one has $[][][]\OML/cmm/m/it/10 M\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 i; `\OT1/cmr/m/n/10 )[] []
  []
@@ -783,13 +788,13 @@ Overfull \hbox (8.4827pt too wide) in paragraph at lines 1702--1703
  []
 
 
-
-[30]
 Overfull \hbox (80.23628pt too wide) detected at line 1742
 [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A\OT1/cmr/m/n/10 ) = [][]\OML/cmm/m/it/10 V \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 k[][]k[][]:
  []
 
 
+
+[30]
 
 [31]
 
@@ -849,7 +854,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  84i,20n,91p,881b,828s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on geometry_dlns.pdf (41 pages, 441018 bytes).
+Output written on geometry_dlns.pdf (41 pages, 440480 bytes).
 PDF statistics:
  575 PDF objects out of 1000 (max. 8388607)
  478 compressed objects within 5 object streams
