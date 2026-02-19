@@ -934,6 +934,253 @@ Acting on $\phi_S$ via the hidden subgroup $G_h$ yields:
     \nabla_l L(g\phi_S) = g_l^t\nabla_l L(\phi_S) g_{l-1}^t = 0
 \end{equation*}
 Since $\nabla_l L(\phi_S) = 0$ for all $l$.
+\section{Hessian analysis}
+The Hessian of the loss function encodes the local curvature of the parameter space and therefore provides a second-order description of the geometry of the optimization landscape. Its eigenvalues quantify curvature along different parameter directions: large eigenvalues correspond to stiff, highly identifiable directions, while small or zero eigenvalues indicate flat or redundant directions. The rank of the Hessian thus measures the effective local dimensionality of the model and reveals structural degeneracies induced by overparameterization or symmetries. In regular models, the Hessian is full rank and the local learning coefficient (LLC) equals half the parameter dimension. In singular models, however, the presence of degenerate Hessian directions reflects non-identifiability and constrains the asymptotic behavior of the marginal likelihood; in particular, the Hessian rank provides an upper bound on twice the LLC and characterizes the quadratic part of the loss that determines the leading-order contribution to the real log canonical threshold.
+\subsection{Hessian Decomposition: Outer-Product and Functional Terms}
+Consider a parametric model $f_\theta(x) \in \mathbb{R}^K$ with loss
+\[
+L(\theta) = \mathbb{E}_{(x,y)}\big[\ell(f_\theta(x),y)\big].
+\]
+Let $J_\theta(x) := \nabla_\theta f_\theta(x) \in \mathbb{R}^{K \times p}$ denote the Jacobian of the model output with respect to the parameters, and let $\nabla_f \ell$ and $\nabla_f^2 \ell$ denote the gradient and Hessian of the loss with respect to the model output $f$. Applying the chain rule twice yields the Gauss--Newton decomposition of the parameter Hessian:
+\[
+\nabla_\theta^2 L(\theta)
+=
+H_o(\theta)
++
+H_f(\theta),
+\]
+where
+\[
+H_o(\theta)
+=
+\mathbb{E}\!\left[
+J_\theta(x)^\top \, \nabla_f^2 \ell(f_\theta(x),y) \, J_\theta(x)
+\right],
+\]
+and
+\[
+H_f(\theta)
+=
+\mathbb{E}\!\left[
+\sum_{k=1}^K
+\frac{\partial \ell}{\partial f_k}(f_\theta(x),y)
+\,
+\nabla_\theta^2 f_{\theta,k}(x)
+\right].
+\]
+
+\paragraph{Outer-product term.}
+The matrix $H_o$ depends only on first derivatives of the model and second derivatives of the loss. It measures how curvature in output space is pulled back to parameter space through the Jacobian. When $\nabla_f^2 \ell \succeq 0$ (e.g., mean squared error or cross-entropy), $H_o$ is positive semidefinite. For mean squared error,
+\[
+\ell(f,y) = \tfrac12 \|f-y\|^2,
+\qquad
+\nabla_f^2 \ell = I_K,
+\]
+and therefore
+\[
+H_o(\theta) = \mathbb{E}\big[J_\theta(x)^\top J_\theta(x)\big].
+\]
+In this case, $H_o$ coincides with the Gauss--Newton matrix and is closely related to the empirical Fisher and the Neural Tangent Kernel. Its rank is bounded by the rank of the Jacobian and thus reflects the locally identifiable directions supported by the data.
+
+\paragraph{Functional term.}
+The matrix $H_f$ depends on second derivatives of the model itself. It captures curvature induced by the parameterization rather than by the loss geometry. For mean squared error,
+\[
+H_f(\theta)
+=
+\mathbb{E}\!\left[
+\sum_{k=1}^K
+\big(f_{\theta,k}(x)-y_k\big)
+\, \nabla_\theta^2 f_{\theta,k}(x)
+\right].
+\]
+Hence $H_f$ is weighted by residuals and vanishes at exact interpolation. Unlike $H_o$, it is generally indefinite and encodes structural degeneracies arising from overparameterization or symmetries in the model.
+
+\paragraph{Geometric interpretation and relation to the LLC.}
+The decomposition separates two sources of curvature: data-induced curvature ($H_o$) and parameterization-induced curvature ($H_f$). Near well-fitted minima in regression and classification, $H_f$ becomes negligible and the Hessian is dominated by $H_o$. The nonzero eigenvalues of $H_o$ determine the quadratic directions of the loss landscape and therefore govern the leading-order local geometry. In regular models the Hessian is full rank, whereas in singular models rank deficiency reflects parameter redundancies. Since the local learning coefficient (LLC) is determined by the leading quadratic structure of the loss expansion, the rank of the Hessian provides an upper bound on twice the LLC, while higher-order terms determine whether this bound is tight.
+```latex
+\subsection{Exact Rank Formula, Upper Bound, and Rank Deficiency}
+
+We consider a depth-$L$ deep linear network with layer widths
+$d_0, d_1, \dots, d_L$, where $d_0 = d$ is the input dimension
+and $d_L = K$ the output dimension.
+Let $M_\ell = d_\ell$ and let
+\[
+M := \sum_{\ell=1}^{L-1} M_\ell
+\]
+denote the total number of hidden units.
+Let $\Sigma_{xx} = \mathbb{E}[xx^\top]$ with
+$r := \mathrm{rk}(\Sigma_{xx})$, and define
+\[
+q := \min\{r, M_1, \dots, M_{L-1}, K\}.
+\]
+
+\paragraph{Exact expression for the outer-product term.}
+For the mean squared error loss,
+the outer-product (Gauss--Newton) term admits the factorization
+\[
+H_o = A_o (I_K \otimes \Sigma_{xx}) A_o^\top,
+\]
+where
+\[
+A_o^\top
+=
+\big(
+W_{L:2} \otimes I_d,
+\,
+W_{L:\ell+1} \otimes W_{1:\ell-1},
+\,
+\dots,
+\,
+I_K \otimes W_{1:L-1}
+\big).
+\]
+Under the maximal-rank assumption on the weight matrices,
+the rank of $H_o$ is given exactly by
+\[
+\mathrm{rk}(H_o)
+=
+q \, (r + K - q).
+\]
+
+\paragraph{Upper bound (tight in practice) for the full Hessian.}
+Writing $H_L = H_o + H_f$, one obtains the sharp upper bound
+\[
+\mathrm{rk}(H_L)
+\le
+2 q M - L q^2 + q(r + K).
+\]
+Empirically (and at initialization), this bound holds with equality:
+\[
+\mathrm{rk}(H_L)
+=
+2 q M - L q^2 + q(r + K).
+\]
+
+\paragraph{Rank deficiency.}
+Let $p = \sum_{\ell=0}^{L-1} M_\ell M_{\ell+1}$ be the total number of parameters.
+When $r = d$ (full-rank input covariance),
+the rank deficiency of the Hessian satisfies
+\[
+\mathrm{rank\text{-}deficiency}(H_L)
+=
+p - \mathrm{rk}(H_L)
+=
+\sum_{\ell=0}^{L-1}
+(M_\ell - q)(M_{\ell+1} - q).
+\]
+
+\paragraph{Interpretation.}
+These formulas reveal that the effective dimension of the model,
+as measured by the Hessian rank, scales \emph{linearly} in the layer widths,
+whereas the number of parameters scales \emph{quadratically}.
+The quantity $q$ acts as the effective bottleneck dimension:
+only $q$ directions per layer participate in curvature.
+All remaining directions correspond to structurally degenerate
+parameter combinations.
+
+The rank deficiency formula admits a particularly clean interpretation:
+it equals the parameter count of a hypothetical network in which each
+layer width has been reduced by $q$.
+In other words, the degeneracy is exactly the redundancy created by
+overparameterizing beyond the minimum effective dimension.
+
+Consequently, deep networks possess a large nullspace in the Hessian,
+whose dimension grows quadratically with overparameterization.
+The Hessian therefore lives on a much lower-dimensional manifold than
+the parameter space itself.
+This clarifies that:
+(i) degeneracy is architectural rather than accidental,
+(ii) the effective dimension is governed by $q$ and the sum of widths,
+not by the raw parameter count, and
+(iii) overparameterization primarily increases flat directions rather
+than curved ones.
+```latex
+\subsection{Link Between $H_o$, $H_f$, and Strict vs.\ Non-Strict Saddles}
+
+Consider a deep linear network trained with squared loss
+\[
+L(W) = \frac12 \| Y - W_{L:1} X \|_F^2.
+\]
+The Hessian admits the Gauss--Newton decomposition
+\[
+H_L = H_o + H_f,
+\]
+where
+\[
+H_o = \mathbb{E}\!\left[ J^\top J \right]
+\quad\text{and}\quad
+H_f = \mathbb{E}\!\left[
+\sum_{k=1}^{d_L}
+\frac{\partial \ell}{\partial f_k}\,
+\nabla^2_W f_k
+\right].
+\]
+For squared loss, $H_o$ is positive semidefinite, since it is a Gram matrix of Jacobians. Hence any negative curvature of the full Hessian must arise from the functional term $H_f$.
+
+\paragraph{Second-order expansion and correspondence.}
+In the second-order analysis of Achour \emph{et al.}, the loss along a perturbation $W'$
+around a first-order critical point is expanded as
+\[
+L(W + tW') = L(W) + t^2 c_2(W,W') + o(t^2),
+\]
+where the quadratic coefficient $c_2(W,W')$ splits into two parts:
+\[
+c_2(W,W') = F^T(W,W') + S^T(W,W').
+\]
+The term $F^T$ is a squared-norm expression (of the form
+$\|\sum_i T_i\|^2$) and is manifestly nonnegative.
+This corresponds precisely to the Gauss--Newton curvature $v^\top H_o v$.
+The term $S^T$ is a residual-weighted interaction term arising from
+second derivatives of the model; this corresponds to the functional contribution
+$v^\top H_f v$.
+
+Thus, in quadratic form,
+\[
+v^\top H_L v
+=
+v^\top H_o v
++
+v^\top H_f v,
+\]
+which matches
+\[
+c_2(W,W') = F^T + S^T.
+\]
+
+\paragraph{Strict vs.\ non-strict saddles.}
+Since $H_o \succeq 0$, negative curvature of $H_L$ can only occur if
+\[
+v^\top H_f v < -\, v^\top H_o v
+\]
+for some direction $v$.
+In other words, the functional term must be sufficiently negative
+to dominate the positive semidefinite outer-product curvature.
+
+The results of Achour \emph{et al.} show that
+\begin{itemize}
+\item If a critical point is \emph{non-tightened}, then there exists a direction
+$W'$ such that $c_2(W,W') < 0$.
+In Hessian language, this means $H_f$ produces a negative eigenvalue of
+$H_L$, and the point is a strict saddle.
+\item If a critical point is \emph{tightened}, the second-order term can be
+rewritten as a sum of squares, implying $c_2(W,W') \ge 0$ for all directions.
+Equivalently, $H_f$ cannot overcome the PSD curvature of $H_o$,
+and the Hessian has no negative eigenvalues (non-strict saddle).
+\end{itemize}
+
+\paragraph{Interpretation.}
+The Gauss--Newton term $H_o$ captures curvature induced by output sensitivity
+and is always positive semidefinite.
+The functional term $H_f$ captures residual-weighted second-order effects
+of the parameterization and is the sole source of indefiniteness.
+Non-tightened configurations correspond to structural conditions under which
+the indefinite component $H_f$ generates a negative curvature direction.
+Tightened configurations correspond to algebraic rank conditions that prevent
+$H_f$ from dominating $H_o$, thereby eliminating strict saddle behavior. 
+\\
+Useful references: \href{https://arxiv.org/abs/2106.16225}{Analytic Insights into Structure and Rank of
+Neural Network Hessian Maps} and \href{https://arxiv.org/abs/2602.00545}{Depth, Not Data: An Analysis of Hessian Spectral Bifurcation
+}
 \section{Bounding the critical loci}
 Using proposition 9, we see that for all the critical points the product map is of the form:
 \begin{align*}
