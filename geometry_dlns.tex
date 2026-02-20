@@ -2158,18 +2158,18 @@ The map
 is no longer $G_d$-equivariant.
 
 \begin{definition}[Stabilizer group of the fixed arrow]\label{def:stabilizer-sigma}
-Let $\sigma\in\mathrm{Hom}(V_L,V_1)$ be fixed. Define
+Let $\sigma\in\mathrm{Hom}(V_L,V_0)$ be fixed. Define
 \[
-\mathrm{Stab}(\sigma):=\{(g_1,g_L)\in \mathrm{GL}(V_1)\times \mathrm{GL}(V_L)\mid g_1\,\sigma\,g_L^{-1}=\sigma\},
+\mathrm{Stab}(\sigma):=\{(g_0,g_L)\in \mathrm{GL}(V_0)\times \mathrm{GL}(V_L)\mid g_0\,\sigma\,g_L^{-1}=\sigma\},
 \]
 and the corresponding subgroup of the base--change group
 \[
-G_\sigma:=\{g=(g_1,\ldots,g_L)\in \prod_{l=1}^L\mathrm{GL}(V_l)\mid (g_1,g_L)\in \mathrm{Stab}(\sigma)\}.
+G_\sigma:=\{g=(g_0,\ldots,g_L)\in \prod_{l=0}^L\mathrm{GL}(V_l)\mid (g_0,g_L)\in \mathrm{Stab}(\sigma)\}.
 \]
 \end{definition}
 
 \begin{proposition}[$G_\sigma$-equivariance of the cyclic composition maps]\label{prop:mu-sigma-equivariant}
-Fix $\sigma\in\mathrm{Hom}(V_L,V_1)$ and consider the representation space with $\phi_{L+1}=\sigma$.
+Fix $\sigma\in\mathrm{Hom}(V_L,V_0)$ and consider the representation space with $\phi_{L+1}=\sigma$.
 For $\phi=(\phi_1,\ldots,\phi_L,\sigma)$ and each $l=1,\ldots,L$, define
 \[
 d\mu_{l,\sigma}(\phi):=\phi_{l-1}\cdots \phi_1\,\sigma\,\phi_L\cdots \phi_{l+1}\in\mathrm{Hom}(V_{l+1},V_l),
@@ -2315,9 +2315,9 @@ $G_\sigma$--orbit. The lemma follows.
 Fix $L\ge 2$ and finite-dimensional real vector spaces $V_1,\dots,V_L$.
 Let
 \[
-G_d \;:=\; \prod_{i=1}^L GL(V_i)
+G_d \;:=\; \prod_{i=0}^L GL(V_i)
 \qquad\text{and}\qquad
-W \;:=\; \Hom_{\mathbb{R}}(V_L,V_1).
+W \;:=\; \Hom_{\mathbb{R}}(V_L,V_0).
 \]
 Let $\Gamma_d$ be a real algebraic variety equipped with an algebraic action of $G_d$.
 Assume there is a morphism of real varieties
@@ -2327,8 +2327,8 @@ F:\Gamma_d \longrightarrow W
 satisfying the equivariance identity
 \begin{equation}
 \label{eq:equivariance_F}
-F\!\big((g_1,\dots,g_L)\cdot x\big)=g_1\,F(x)\,g_L^{-1}
-\qquad\text{for all } (g_1,\dots,g_L)\in G_d,\; x\in \Gamma_d .
+F\!\big((g_0,\dots,g_L)\cdot x\big)=g_0\,F(x)\,g_L^{-1}
+\qquad\text{for all } (g_0,\dots,g_L)\in G_d,\; x\in \Gamma_d .
 \end{equation}
 
 \medskip
@@ -2366,24 +2366,24 @@ We prove (i) and (ii) in separate steps.
 
 \medskip\noindent
 \textbf{Step 1: A basic invariance identity for ranks under left--right change of bases.}
-Let $A\in GL(V_1)$, $B\in GL(V_L)$, and $T\in W=\Hom_{\mathbb{R}}(V_L,V_1)$.
+Let $A\in GL(V_0)$, $B\in GL(V_L)$, and $T\in W=\Hom_{\mathbb{R}}(V_L,V_0)$.
 Consider the map $T':=A\,T\,B^{-1}\in W$.
 We have $\mathrm{rank}(T')=\mathrm{rank}(T)$.
 
 \medskip\noindent
 \textbf{Step 2: Proof of (i) (well-definedness of $r(\lambda)$).}
 Fix $\lambda\in\Lambda$ and choose two points $x,y\in \mathcal O_\lambda$.
-By definition of orbit, there exists $g=(g_1,\dots,g_L)\in G_d$ such that
+By definition of orbit, there exists $g=(g_0,\dots,g_L)\in G_d$ such that
 \[
 y=g\cdot x.
 \]
 Apply $F$ to both sides and use the equivariance identity \eqref{eq:equivariance_F}:
 \[
-F(y)=F(g\cdot x)=g_1\,F(x)\,g_L^{-1}.
+F(y)=F(g\cdot x)=g_0\,F(x)\,g_L^{-1}.
 \]
-Now apply Step 1 with $A=g_1$, $B=g_L$, and $T=F(x)$. This yields
+Now apply Step 1 with $A=g_0$, $B=g_L$, and $T=F(x)$. This yields
 \[
-\mathrm{rank}(F(y))=\mathrm{rank}(g_1\,F(x)\,g_L^{-1})=\mathrm{rank}(F(x)).
+\mathrm{rank}(F(y))=\mathrm{rank}(g_0\,F(x)\,g_L^{-1})=\mathrm{rank}(F(x)).
 \]
 Thus the rank of $F(\,\cdot\,)$ is constant along $\mathcal O_\lambda$, so the integer $r(\lambda)$
 defined by \eqref{eq:def_r_lambda} is independent of the choice of $x\in\mathcal O_\lambda$.
@@ -2420,17 +2420,17 @@ Then, by definition of $r(\lambda)$,
 \mathrm{rank}(F(x_0))=r(\lambda)=\mathrm{rank}(\sigma).
 \]
 By the claim in Step 3 (applied to $T=F(x_0)$ and $S=\sigma$), there exist
-$A\in GL(V_1)$ and $B\in GL(V_L)$ such that
+$A\in GL(V_0)$ and $B\in GL(V_L)$ such that
 \[
 \sigma=A\,F(x_0)\,B^{-1}.
 \]
-Define $g=(g_1,\dots,g_L)\in G_d$ by setting
+Define $g=(g_0,\dots,g_L)\in G_d$ by setting
 \[
-g_1:=A,\qquad g_L:=B,\qquad g_i:=\mathrm{Id}_{V_i}\ \text{ for } i=2,\dots,L-1.
+g_0:=A,\qquad g_L:=B,\qquad g_i:=\mathrm{Id}_{V_i}\ \text{ for } i=1,\dots,L-1.
 \]
 Then $g\in G_d$ and, using equivariance \eqref{eq:equivariance_F},
 \[
-F(g\cdot x_0)=g_1\,F(x_0)\,g_L^{-1}=A\,F(x_0)\,B^{-1}=\sigma.
+F(g\cdot x_0)=g_0\,F(x_0)\,g_L^{-1}=A\,F(x_0)\,B^{-1}=\sigma.
 \]
 Hence $g\cdot x_0\in \Gamma_\sigma$.
 Also, since $x_0\in\mathcal O_\lambda$ and $\mathcal O_\lambda$ is a $G_d$--orbit, we have $g\cdot x_0\in\mathcal O_\lambda$.
@@ -2442,7 +2442,7 @@ Combining Steps 4 and 5 yields \eqref{eq:nonemptiness}. This completes the proof
 \label{prop:GammaXY_orbit_decomposition}
 Let $d=(d_1,\dots,d_L)$ be a dimension vector and let
 \[
-\Gamma_d \subset \Rep_d(C_{L+1}^{\mathrm{op}})
+\Gamma_d \subset \Rep_d(C_{L+1})
 \]
 be the variety defined in Section~\S9.
 Recall that $\Gamma_d$ admits a decomposition into $G_d$--orbits indexed by
@@ -2506,8 +2506,8 @@ and each stratum in this decomposition is a single $G_\sigma$--orbit.
 \end{proposition}
 \begin{proposition}[Rank formula for the closing arrow in terms of Nakayama multiplicities]
 \label{prop:rank_formula_eps}
-Work over $\mathbb{R}$. Fix $L\ge 2$ and a dimension vector $d=(d_1,\dots,d_L)$.
-Let $\Gamma_d\subset \Rep_d(C_{L+1}^{\mathrm{op}})$ be the variety from the document, and recall that
+Work over $\mathbb{R}$. Fix $L\ge 2$ and a dimension vector $d=(d_0,\dots,d_L)$.
+Let $\Gamma_d\subset \Rep_d(C_{L+1})$ be the variety from the document, and recall that
 $\Gamma_d$ decomposes into $G_d$--orbits indexed by $\mathcal M_d^+$, i.e.\ for each
 \[
 \mathbf m=(m_{i,\ell})\in \mathcal M_d^+
@@ -2536,20 +2536,20 @@ which is well-defined by Proposition~\ref{prop:rank_label_and_nonemptiness_real}
 \textbf{Definition (support interval and activity indicator).}
 For an indecomposable $M(i,\ell)$, define its \emph{support interval} to be the cyclic set of vertices
 \[
-\Supp(i,\ell)\;:=\;\{\,i,\; i+1,\; \dots,\; i+\ell-1\,\}\subset \mathbb{Z}/L\mathbb{Z},
+\Supp(i,\ell)\;:=\;\{\,i,\; i+1,\; \dots,\; i+\ell-1\,\}\subset \mathbb{Z}/(L+1)\mathbb{Z},
 \]
 where addition is taken modulo $L$ and we identify vertices with their residue classes.
-Say that $M(i,\ell)$ is \emph{$(L\to 1)$--active} if the arrow $L\to 1$ acts nontrivially on $M(i,\ell)$,
+Say that $M(i,\ell)$ is \emph{$(L\to 0)$--active} if the arrow $L\to 0$ acts nontrivially on $M(i,\ell)$,
 i.e.\ if the structure map
 \[
-M(i,\ell)(L)\longrightarrow M(i,\ell)(1)
+M(i,\ell)(L)\longrightarrow M(i,\ell)(0)
 \]
-induced by the quiver arrow $L\to 1$ is nonzero.
+induced by the quiver arrow $L\to 0$ is nonzero.
 Define the indicator
 \[
 \epsilon(i,\ell)\;:=\;
 \begin{cases}
-1, & \text{if $M(i,\ell)$ is $(L\to 1)$--active},\\
+1, & \text{if $M(i,\ell)$ is $(L\to 0)$--active},\\
 0, & \text{otherwise}.
 \end{cases}
 \]
@@ -2557,7 +2557,7 @@ Define the indicator
 Then for every $\mathbf m=(m_{i,\ell})\in \mathcal M_d^+$ one has the formula
 \begin{equation}
 \label{eq:rank_formula_eps}
-r(\mathbf m)\;=\;\sum_{i,\ell}\epsilon(i,\ell)\,m_{i,\ell}.
+r(\mathbf m)\;=\;\sum_{i=0}^L\sum_{\ell=1}^L\epsilon(i,\ell)\,m_{i,\ell}.
 \end{equation}
 \end{proposition}
 
@@ -2572,9 +2572,9 @@ M \;\cong\;\bigoplus_{i,\ell} M(i,\ell)^{\oplus m_{i,\ell}}.
 We will compute $\rank(\phi_{L+1})=\rank(F(\phi))$ from this decomposition.
 
 \medskip\noindent
-\textbf{Step 1: Describe the vector spaces at vertices $1$ and $L$ using \eqref{eq:KS_decomp}.}
+\textbf{Step 1: Describe the vector spaces at vertices $0$ and $L$ using \eqref{eq:KS_decomp}.}
 
-For each vertex $j\in\{1,L\}$ the representation space is $V_j=M(j)$.
+For each vertex $j\in\{0,L\}$ the representation space is $V_j=M(j)$.
 Evaluating \eqref{eq:KS_decomp} at the vertex $j$ gives an isomorphism of real vector spaces
 \begin{equation}
 \label{eq:vertex_decomp}
@@ -2591,10 +2591,10 @@ $0$ or $\mathbb{R}^{m_{i,\ell}}$.
 \medskip\noindent
 \textbf{Step 2: The closing arrow respects the direct-sum decomposition.}
 
-The linear map $\phi_{L+1}:V_L\to V_1$ is the structure map on the quiver arrow $L\to 1$.
+The linear map $\phi_{L+1}:V_L\to V_0$ is the structure map on the quiver arrow $L\to 0$.
 Because $M$ is a direct sum of submodules as in \eqref{eq:KS_decomp}, the action of every quiver arrow,
-and in particular the arrow $L\to 1$, decomposes as the direct sum of its actions on each direct summand.
-Concretely, after choosing identifications as in \eqref{eq:vertex_decomp} for $j=L$ and $j=1$,
+and in particular the arrow $L\to 0$, decomposes as the direct sum of its actions on each direct summand.
+Concretely, after choosing identifications as in \eqref{eq:vertex_decomp} for $j=L$ and $j=0$,
 the map $\phi_{L+1}$ can be written as a block-diagonal direct sum
 \begin{equation}
 \label{eq:block_sum}
@@ -2748,5 +2748,655 @@ via the correspondence
 In particular, $\Gamma_{XY}$ decomposes as a disjoint union of $G_\sigma$--orbits indexed by
 Nakayama indecomposable multiplicity data satisfying the rank constraint.
 \end{remark}
+\section{Rank Patterns parameterize orbits of critical points}
+\subsection{Cyclic rank patterns and multiplicities}
 
+We work with the cyclic quiver on vertices $\{0,\dots,L\}$ and arrows
+\[
+\phi_\ell : V_{\ell-1} \longrightarrow V_\ell,
+\qquad \ell=1,\dots,L+1,
+\]
+where indices are taken modulo $L+1$ (so $\phi_{L+1}:V_L\to V_0$). We impose the cyclic relations described above, so that only oriented paths of length at most $L$ are relevant.
+
+\paragraph{Cyclic intervals.}
+For $i,j\in\{0,\dots,L\}$ we denote by
+\[
+[i\leadsto j]
+\]
+the oriented segment obtained by following the arrows forward from $i$ to $j$. Its length is
+\[
+\delta(i,j)\in\{0,\dots,L\},
+\]
+characterized by $j \equiv i+\delta(i,j)\pmod{L+1}$. Thus
+\[
+[i\leadsto j]
+=
+\bigl(
+i \xrightarrow{\phi_{i+1}} i+1 \xrightarrow{\phi_{i+2}} \cdots
+\xrightarrow{\phi_{j}} j
+\bigr).
+\]
+
+\paragraph{Cyclic rank patterns.}
+Given $\phi=(\phi_1,\dots,\phi_{L+1})\in\Gamma_d$, for any pair $(i,j)$ with $\delta(i,j)\le L$ we define the composed path map
+\[
+\Phi_{i\to j}(\phi)
+:=
+\phi_{j}\,\phi_{j-1}\cdots \phi_{i+1}
+:
+V_i \longrightarrow V_j,
+\]
+where indices are taken modulo $L+1$ and the product is along the oriented segment $[i\leadsto j]$.
+
+\begin{definition}
+The \emph{cyclic rank pattern} of $\phi$ is the collection of integers
+\[
+r_{ij}(\phi)
+:=
+\mathrm{rank}\bigl(\Phi_{i\to j}(\phi)\bigr),
+\qquad
+(i,j)\in\{0,\dots,L\}^2
+\text{ with }\delta(i,j)\le L.
+\]
+\end{definition}
+
+These ranks are invariant under the base–change action of
+$G_d=\prod_{k=0}^L GL(V_k)$ and therefore are constant on $G_d$–orbits.
+
+\paragraph{Indecomposables and multiplicities.}
+Let $M(i,j)$ denote the indecomposable cyclic interval module supported on
+$[i\leadsto j]$, and write
+\[
+m_{ij}
+\]
+for its multiplicity in the Krull–Schmidt decomposition of the module
+corresponding to $\phi$. Thus the orbit of $\phi$ in $\Gamma_d$
+is determined by the collection $\{m_{ij}\}$.
+
+By construction, on the indecomposable $M(a,b)$ the map
+$\Phi_{i\to j}$ has rank $1$ if and only if the segment
+$[i\leadsto j]$ is contained in $[a\leadsto b]$, and has rank $0$
+otherwise. Since $\phi$ is a direct sum of such interval modules,
+ranks add over summands. We therefore obtain the cumulative formula
+\begin{equation}\label{eq:cyclic-rank-forward}
+r_{ij}
+=
+\sum_{\substack{(a,b)\\ [i\leadsto j]\subseteq [a\leadsto b]}}
+m_{ab}.
+\end{equation}
+
+\paragraph{Explicit form.}
+Fix $i$ and write $j=i+t$ with $t=\delta(i,j)\in\{0,\dots,L\}$.
+An interval $[a\leadsto b]$ contains $[i\leadsto j]$
+if and only if $a=i$ and $\delta(i,b)\ge t$.
+Hence \eqref{eq:cyclic-rank-forward} reduces to
+\begin{equation}\label{eq:cyclic-rank-cumulative}
+r_{i,\,i+t}
+=
+\sum_{\ell=t}^{L}
+m_{i,\,i+\ell},
+\qquad t=0,\dots,L.
+\end{equation}
+
+\paragraph{Inversion formula.}
+Since \eqref{eq:cyclic-rank-cumulative} is a cumulative sum in the
+length parameter, it can be inverted by taking first differences.
+For $\ell=0,\dots,L$ we obtain
+\begin{equation}\label{eq:cyclic-inversion}
+m_{i,\,i+\ell}
+=
+r_{i,\,i+\ell}
+-
+r_{i,\,i+\ell+1},
+\end{equation}
+where by convention $r_{i,\,i+L+1}=0$.
+
+Equivalently, in $(i,j)$ notation,
+\[
+m_{ij}
+=
+r_{ij}
+-
+r_{i,\,j+1},
+\]
+with indices taken modulo $L+1$ and the understanding that
+$r_{i,\,j+1}=0$ if $\delta(i,j+1)>L$.
+
+Thus the cyclic rank pattern $\{r_{ij}\}$ and the multiplicity
+data $\{m_{ij}\}$ determine one another, and the $G_d$–orbits in
+$\Gamma_d$ may equivalently be parametrized by either set of data.
+```latex
+\subsection{Cyclic rank patterns and the bijection $M_d^+\simeq R_d^{\mathrm{orb}}$}
+
+Throughout this subsection we fix $L\ge 1$ and a dimension vector
+$d=(d_0,\dots,d_L)$, where $d_i=\dim V_i$.
+We consider the cyclic quiver on vertices $\{0,\dots,L\}$ with arrows
+\[
+\phi_\ell:V_{\ell-1}\longrightarrow V_\ell,\qquad \ell=1,\dots,L+1,
+\]
+where indices are taken modulo $L+1$ (so $\phi_{L+1}:V_L\to V_0$).
+We work inside $\Gamma_d$, i.e.\ representations satisfying the cyclic relations
+introduced earlier (in particular, only oriented paths of length $\le L$
+are relevant).
+
+\paragraph{Cyclic distance and path compositions.}
+For $i,j\in\{0,\dots,L\}$ we denote by $\delta(i,j)\in\{0,\dots,L\}$ the
+(unique) cyclic distance from $i$ to $j$ obtained by following the arrows
+forward, i.e.\ the unique integer such that
+\[
+j \equiv i+\delta(i,j) \pmod{L+1}.
+\]
+Thus there is a unique oriented path of length $\delta(i,j)$ from $V_i$ to $V_j$,
+namely
+\[
+V_i \xrightarrow{\phi_{i+1}} V_{i+1} \xrightarrow{\phi_{i+2}} \cdots
+\xrightarrow{\phi_{j}} V_j,
+\]
+where we interpret indices modulo $L+1$.
+For $\phi\in \Gamma_d$ we define the corresponding composition
+\begin{equation}\label{eq:Phi-ij}
+\Phi_{ij}(\phi)
+:=
+\phi_{j}\,\phi_{j-1}\cdots \phi_{i+1}
+\;:\;
+V_i \longrightarrow V_j,
+\end{equation}
+with the convention that $\Phi_{ii}(\phi)=\mathrm{id}_{V_i}$.
+
+\paragraph{Cyclic rank patterns.}
+\begin{definition}\label{def:cyclic-rank-pattern}
+For $\phi\in\Gamma_d$ we define its \emph{cyclic rank pattern} to be the array
+\[
+r(\phi)=(r_{ij}(\phi))_{0\le i,j\le L}
+\qquad\text{where}\qquad
+r_{ij}(\phi):=\mathrm{rank}\bigl(\Phi_{ij}(\phi)\bigr).
+\]
+\end{definition}
+Note that $r_{ii}(\phi)=\mathrm{rank}(\mathrm{id}_{V_i})=d_i$.
+
+We now define an abstract space of rank patterns and an ``orbit-realizable''
+subset.
+
+\begin{definition}\label{def:Rd}
+Let $R_d$ be the set of all integer arrays $r=(r_{ij})_{0\le i,j\le L}$
+such that
+\[
+r_{ii}=d_i\qquad\text{for all }i\in\{0,\dots,L\}.
+\]
+Define
+\[
+R_d^{\mathrm{orb}}
+:=
+\Bigl\{
+r\in R_d \ \Bigm|\ 
+r_{i,\,i+\ell-1}-r_{i,\,i+\ell}\ge 0 \ \text{for all } i\text{ and } \ell=1,\dots,L
+\Bigr\},
+\]
+where indices are taken modulo $L+1$.
+\end{definition}
+
+\paragraph{Multiplicity data.}
+Let $M(i,j)$ denote the indecomposable cyclic interval module supported on the
+oriented segment from $i$ to $j$ (i.e.\ on the vertices
+$i,i+1,\dots,j$ along the cycle), and let $m_{ij}\in\mathbb Z_{\ge 0}$
+denote its multiplicity in the Krull--Schmidt decomposition of the
+module corresponding to a point of $\Gamma_d$.
+We write
+\[
+m=(m_{ij}) \in M_d^+
+\]
+for the collection of multiplicities, where $M_d^+$ denotes the finite set of
+all such multiplicity collections compatible with the fixed dimension vector
+$d$ (equivalently, those for which the corresponding direct sum
+$\bigoplus_{i,j} M(i,j)^{\oplus m_{ij}}$ has dimension vector $d$).
+
+\medskip
+
+We now show that $M_d^+$ is naturally in bijection with $R_d^{\mathrm{orb}}$.
+
+\subsubsection*{Step 1: the map $M_d^+\to R_d^{\mathrm{orb}}$}
+Fix $m\in M_d^+$.
+For each $i,j$ define
+\begin{equation}\label{eq:forward-map}
+r_{ij}(m)
+:=
+\sum_{k=0}^{L-\delta(i,j)} m_{i,\,j+k},
+\end{equation}
+where indices are taken modulo $L+1$, and the sum is taken over those
+endpoints $j+k$ for which the oriented segment $[i\leadsto j+k]$
+has length $\delta(i,j+k)\le L$.
+Equivalently, \eqref{eq:forward-map} is the sum over all indecomposables
+$M(i,b)$ whose support contains the segment $[i\leadsto j]$.
+
+\begin{lemma}[Containment criterion]\label{lem:containment}
+Fix $i,j$ and set $t=\delta(i,j)$.
+For an endpoint $b\in\{0,\dots,L\}$ with $\delta(i,b)\le L$,
+the oriented segment $[i\leadsto j]$ is contained in $[i\leadsto b]$
+if and only if $\delta(i,b)\ge t$, i.e.\ if and only if $b=j+k$ for some
+$k\in\{0,\dots,L-t\}$.
+\end{lemma}
+
+\begin{proof}
+The segment $[i\leadsto j]$ is the unique oriented path of length $t$ starting
+at $i$. The segment $[i\leadsto b]$ is the unique oriented path of length
+$\delta(i,b)$ starting at $i$. Since both start at $i$ and follow the same
+orientation, $[i\leadsto j]\subseteq [i\leadsto b]$ holds exactly when the
+second path is at least as long as the first, i.e.\ $\delta(i,b)\ge t$.
+Writing $b\equiv i+\delta(i,b)\equiv j+(\delta(i,b)-t)$ shows that
+$b=j+k$ with $k=\delta(i,b)-t\in\{0,\dots,L-t\}$. Conversely, any such $k$
+gives $\delta(i,j+k)=t+k\ge t$, hence containment.
+\end{proof}
+
+\begin{lemma}[Forward formula]\label{lem:forward-formula}
+Let $\phi$ be any representation whose Krull--Schmidt multiplicities are $m$.
+Then for all $i,j$ one has
+\[
+r_{ij}(\phi)=r_{ij}(m),
+\]
+where $r_{ij}(m)$ is defined by \eqref{eq:forward-map}.
+In particular, $r(m):=(r_{ij}(m))$ depends only on $m$ and not on the choice
+of $\phi$ in the corresponding orbit.
+\end{lemma}
+
+\begin{proof}
+Decompose the corresponding module as a direct sum of indecomposables:
+$\mathcal M \cong \bigoplus_{a,b} M(a,b)^{\oplus m_{ab}}$.
+The linear map $\Phi_{ij}(\phi):V_i\to V_j$ respects this decomposition:
+on each indecomposable summand $M(a,b)$ it is either the identity on a
+$1$--dimensional space (hence has rank $1$) if the segment $[i\leadsto j]$
+is contained in the support of $M(a,b)$, or it is the zero map (hence rank $0$)
+otherwise.
+Moreover, for fixed $i,j$, the only summands that can contribute are those
+with $a=i$ (since the domain is $V_i$ and interval modules have a unique
+``start'' vertex in the oriented string).
+Therefore
+\[
+\mathrm{rank}(\Phi_{ij}(\phi))
+=
+\sum_{\substack{b:\\ [i\leadsto j]\subseteq [i\leadsto b]}}
+m_{i b}.
+\]
+By Lemma~\ref{lem:containment}, the condition
+$[i\leadsto j]\subseteq [i\leadsto b]$ is equivalent to $b=j+k$ with
+$k\in\{0,\dots,L-\delta(i,j)\}$, which yields \eqref{eq:forward-map}.
+\end{proof}
+
+\begin{lemma}\label{lem:orb-ineq}
+For any $m\in M_d^+$, the rank pattern $r(m)$ lies in $R_d^{\mathrm{orb}}$.
+\end{lemma}
+
+\begin{proof}
+First, $r_{ii}(m)=\sum_{k=0}^{L} m_{i,i+k}=d_i$ by the dimension constraint at
+vertex $i$, hence $r(m)\in R_d$.
+Next, fix $i$ and $\ell\in\{1,\dots,L\}$. Using \eqref{eq:forward-map} with
+$j=i+\ell-1$ and $j'=i+\ell$ gives
+\[
+r_{i,\,i+\ell-1}(m)-r_{i,\,i+\ell}(m)
+=
+\Bigl(\sum_{k=0}^{L-(\ell-1)} m_{i,\,i+\ell-1+k}\Bigr)
+-
+\Bigl(\sum_{k=0}^{L-\ell} m_{i,\,i+\ell+k}\Bigr)
+=
+m_{i,\,i+\ell-1}\ \ge\ 0,
+\]
+since all other terms cancel by reindexing.
+Thus $r(m)\in R_d^{\mathrm{orb}}$.
+\end{proof}
+
+Define
+\[
+F: M_d^+ \longrightarrow R_d^{\mathrm{orb}},\qquad F(m):=r(m).
+\]
+
+\subsubsection*{Step 2: the inverse map $R_d^{\mathrm{orb}}\to M_d^+$}
+Let $r\in R_d^{\mathrm{orb}}$. Define integers
+\begin{equation}\label{eq:inverse-map}
+m_{ij}(r)
+:=
+r_{ij}-r_{i,\,j+1},
+\end{equation}
+for all $i,j$, with indices modulo $L+1$ and the convention that
+$r_{i,\,j+1}=0$ whenever the segment $[i\leadsto j+1]$ has length $>L$
+(i.e.\ whenever $\delta(i,j+1)=L+1$ in the untruncated cycle; in practice, this
+means we set $r_{i,\,i+L+1}:=0$ to terminate the difference).
+Write $G(r):=(m_{ij}(r))$.
+
+\begin{lemma}\label{lem:inverse-well-defined}
+If $r\in R_d^{\mathrm{orb}}$, then $m_{ij}(r)\ge 0$ for all $i,j$, and
+$G(r)\in M_d^+$.
+\end{lemma}
+
+\begin{proof}
+Fix $i,j$ and write $j=i+\ell$ with $\ell=\delta(i,j)\in\{0,\dots,L\}$.
+Then \eqref{eq:inverse-map} reads
+\[
+m_{i,\,i+\ell}(r)=r_{i,\,i+\ell}-r_{i,\,i+\ell+1}.
+\]
+By definition of $R_d^{\mathrm{orb}}$ we have
+$r_{i,\,i+\ell}-r_{i,\,i+\ell+1}\ge 0$, hence $m_{ij}(r)\ge 0$.
+
+It remains to verify the dimension constraint at each vertex $i$.
+Using telescoping sums and the convention $r_{i,\,i+L+1}=0$ we obtain
+\[
+\sum_{\ell=0}^{L} m_{i,\,i+\ell}(r)
+=
+\sum_{\ell=0}^{L} \bigl(r_{i,\,i+\ell}-r_{i,\,i+\ell+1}\bigr)
+=
+r_{ii}-r_{i,\,i+L+1}
+=
+d_i.
+\]
+Thus the multiplicities $m_{ij}(r)$ are nonnegative and satisfy the required
+dimension constraints, so $G(r)\in M_d^+$.
+\end{proof}
+
+\subsubsection*{Step 3: $F$ and $G$ are inverse bijections}
+\begin{proposition}\label{prop:bijection}
+The maps
+\[
+F:M_d^+\to R_d^{\mathrm{orb}}
+\qquad\text{and}\qquad
+G:R_d^{\mathrm{orb}}\to M_d^+
+\]
+defined above are mutually inverse. In particular,
+\[
+M_d^+ \ \xrightarrow{\ \sim\ }\ R_d^{\mathrm{orb}}.
+\]
+\end{proposition}
+
+\begin{proof}
+\emph{(i) $G\circ F=\mathrm{id}_{M_d^+}$.}
+Let $m\in M_d^+$ and set $r=F(m)$.
+Fix $i$ and write $j=i+\ell$ with $\ell=\delta(i,j)\in\{0,\dots,L\}$.
+Then by \eqref{eq:forward-map},
+\[
+r_{i,\,i+\ell}
+=
+\sum_{k=0}^{L-\ell} m_{i,\,i+\ell+k},
+\qquad
+r_{i,\,i+\ell+1}
+=
+\sum_{k=0}^{L-(\ell+1)} m_{i,\,i+\ell+1+k}.
+\]
+Subtracting yields a telescoping cancellation:
+\[
+r_{i,\,i+\ell}-r_{i,\,i+\ell+1}
+=
+m_{i,\,i+\ell}.
+\]
+By \eqref{eq:inverse-map}, this is exactly
+$m_{ij}(G(r))=m_{ij}$, hence $G(F(m))=m$.
+
+\emph{(ii) $F\circ G=\mathrm{id}_{R_d^{\mathrm{orb}}}$.}
+Let $r\in R_d^{\mathrm{orb}}$ and set $m=G(r)$.
+Fix $i$ and write $j=i+\ell$ with $\ell=\delta(i,j)\in\{0,\dots,L\}$.
+Using \eqref{eq:forward-map} and \eqref{eq:inverse-map},
+\[
+(F(m))_{i,\,i+\ell}
+=
+\sum_{k=0}^{L-\ell} m_{i,\,i+\ell+k}
+=
+\sum_{k=0}^{L-\ell} \bigl(r_{i,\,i+\ell+k}-r_{i,\,i+\ell+k+1}\bigr).
+\]
+This sum telescopes to
+\[
+r_{i,\,i+\ell}-r_{i,\,i+L+1}.
+\]
+By convention $r_{i,\,i+L+1}=0$, hence $(F(m))_{i,\,i+\ell}=r_{i,\,i+\ell}$.
+Thus $F(G(r))=r$.
+
+Together, (i) and (ii) prove that $F$ and $G$ are inverse bijections.
+\end{proof}
+
+\paragraph{Remark (comparison with the linear case).}
+In the equioriented $A_n$ (linear) setting, rank patterns are indexed by all
+intervals $[i,j]$ and the relation between rank data and Kostant multiplicities
+is given by a two-dimensional inclusion--exclusion formula.
+In the present cyclic (Nakayama) setting with the above relations, indecomposable
+summands are indexed by cyclic intervals with a distinguished start vertex.
+Consequently, the forward map \eqref{eq:forward-map} becomes a one-sided
+cumulative sum along each fixed start vertex $i$, and the inversion
+\eqref{eq:inverse-map} is a first-difference (telescoping) formula.
+```latex
+\subsection{Orbit decomposition of $\Gamma_{XY}$ via cyclic rank patterns and the constraint $r(m)=\sigma$}
+
+\paragraph{Setup.}
+Fix vector spaces $V_0,\dots,V_L$ with $\dim V_i=d_i$ and consider the cyclic quiver on
+vertices $\{0,\dots,L\}$ with arrows
+\[
+\phi_\ell:V_{\ell-1}\longrightarrow V_\ell,\qquad \ell=1,\dots,L+1,
+\]
+where indices are taken modulo $L+1$ (so $\phi_{L+1}:V_L\to V_0$). Let $\Gamma_d\subset \Rep_d(C_{L+1})$
+be the closed subvariety cut out by the cyclic relations introduced earlier.
+We fix a linear map
+\[
+\sigma \in \Hom(V_L,V_0)
+\]
+and define the fibre
+\[
+\Gamma_{XY}:=\{\phi\in \Gamma_d \mid \phi_{L+1}=\sigma\}.
+\]
+
+Let
+\[
+G_d:=\prod_{i=0}^L GL(V_i)
+\]
+act on $\Gamma_d$ by base change. Since $\sigma$ is fixed, the natural group acting on
+$\Gamma_{XY}$ is the stabilizer of $\sigma$ under the $(0,L)$-component action:
+\[
+G_\sigma:=\{(g_0,\dots,g_L)\in G_d \mid g_0\,\sigma=\sigma\, g_L\}.
+\]
+
+\paragraph{Step 1: $G_d$--orbit decomposition of $\Gamma_d$.}
+By the finiteness of the representation type in the present cyclic (Nakayama) setting,
+the $G_d$--orbits in $\Gamma_d$ are parametrized by multiplicity data
+\[
+m=(m_{ij})\in M_d^+,
+\]
+where $m_{ij}\in\Bbb Z_{\ge 0}$ denotes the multiplicity of the indecomposable interval
+module $M(i,j)$ supported on the oriented segment $[i\leadsto j]$.
+We denote by $\mathcal O_m\subset \Gamma_d$ the corresponding $G_d$--orbit. Then
+\begin{equation}\label{eq:Gamma_d_orbit_decomp}
+\Gamma_d=\bigsqcup_{m\in M_d^+}\mathcal O_m.
+\end{equation}
+
+\paragraph{Step 2: Passage to the fibre $\Gamma_{XY}$ and $G_\sigma$--orbits.}
+Consider the morphism
+\[
+F:\Gamma_d\longrightarrow \Hom(V_L,V_0),\qquad F(\phi):=\phi_{L+1}.
+\]
+The map $F$ is $G_d$--equivariant with respect to the natural action of $G_d$ on
+$\Hom(V_L,V_0)$ given by $(g_0,\dots,g_L)\cdot A=g_0 A g_L^{-1}$.
+
+For each $m\in M_d^+$, the rank
+\[
+r(m):=\rank(\phi_{L+1})
+\qquad (\phi\in \mathcal O_m)
+\]
+is well-defined (independent of $\phi\in\mathcal O_m$) because rank is invariant under left--right
+base change. Equivalently, $F(\mathcal O_m)$ is contained in the rank stratum
+\[
+\Hom(V_L,V_0)_{r(m)}:=\{A\in\Hom(V_L,V_0)\mid \rank(A)=r(m)\}.
+\]
+
+Since over $\Bbb R$ (or $\Bbb C$) the orbits of $GL(V_0)\times GL(V_L)$ in $\Hom(V_L,V_0)$
+are precisely the rank strata, we have:
+\begin{equation}\label{eq:nonempty_fibre_criterion}
+\mathcal O_m\cap \Gamma_{XY}\neq\varnothing \quad\Longleftrightarrow\quad r(m)=\rank(\sigma).
+\end{equation}
+Moreover, whenever $\mathcal O_m\cap \Gamma_{XY}\neq\varnothing$, this intersection is a single
+$G_\sigma$--orbit (equivalently: the fibre of a $G_d$--equivariant map over a point in a homogeneous
+$G_d$--orbit is homogeneous under the stabilizer of that point). Therefore,
+\begin{equation}\label{eq:Gamma_XY_orbit_decomp_m}
+\Gamma_{XY}
+=
+\bigsqcup_{\substack{m\in M_d^+\\ r(m)=\rank(\sigma)}}
+\bigl(\mathcal O_m\cap \Gamma_{XY}\bigr),
+\qquad
+\text{and each }\ \mathcal O_m\cap\Gamma_{XY}\ \text{is a single $G_\sigma$--orbit.}
+\end{equation}
+
+\paragraph{Step 3: Reparametrization by cyclic rank patterns.}
+For $\phi\in\Gamma_d$ we define, for all $i,j\in\{0,\dots,L\}$, the composed map
+\[
+\Phi_{ij}(\phi):=\phi_{j}\phi_{j-1}\cdots \phi_{i+1}:V_i\to V_j
+\]
+(along the unique oriented path $i\leadsto j$), and the cyclic rank pattern
+\[
+r_{ij}(\phi):=\rank\bigl(\Phi_{ij}(\phi)\bigr).
+\]
+As proved in the previous subsection, the assignment $\phi\mapsto (r_{ij}(\phi))$
+is constant on $G_d$--orbits and yields a bijection
+\[
+M_d^+ \xrightarrow{\ \sim\ } R_d^{\mathrm{orb}},
+\qquad
+m\longmapsto r(m):=(r_{ij}(m)),
+\]
+with inverse given by the first-difference formula
+\begin{equation}\label{eq:m_from_r}
+m_{ij}=r_{ij}-r_{i,j+1},
+\end{equation}
+where $j+1$ is taken modulo $L+1$, and we adopt the terminating convention
+\[
+r_{i,i+L+1}:=0
+\qquad (\text{so that telescoping identities are valid}).
+\]
+
+Combining \eqref{eq:Gamma_XY_orbit_decomp_m} with the bijection $M_d^+\simeq R_d^{\mathrm{orb}}$,
+we may equivalently index the $G_\sigma$--orbits in $\Gamma_{XY}$ by rank patterns
+$r\in R_d^{\mathrm{orb}}$ subject to a single additional scalar constraint,
+obtained by translating $r(m)=\rank(\sigma)$ into rank-pattern language.
+
+\paragraph{Step 4: The constraint $r(m)=\rank(\sigma)$ in rank-pattern coordinates.}
+For each indecomposable interval module $M(i,j)$ (equivalently, $M(i,i+\ell)$ with $\ell=\delta(i,j)$),
+the distinguished arrow $\phi_{L+1}:V_L\to V_0$ acts either trivially or nontrivially. Define the indicator
+\[
+\epsilon(i,j)\in\{0,1\}
+\]
+by
+\[
+\epsilon(i,j)=1 \ \Longleftrightarrow\ 
+\text{the arrow } (L\to 0) \text{ lies in the support segment } [i\leadsto j]
+\text{ (equivalently: $\phi_{L+1}$ is active on $M(i,j)$)}.
+\]
+(Equivalently: $[i\leadsto j]$ contains the step $L\leadsto 0$.)
+
+\begin{lemma}\label{lem:r_of_m_epsilon}
+For $m\in M_d^+$ one has
+\begin{equation}\label{eq:r(m)_epsilon}
+r(m)=\rank(\phi_{L+1})
+=
+\sum_{i,j}\epsilon(i,j)\,m_{ij},
+\end{equation}
+where the sum ranges over all $(i,j)$ with $\delta(i,j)\le L$ (i.e.\ over all indecomposables present).
+\end{lemma}
+
+\begin{proof}
+Decompose the corresponding module as a direct sum of indecomposables:
+$\mathcal M \cong \bigoplus_{i,j} M(i,j)^{\oplus m_{ij}}$.
+The map $\phi_{L+1}$ is block-diagonal with respect to this decomposition, and on each summand $M(i,j)$
+it has rank $1$ precisely when the arrow $L\to 0$ belongs to the support of $M(i,j)$, and rank $0$ otherwise.
+Thus the total rank of $\phi_{L+1}$ equals the number of summands (counted with multiplicity) on which it is active,
+i.e.\ the sum \eqref{eq:r(m)_epsilon}.
+\end{proof}
+
+Now substitute \eqref{eq:m_from_r} into \eqref{eq:r(m)_epsilon}. Writing $j=i+\ell$ with $\ell=\delta(i,j)$,
+we obtain, for the rank pattern $r=(r_{ij})\in R_d^{\mathrm{orb}}$ corresponding to $m$,
+\begin{align}
+\rank(r)
+&:=\sum_{i,j}\epsilon(i,j)\,m_{ij}
+=\sum_{i,j}\epsilon(i,j)\,\bigl(r_{ij}-r_{i,j+1}\bigr).
+\label{eq:rank_r_general}
+\end{align}
+Equivalently, grouping by the length parameter $\ell\in\{0,\dots,L\}$ and using the terminating convention
+$r_{i,i+L+1}=0$, one may write
+\begin{equation}\label{eq:rank_r_length_form}
+\rank(r)
+=
+\sum_{i=0}^L\ \sum_{\ell=0}^L \epsilon(i,i+\ell)\,\bigl(r_{i,\,i+\ell}-r_{i,\,i+\ell+1}\bigr)
+=
+\sum_{i=0}^L\ \sum_{\ell=0}^L \epsilon(i,i+\ell)\,r_{i,\,i+\ell}
+\;-\;
+\sum_{i=0}^L\epsilon(i,i+L)\,r_{i,\,i+L+1}.
+\end{equation}
+Since $r_{i,i+L+1}=0$ by convention, the final term vanishes; in particular one may record the schematic identity
+\[
+\rank(r)
+=
+\sum_{i,\ell}\epsilon(i,i+\ell)\,m_{i,\,i+\ell}
+=
+\sum_{i,\ell}\epsilon(i,i+\ell)\,\bigl(r_{i,\,i+\ell}-r_{i,\,i+\ell+1}\bigr),
+\]
+which is the rank-pattern form of the constraint $r(m)=\rank(\sigma)$.
+
+\paragraph{Conclusion: orbit decomposition of $\Gamma_{XY}$ by rank patterns.}
+Define the rank-pattern admissible locus
+\[
+R_d^{\mathrm{orb}}(\sigma)
+:=
+\{\, r\in R_d^{\mathrm{orb}} \mid \rank(r)=\rank(\sigma)\,\},
+\]
+where $\rank(r)$ is given by \eqref{eq:rank_r_general} (equivalently \eqref{eq:rank_r_length_form}).
+Then \eqref{eq:Gamma_XY_orbit_decomp_m} becomes the rank-pattern stratification
+\begin{equation}\label{eq:Gamma_XY_orbit_decomp_r}
+\Gamma_{XY}
+=
+\bigsqcup_{r\in R_d^{\mathrm{orb}}(\sigma)}
+\Gamma_{XY}^{(r)},
+\end{equation}
+where each stratum $\Gamma_{XY}^{(r)}$ is a single $G_\sigma$--orbit, namely
+\[
+\Gamma_{XY}^{(r)}=\mathcal O_m\cap \Gamma_{XY}
+\quad\text{for the unique }m\in M_d^+\text{ with }F(m)=r.
+\]
+Thus $\Gamma_{XY}$ decomposes into $G_\sigma$--orbits indexed by cyclic rank patterns
+$r\in R_d^{\mathrm{orb}}$ satisfying the additional scalar constraint
+$\rank(r)=\rank(\sigma)$, which is equivalently the condition
+\[
+\sum_{i,j}\epsilon(i,j)\,m_{ij}=\rank(\sigma)
+\qquad\Longleftrightarrow\qquad
+\sum_{i,j}\epsilon(i,j)\,(r_{ij}-r_{i,j+1})=\rank(\sigma).
+\]
+\begin{proposition}[Orbit stratification of $\Gamma_{XY}$ by cyclic rank patterns]\label{prop:GammaXY_orbit_stratification}
+Fix $\sigma\in\Hom(V_L,V_0)$ and set
+\[
+\Gamma_{XY}:=\{\phi\in\Gamma_d\mid \phi_{L+1}=\sigma\}.
+\]
+Let $R_d^{\mathrm{orb}}$ be the set of orbit-realizable cyclic rank patterns, and for
+$r\in R_d^{\mathrm{orb}}$ let $\mathcal O_r\subset \Gamma_d$ denote the corresponding
+$G_d$--orbit (equivalently, $\mathcal O_r=\mathcal O_m$ where $m\in M_d^+$ is the unique
+multiplicity datum mapping to $r$ under the bijection $M_d^+\simeq R_d^{\mathrm{orb}}$).
+
+For each $r\in R_d^{\mathrm{orb}}$ define the \emph{$\sigma$--restricted orbit}
+\[
+\mathcal O_{r,\sigma}:=\mathcal O_r\cap \Gamma_{XY}.
+\]
+Then:
+\begin{enumerate}
+\item For every $r\in R_d^{\mathrm{orb}}$, the subset $\mathcal O_{r,\sigma}$ is either empty
+or a single $G_\sigma$--orbit (where $G_\sigma=\{(g_0,\dots,g_L)\in G_d\mid g_0\sigma=\sigma g_L\}$).
+\item $\mathcal O_{r,\sigma}\neq\varnothing$ if and only if the scalar constraint
+\[
+\rank(r)=\rank(\sigma)
+\]
+holds, where $\rank(r)$ is defined by
+\begin{equation}\label{eq:rank_of_rankpattern}
+\rank(r)
+:=
+\sum_{i=0}^L\ \sum_{\ell=1}^L \epsilon(i,i+\ell)\,m_{i,\,i+\ell}
+=
+\sum_{i=0}^L\ \sum_{\ell=1}^L \epsilon(i,i+\ell)\,\bigl(r_{i,\,i+\ell}-r_{i,\,i+\ell+1}\bigr),
+\end{equation}
+with $m_{ij}=r_{ij}-r_{i,j+1}$ and the convention $r_{i,\,i+L+1}=0$.
+\item Consequently, $\Gamma_{XY}$ admits the disjoint union decomposition
+\begin{equation}\label{eq:GammaXY_disjoint_union}
+\Gamma_{XY}
+=
+\bigsqcup_{\substack{r\in R_d^{\mathrm{orb}}\\ \rank(r)=\rank(\sigma)}}
+\mathcal O_{r,\sigma}.
+\end{equation}
+In particular, $\Gamma_{XY}$ is stratified by $G_\sigma$--orbits indexed by cyclic rank patterns
+$r\in R_d^{\mathrm{orb}}$ satisfying $\rank(r)=\rank(\sigma)$.
+\end{enumerate}
+\end{proposition}
 \end{document}
