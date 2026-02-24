@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1771932532.60554 "/Users/guime/projects/deep_linear_networks/geometry_dln_notes/geometry_dlns.tex" "geometry_dlns.pdf" "geometry_dlns" 1771932533.61735 0
-  "/Users/guime/projects/deep_linear_networks/geometry_dln_notes/geometry_dlns.tex" 1771932532.1994 175216 87b8e8b25882aa08c1f4311a67de0d3a ""
+["pdflatex"] 1771942933.69066 "/Users/guime/projects/deep_linear_networks/geometry_dln_notes/geometry_dlns.tex" "geometry_dlns.pdf" "geometry_dlns" 1771942934.69492 0
+  "/Users/guime/projects/deep_linear_networks/geometry_dln_notes/geometry_dlns.tex" 1771942932.53839 178754 0140312697cb5f4934694a2fad3eaa7d ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -193,9 +193,9 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1749050915 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1749050869 3345728 6e9d6b4ca934c854c1520d15fef27576 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "geometry_dlns.aux" 1771932533.51215 17716 68191716e37f758362d2cbe79a79d52a "pdflatex"
-  "geometry_dlns.out" 1771932533.51346 7241 9278436d3312b19757768d2684fe7249 "pdflatex"
-  "geometry_dlns.tex" 1771932532.1994 175216 87b8e8b25882aa08c1f4311a67de0d3a ""
+  "geometry_dlns.aux" 1771942934.58899 18024 e61d12d43645fc03eb19cb01280dc3b5 "pdflatex"
+  "geometry_dlns.out" 1771942934.59027 7241 9278436d3312b19757768d2684fe7249 "pdflatex"
+  "geometry_dlns.tex" 1771942932.53839 178754 0140312697cb5f4934694a2fad3eaa7d ""
   (generated)
   "geometry_dlns.aux"
   "geometry_dlns.log"

@@ -10,6 +10,7 @@
 \newcommand{\Rep}{\operatorname{Rep}}
 \newcommand{\rank}{\operatorname{rank}}
 \newcommand{\Supp}{\operatorname{Supp}}
+\newcommand{\codim}{\operatorname{codim}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Mat}{\mathrm{Mat}}
 \usepackage{graphicx}
@@ -1707,7 +1708,7 @@ with the obvious endpoint conventions for $\ell=1$ and $\ell=L$ determined by th
 \eqref{eq:endpoints-slice}.
 By construction, $\mathcal X_{r,\sigma}\subset \mathcal Z$ is $H_{r,\sigma}$-stable (this is exactly the meaning of
 $h\cdot \mathcal S_{r,\sigma}=\mathcal S_{r,\sigma}$).
-\begin{theorem}[A precise replacement for $C_r \cong G \otimes \Gamma / H$]\label{thm:critical-bundle}
+\begin{theorem}\label{thm:critical-bundle}
 Let $C_r \subset \Omega$ denote the set of rank-$r$ first-order critical points in the normal form of the DLN second-order characterisation, i.e.\ the set described by the existence of residual blocks $Z = (Z_1, \dots, Z_L)$ such that
 \[
 W_L = [U_S,\, U_Q Z_L], \qquad
@@ -1726,44 +1727,44 @@ C_r = G_h \cdot S_{r,\sigma}.
 
 \medskip\noindent
 \textbf{(2) Associated bundle model (set-level).}
-Define $\Phi \colon G_h \times X_{r,\sigma} \to \Omega$ by
+Define $\Phi \colon G_h \times \mathcal X_{r,\sigma} \to \Omega$ by
 \begin{equation}\tag{23}
 \Phi(g, Z) := g \cdot \iota(Z),
 \end{equation}
-where $\iota$ is defined by~(17)--(18).  Then $\Phi(G_h \times X_{r,\sigma}) = C_r$ and $\Phi$ is invariant under the right action of $H_{r,\sigma}$ on $G_h \times X_{r,\sigma}$ given by
+where $\iota$ is defined by~(17)--(18).  Then $\Phi(G_h \times \mathcal X_{r,\sigma}) = C_r$ and $\Phi$ is invariant under the right action of $H_{r,\sigma}$ on $G_h \times \mathcal X_{r,\sigma}$ given by
 \begin{equation}\tag{24}
 (g, Z) \cdot h := (g h,\; h^{-1} \cdot Z).
 \end{equation}
 Hence $\Phi$ descends to a surjective map
 \[
-\bar\Phi \colon G_h \times_{H_{r,\sigma}} X_{r,\sigma} \longrightarrow C_r.
+\bar\Phi \colon G_h \times_{H_{r,\sigma}} \mathcal X_{r,\sigma} \longrightarrow C_r.
 \]
-Define the \emph{transporter into the slice} at a point $Z' \in X_{r,\sigma}$ by
+Define the \emph{transporter into the slice} at a point $Z' \in \mathcal X_{r,\sigma}$ by
 \[
 \mathrm{Trans}_{G_h}\!\bigl(\iota(Z'),\, S_{r,\sigma}\bigr)
 := \bigl\{ g \in G_h : g \cdot \iota(Z') \in S_{r,\sigma} \bigr\}.
 \]
 Define the \emph{principal slice locus}
 \[
-X_{r,\sigma}^{\circ} := \bigl\{ Z' \in X_{r,\sigma} \;\big|\;
+\mathcal X_{r,\sigma}^{\circ} := \bigl\{ Z' \in \mathcal X_{r,\sigma} \;\big|\;
 \mathrm{Trans}_{G_h}\!\bigl(\iota(Z'),\, S_{r,\sigma}\bigr) = H_{r,\sigma} \bigr\},
 \]
-and let $C_r^{\circ} := \Phi(G_h \times X_{r,\sigma}^{\circ})$.
+and let $C_r^{\circ} := \Phi(G_h \times \mathcal X_{r,\sigma}^{\circ})$.
 Then the restriction
 \[
-\bar\Phi \colon G_h \times_{H_{r,\sigma}} X_{r,\sigma}^{\circ}
+\bar\Phi \colon G_h \times_{H_{r,\sigma}} \mathcal X_{r,\sigma}^{\circ}
 \xrightarrow{\;\sim\;} C_r^{\circ}
 \]
 is a bijection.  In particular, on the principal slice locus one has a canonical identification
 \begin{equation}\tag{25}
-C_r^{\circ} \;\cong\; G_h \times_{H_{r,\sigma}} X_{r,\sigma}^{\circ}
+C_r^{\circ} \;\cong\; G_h \times_{H_{r,\sigma}} \mathcal X_{r,\sigma}^{\circ}
 \qquad\text{(on the principal slice locus).}
 \end{equation}
 
 \medskip\noindent
 \textbf{(3) Quotient of critical points by hidden gauge.}  On the same principal slice locus,
 \begin{equation}\tag{26}
-C_r^{\circ} / G_h \;\cong\; X_{r,\sigma}^{\circ} / H_{r,\sigma}.
+C_r^{\circ} / G_h \;\cong\; \mathcal X_{r,\sigma}^{\circ} / H_{r,\sigma}.
 \end{equation}
 \end{theorem}
 
@@ -1772,15 +1773,14 @@ We proceed in explicit steps.
 
 \medskip
 \textbf{Step~1: Proof of~(22).}
-By the assumed DLN normal form for rank-$r$ critical points, $W \in C_r$ if and only if there exists $Z \in X_{r,\sigma}$ and a sequence of hidden invertible changes of basis $g = (g_1, \dots, g_{L-1}) \in G_h$ such that the transformed weights satisfy the block gauge-fixed identities~(17)--(18).  Equivalently, $g^{-1} \cdot W = \iota(Z) \in S_{r,\sigma}$.  Therefore $W = g \cdot \iota(Z) \in G_h \cdot S_{r,\sigma}$, proving $C_r \subseteq G_h \cdot S_{r,\sigma}$.  Conversely, if $W = g \cdot \iota(Z)$ with $Z \in X_{r,\sigma}$, then $W$ has the required normal form up to the hidden reparametrisation~$g$, and since $Z$ satisfies both~(14) and~(15), $W$ is critical.  Thus $G_h \cdot S_{r,\sigma} \subseteq C_r$.  This proves~(22).
+By the assumed DLN normal form for rank-$r$ critical points, $W \in C_r$ if and only if there exists $Z \in \mathcal X_{r,\sigma}$ and a sequence of hidden invertible changes of basis $g = (g_1, \dots, g_{L-1}) \in G_h$ such that the transformed weights satisfy the block gauge-fixed identities~(17)--(18).  Equivalently, $g^{-1} \cdot W = \iota(Z) \in S_{r,\sigma}$.  Therefore $W = g \cdot \iota(Z) \in G_h \cdot S_{r,\sigma}$, proving $C_r \subseteq G_h \cdot S_{r,\sigma}$.  Conversely, if $W = g \cdot \iota(Z)$ with $Z \in \mathcal X_{r,\sigma}$, then $W$ has the required normal form up to the hidden reparametrisation~$g$, and since $Z$ satisfies both~(14) and~(15), $W$ is critical.  Thus $G_h \cdot S_{r,\sigma} \subseteq C_r$.  This proves~(22).
 
 \medskip
 \textbf{Step~2: Image of $\Phi$ equals $C_r$.}
-By definition~(23), $\Phi(g, Z) = g \cdot \iota(Z) \in G_h \cdot S_{r,\sigma} = C_r$ by Step~1.  Hence $\Phi(G_h \times X_{r,\sigma}) \subseteq C_r$.  Conversely, Step~1 already shows every $W \in C_r$ can be written $W = g \cdot \iota(Z)$ with $Z \in X_{r,\sigma}$.  Therefore $\Phi(G_h \times X_{r,\sigma}) = C_r$.
-
+By definition~(23), $\Phi(g, Z) = g \cdot \iota(Z) \in G_h \cdot S_{r,\sigma} = C_r$ by Step~1.  Hence $\Phi(G_h \times \mathcal X_{r,\sigma}) \subseteq C_r$.  Conversely, Step~1 already shows every $W \in C_r$ can be written $W = g \cdot \iota(Z)$ with $Z \in \mathcal X_{r,\sigma}$.  Therefore $\Phi(G_h \times \mathcal X_{r,\sigma}) = C_r$.
 \medskip
 \textbf{Step~3: $H_{r,\sigma}$-invariance of $\Phi$.}
-Fix $(g, Z) \in G_h \times X_{r,\sigma}$ and $h \in H_{r,\sigma}$.  Then
+Fix $(g, Z) \in G_h \times \mathcal X_{r,\sigma}$ and $h \in H_{r,\sigma}$.  Then
 \[
 \Phi\bigl((g, Z) \cdot h\bigr) = \Phi\bigl(gh,\; h^{-1} \cdot Z\bigr)
 = (gh) \cdot \iota(h^{-1} \cdot Z).
@@ -1819,13 +1819,13 @@ Assume $\Phi(g, Z) = \Phi(g', Z')$ with $Z, Z' \in X_{r,\sigma}^{\circ}$.  Then 
 \begin{equation}\tag{$\star\star$}
 \iota(Z) = h \cdot \iota(Z').
 \end{equation}
-In particular, $h$ maps the slice point $\iota(Z')$ to another slice point $\iota(Z)$, so $h \in \mathrm{Trans}_{G_h}(\iota(Z'), S_{r,\sigma})$.  Since $Z' \in X_{r,\sigma}^{\circ}$, we have $\mathrm{Trans}_{G_h}(\iota(Z'), S_{r,\sigma}) = H_{r,\sigma}$ by definition of the principal slice locus.  Therefore $h \in H_{r,\sigma}$.
+In particular, $h$ maps the slice point $\iota(Z')$ to another slice point $\iota(Z)$, so $h \in \mathrm{Trans}_{G_h}(\iota(Z'), S_{r,\sigma})$.  Since $Z' \in  \mathcal X_{r,\sigma}^{\circ}$, we have $\mathrm{Trans}_{G_h}(\iota(Z'), S_{r,\sigma}) = H_{r,\sigma}$ by definition of the principal slice locus.  Therefore $h \in H_{r,\sigma}$.
 
-Having established $h \in H_{r,\sigma}$, we compute~($\star\star$) componentwise.  By the same block multiplication as in Step~3 (run in reverse), equation~($\star\star$) yields $Z = h \cdot Z'$, i.e.\ $Z' = h^{-1} \cdot Z$.  Therefore $(g', Z') = (gh, h^{-1} \cdot Z) = (g, Z) \cdot h$ in the right action~(24), and hence $[g', Z'] = [g, Z]$ in $G_h \times_{H_{r,\sigma}} X_{r,\sigma}^{\circ}$.  This proves injectivity on the principal slice locus.
+Having established $h \in H_{r,\sigma}$, we compute~($\star\star$) componentwise.  By the same block multiplication as in Step~3 (run in reverse), equation~($\star\star$) yields $Z = h \cdot Z'$, i.e.\ $Z' = h^{-1} \cdot Z$.  Therefore $(g', Z') = (gh, h^{-1} \cdot Z) = (g, Z) \cdot h$ in the right action~(24), and hence $[g', Z'] = [g, Z]$ in $G_h \times_{H_{r,\sigma}} \mathcal X_{r,\sigma}^{\circ}$.  This proves injectivity on the principal slice locus.
 
 \medskip
 \textbf{Step~5: The principal slice locus is generically non-empty.}
-We show that $X_{r,\sigma}^{\circ}$ contains a dense open subset of $X_{r,\sigma}$, so that the bijection~(25) holds on a large locus.  Take any $h = (h_1, \dots, h_{L-1}) \in G_h$ satisfying $h \cdot \iota(Z') \in S_{r,\sigma}$ for some $Z' \in X_{r,\sigma}$.  We must show $h \in H_{r,\sigma}$ for generic~$Z'$.
+We show that $\mathcal X_{r,\sigma}^{\circ}$ contains a dense open subset of $X_{r,\sigma}$, so that the bijection~(25) holds on a large locus.  Take any $h = (h_1, \dots, h_{L-1}) \in G_h$ satisfying $h \cdot \iota(Z') \in S_{r,\sigma}$ for some $Z' \in X_{r,\sigma}$.  We must show $h \in H_{r,\sigma}$ for generic~$Z'$.
 
 Write $h_\ell = \bigl(\begin{smallmatrix} a_\ell & b_\ell \\ c_\ell & k_\ell \end{smallmatrix}\bigr)$ in the $r \times (d_\ell - r)$ block decomposition.
 
@@ -1844,12 +1844,90 @@ Thus, for $Z'$ in a dense open subset of $X_{r,\sigma}$ (where certain residual 
 
 \medskip
 \textbf{Step~6: Conclusion.}
-Steps~2 and~3 establish that $\bar\Phi$ is a well-defined surjection.  Step~4 establishes injectivity on $X_{r,\sigma}^{\circ}$, giving~(25).  Taking $G_h$-quotients gives~(26).  The global map $\bar\Phi \colon G_h \times_{H_{r,\sigma}} X_{r,\sigma} \to C_r$ is surjective but may fail to be injective at points $Z'$ where certain residual blocks $Z_\ell'$ are rank-deficient, causing $\mathrm{Trans}_{G_h}(\iota(Z'), S_{r,\sigma})$ to strictly contain $H_{r,\sigma}$.
+Steps~2 and~3 establish that $\bar\Phi$ is a well-defined surjection.  Step~4 establishes injectivity on $\mathcal X_{r,\sigma}^{\circ}$, giving~(25).  Taking $G_h$-quotients gives~(26).  The global map $\bar\Phi \colon G_h \times_{H_{r,\sigma}} \mathcal X_{r,\sigma} \to C_r$ is surjective but may fail to be injective at points $Z'$ where certain residual blocks $Z_\ell'$ are rank-deficient, causing $\mathrm{Trans}_{G_h}(\iota(Z'), S_{r,\sigma})$ to strictly contain $H_{r,\sigma}$.
 \end{proof}
 
 \begin{remark}[How this corrects the conjectural formula]
 The correct ``product/quotient'' description involves the hidden gauge group $G_h$ and the intersection $X_{r,\sigma} = \Sigma_0^{d-r} \cap \Gamma_\sigma$ rather than $\Gamma_d$ alone.  A fully global isomorphism $C_r \cong G_h \times_{H_{r,\sigma}} X_{r,\sigma}$ can fail only where the transporter into the slice strictly contains $H_{r,\sigma}$; in that case the correct statement is that $C_r$ is modelled by this associated bundle on each transporter stratum.
 \end{remark}
+\begin{lemma}[Codimension is determined by the principal slice locus]
+\label{lem:codim-principal-locus}
+With notation as in Theorem~\ref{thm:critical-bundle}, assume the principal slice locus
+$\mathcal X_{r,\sigma}^{\circ}\subset \mathcal X_{r,\sigma}$ is Zariski open and dense in $\mathcal X_{r,\sigma}$, and let
+$C_r^{\circ}:=\Phi(G_h\times \mathcal X_{r,\sigma}^{\circ})\subset C_r$.
+Then $C_r^{\circ}$ is Zariski dense in $C_r$, and in particular
+\[
+\codim_{\Omega}(C_r^{\circ}) \;=\; \codim_{\Omega}(C_r).
+\]
+\end{lemma}
+
+\begin{proof}
+First note that $\mathcal X_{r,\sigma}^{\circ}$ Zariski open and dense in $\mathcal X_{r,\sigma}$ implies
+$G_h\times \mathcal X_{r,\sigma}^{\circ}$ is Zariski open and dense in $G_h\times \mathcal X_{r,\sigma}$, since $G_h$ is irreducible and
+the product of a dense open subset with an irreducible variety is dense open in the product.
+
+Consider the map $\Phi\colon G_h\times \mathcal X_{r,\sigma}\to \Omega$ defined in~\textup{(23)}. It is a morphism (being the restriction of the
+algebraic action map $(g,W)\mapsto g\cdot W$ composed with the embedding $\iota$), hence it is continuous in the Zariski topology.
+By Theorem~\ref{thm:critical-bundle}\textup{(2)}, $\Phi(G_h\times \mathcal X_{r,\sigma})=C_r$ and by definition
+$\Phi(G_h\times \mathcal X_{r,\sigma}^{\circ})=C_r^{\circ}$.
+
+Since $\Phi$ is continuous, for any subset $A\subseteq G_h\times \mathcal X_{r,\sigma}$ one has
+\[
+\Phi(\overline{A}) \;\subseteq\; \overline{\Phi(A)},
+\]
+where closures are taken in the Zariski topology. Apply this with $A=G_h\times \mathcal X_{r,\sigma}^{\circ}$.
+Because $G_h\times \mathcal X_{r,\sigma}^{\circ}$ is dense in $G_h\times \mathcal X_{r,\sigma}$, we have
+\[
+\overline{G_h\times \mathcal X_{r,\sigma}^{\circ}} \;=\; G_h\times \mathcal X_{r,\sigma}.
+\]
+Therefore,
+\[
+C_r \;=\; \Phi(G_h\times \mathcal X_{r,\sigma})
+\;=\; \Phi\!\left(\overline{G_h\times \mathcal X_{r,\sigma}^{\circ}}\right)
+\;\subseteq\; \overline{\Phi(G_h\times \mathcal X_{r,\sigma}^{\circ})}
+\;=\; \overline{C_r^{\circ}}.
+\]
+Since always $C_r^{\circ}\subseteq C_r$, we also have $\overline{C_r^{\circ}}\subseteq C_r$, hence
+\[
+\overline{C_r^{\circ}} \;=\; C_r,
+\]
+i.e.\ $C_r^{\circ}$ is Zariski dense in $C_r$.
+
+Finally, Zariski density implies $\dim C_r^{\circ}=\dim C_r$ (because $C_r$ is the Zariski closure of $C_r^{\circ}$), and hence
+\[
+\codim_{\Omega}(C_r^{\circ})
+= \dim\Omega - \dim C_r^{\circ}
+= \dim\Omega - \dim C_r
+= \codim_{\Omega}(C_r).
+\]
+\end{proof}
+\begin{proposition}[Codimension comparison: $C_r$ versus $\mathcal X_{r,\sigma}$]
+\label{prop:codim-Cr-vs-Xrsigma}
+With notation as in Theorem~\ref{thm:critical-bundle}, assume the hypotheses of Lemma~\ref{lem:codim-principal-locus}.
+Then the codimensions satisfy
+\begin{equation}\label{eq:codim-Cr-vs-Xrsigma}
+\codim_{\Omega}(C_r)
+\;=\;
+\codim_{\mathcal Z}(\mathcal X_{r,\sigma})
+\;+\;
+\Bigl(\dim\Omega-\dim\mathcal Z-\dim G_h+\dim H_{r,\sigma}\Bigr).
+\end{equation}
+Equivalently,
+\[
+\codim_{\Omega}(C_r)
+\;=\;
+\codim_{\mathcal Z}(\mathcal X_{r,\sigma})
+\;+\;
+r(d_0+d_L),
+\]
+where the last equality uses the explicit dimension identities
+\[
+\dim\Omega=\sum_{\ell=1}^L d_\ell d_{\ell-1},\qquad
+\dim\mathcal Z=\sum_{\ell=1}^L (d_\ell-r)(d_{\ell-1}-r),\qquad
+\dim G_h=\sum_{\ell=1}^{L-1} d_\ell^2,\qquad
+\dim H_{r,\sigma}=r^2+\sum_{\ell=1}^{L-1}(d_\ell-r)^2.
+\]
+\end{proposition}
 \section{Sampling saddle points}
 
 We leverage the algebraic parameterization of first-order critical points in deep linear networks (DLNs) given by the rank condition and the cyclic conditions. The objective is to turn these polynomial constraints into a numerical sampler that produces many (typically gauge-inequivalent) saddle points.
