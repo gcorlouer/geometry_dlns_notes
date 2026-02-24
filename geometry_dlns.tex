@@ -1001,7 +1001,6 @@ Hence $H_f$ is weighted by residuals and vanishes at exact interpolation. Unlike
 
 \paragraph{Geometric interpretation and relation to the LLC.}
 The decomposition separates two sources of curvature: data-induced curvature ($H_o$) and parameterization-induced curvature ($H_f$). Near well-fitted minima in regression and classification, $H_f$ becomes negligible and the Hessian is dominated by $H_o$. The nonzero eigenvalues of $H_o$ determine the quadratic directions of the loss landscape and therefore govern the leading-order local geometry. In regular models the Hessian is full rank, whereas in singular models rank deficiency reflects parameter redundancies. Since the local learning coefficient (LLC) is determined by the leading quadratic structure of the loss expansion, the rank of the Hessian provides an upper bound on twice the LLC, while higher-order terms determine whether this bound is tight.
-```latex
 \subsection{Exact Rank Formula, Upper Bound, and Rank Deficiency}
 
 We consider a depth-$L$ deep linear network with layer widths
@@ -1098,7 +1097,6 @@ This clarifies that:
 not by the raw parameter count, and
 (iii) overparameterization primarily increases flat directions rather
 than curved ones.
-```latex
 \subsection{Link Between $H_o$, $H_f$, and Strict vs.\ Non-Strict Saddles}
 
 Consider a deep linear network trained with squared loss
@@ -3246,7 +3244,6 @@ Substituting \eqref{eq:rank_block_zero} in Case A and \eqref{eq:rank_block_full}
 By definition $r(\mathbf m)=\rank(\phi_{L+1})$ for $\phi\in\mathcal O_{\mathbf m}$, so this proves
 \eqref{eq:rank_formula_eps}. 
 \end{proof}
-```latex
 \begin{corollary}[Orbit decomposition of $\Gamma_{XY}$ indexed by $\mathcal M_d^+$]
 \label{cor:GammaXY_decomposition_by_Mdplus}
 Work over $\mathbb{R}$ and keep the notation of Proposition~\ref{prop:GammaXY_orbit_decomposition}
@@ -3436,7 +3433,6 @@ $r_{i,\,j+1}=0$ if $\delta(i,j+1)>L$.
 Thus the cyclic rank pattern $\{r_{ij}\}$ and the multiplicity
 data $\{m_{ij}\}$ determine one another, and the $G_d$–orbits in
 $\Gamma_d$ may equivalently be parametrized by either set of data.
-```latex
 \subsection{Cyclic rank patterns and the bijection $M_d^+\simeq R_d^{\mathrm{orb}}$}
 
 Throughout this subsection we fix $L\ge 1$ and a dimension vector
@@ -3728,7 +3724,6 @@ summands are indexed by cyclic intervals with a distinguished start vertex.
 Consequently, the forward map \eqref{eq:forward-map} becomes a one-sided
 cumulative sum along each fixed start vertex $i$, and the inversion
 \eqref{eq:inverse-map} is a first-difference (telescoping) formula.
-```latex
 \subsection{Orbit decomposition of $\Gamma_{XY}$ via cyclic rank patterns and the constraint $r(m)=\sigma$}
 
 \paragraph{Setup.}
@@ -3970,4 +3965,255 @@ In particular, $\Gamma_{XY}$ is stratified by $G_\sigma$--orbits indexed by cycl
 $r\in R_d^{\mathrm{orb}}$ satisfying $\rank(r)=\rank(\sigma)$.
 \end{enumerate}
 \end{proposition}
+\section{Codimension of $\mathcal{C}_r$}
+\subsection{Relation with codimension of orbits}
+\begin{proposition}[Codimension of $\Gamma_{XY}$ via the largest cyclic orbit]
+\label{prop:codim-GammaXY-largest-orbit}
+Let $\Gamma_{XY}$ be stratified by cyclic rank patterns as in Proposition~12.10:
+\[
+\Gamma_{XY}
+\;=\;
+\bigsqcup_{\substack{r\in R^{\mathrm{orb}}_d\\ \mathrm{rank}(r)=\mathrm{rank}(\sigma)}}
+\mathcal O_{r,\sigma},
+\qquad
+\mathcal O_{r,\sigma}:=\mathcal O_r\cap \Gamma_{XY},
+\]
+where each nonempty $\mathcal O_{r,\sigma}$ is a single $G_\sigma$-orbit.
+
+Let
+\[
+\mathcal A(\sigma)
+\;:=\;
+\bigl\{\, r\in R^{\mathrm{orb}}_d \;\big|\;
+\mathrm{rank}(r)=\mathrm{rank}(\sigma)
+\ \text{(equivalently, } \mathcal O_{r,\sigma}\neq\varnothing ) \bigr\}.
+\]
+Then
+\begin{equation}\label{eq:codim-GammaXY-min}
+\codim(\Gamma_{XY})
+\;=\;
+\min_{r\in \mathcal A(\sigma)}
+\codim(\mathcal O_{r,\sigma}).
+\end{equation}
+
+Equivalently, if $r_\ast\in \mathcal A(\sigma)$ is such that
+\[
+\dim \mathcal O_{r_\ast,\sigma}
+=
+\max_{r\in \mathcal A(\sigma)} \dim \mathcal O_{r,\sigma},
+\]
+then $\overline{\mathcal O_{r_\ast,\sigma}}$ is an irreducible component of $\Gamma_{XY}$ of maximal dimension and
+\begin{equation}\label{eq:codim-GammaXY-largest}
+\codim(\Gamma_{XY})
+=
+\codim(\mathcal O_{r_\ast,\sigma}).
+\end{equation}
+\end{proposition}
+\begin{proof}
+We work throughout in the Zariski topology on the affine variety $\Gamma_d$ (hence on the closed subvariety
+$\Gamma_{XY}=\{\phi\in \Gamma_d:\phi_{L+1}=\sigma\}$). By Proposition~12.10,
+\begin{equation}\label{eq:GammaXY-finite-union}
+\Gamma_{XY}
+\;=\;
+\bigsqcup_{r\in \mathcal A(\sigma)} \mathcal O_{r,\sigma},
+\qquad
+\mathcal A(\sigma):=\{\,r\in R^{\mathrm{orb}}_d:\ \mathcal O_{r,\sigma}\neq\varnothing\,\}
+=
+\{\,r\in R^{\mathrm{orb}}_d:\ \mathrm{rank}(r)=\mathrm{rank}(\sigma)\,\},
+\end{equation}
+and each nonempty $\mathcal O_{r,\sigma}$ is a single $G_\sigma$-orbit. In particular, each $\mathcal O_{r,\sigma}$ is a locally closed,
+irreducible subset of $\Gamma_{XY}$ (indeed, an orbit of an algebraic group action is constructible and irreducible, being the image of the
+irreducible variety $G_\sigma$ under the orbit map).
+
+\medskip
+\noindent\textbf{Step 1: Dimension of $\Gamma_{XY}$ is the maximal orbit dimension.}
+Since the indexing set $\mathcal A(\sigma)$ is finite (cyclic rank patterns take values in a finite set of integers bounded by the widths),
+\eqref{eq:GammaXY-finite-union} expresses $\Gamma_{XY}$ as a finite disjoint union of locally closed subsets.
+For any finite family of constructible subsets $\{S_i\}_{i=1}^N$ of an algebraic variety, one has
+\[
+\dim\Bigl(\bigcup_{i=1}^N S_i\Bigr) \;=\; \max_{1\le i\le N}\dim S_i,
+\]
+because taking Zariski closures gives
+$\overline{\bigcup_i S_i}=\bigcup_i \overline{S_i}$, and the dimension of a finite union of closed subsets is the maximum of their dimensions.
+Applying this to the family $\{\mathcal O_{r,\sigma}\}_{r\in\mathcal A(\sigma)}$ yields
+\begin{equation}\label{eq:dim-GammaXY-max}
+\dim(\Gamma_{XY}) \;=\; \max_{r\in\mathcal A(\sigma)} \dim(\mathcal O_{r,\sigma}).
+\end{equation}
+
+\medskip
+\noindent\textbf{Step 2: Codimension is the minimal orbit codimension.}
+By definition, for any constructible $S\subseteq \Gamma_d$ we set
+\[
+\codim_{\Gamma_d}(S)\;:=\;\dim(\Gamma_d)-\dim(S).
+\]
+Combining this with \eqref{eq:dim-GammaXY-max} gives
+\[
+\codim_{\Gamma_d}(\Gamma_{XY})
+\;=\;
+\dim(\Gamma_d)-\max_{r\in\mathcal A(\sigma)}\dim(\mathcal O_{r,\sigma})
+\;=\;
+\min_{r\in\mathcal A(\sigma)}\bigl(\dim(\Gamma_d)-\dim(\mathcal O_{r,\sigma})\bigr)
+\;=\;
+\min_{r\in\mathcal A(\sigma)} \codim_{\Gamma_d}(\mathcal O_{r,\sigma}),
+\]
+which is exactly \eqref{eq:codim-GammaXY-min}.
+
+\medskip
+\noindent\textbf{Step 3: Realization by a largest orbit and maximal component.}
+Let $r_\ast\in\mathcal A(\sigma)$ achieve the maximum in \eqref{eq:dim-GammaXY-max}.
+Since $\mathcal O_{r_\ast,\sigma}$ is irreducible, its Zariski closure $\overline{\mathcal O_{r_\ast,\sigma}}$ is irreducible as well.
+Moreover, $\overline{\mathcal O_{r_\ast,\sigma}}\subseteq \Gamma_{XY}$ and
+\[
+\dim\overline{\mathcal O_{r_\ast,\sigma}}=\dim \mathcal O_{r_\ast,\sigma}=\dim \Gamma_{XY}.
+\]
+Therefore $\overline{\mathcal O_{r_\ast,\sigma}}$ is an irreducible component of $\Gamma_{XY}$ of maximal dimension, and
+\[
+\codim_{\Gamma_d}(\Gamma_{XY})
+=
+\dim(\Gamma_d)-\dim(\Gamma_{XY})
+=
+\dim(\Gamma_d)-\dim(\mathcal O_{r_\ast,\sigma})
+=
+\codim_{\Gamma_d}(\mathcal O_{r_\ast,\sigma}),
+\]
+which is \eqref{eq:codim-GammaXY-largest}.
+\end{proof}
+\begin{proposition}[Codimension of $C_r$ via cyclic orbits in $\Gamma_{XY}$]
+\label{prop:codim-Cr-via-orbits}
+Fix $0\le r\le \min_\ell d_\ell$ and retain the notation of
+Theorem~\ref{thm:critical-bundle} and Proposition~12.11.
+Assume $\Gamma_{XY}$ is identified with the residual constraint variety
+$\mathcal X_{r,\sigma}\subset \mathcal Z$ (i.e.\ $\Gamma_{XY}=\mathcal X_{r,\sigma}$ under the fixed endpoint/closing-arrow model),
+and assume the principal slice locus is dense so that
+\[
+\codim_{\Omega}(C_r^{\circ})=\codim_{\Omega}(C_r).
+\]
+Let $\Gamma_{XY}$ admit the orbit stratification
+\[
+\Gamma_{XY}
+=
+\bigsqcup_{\substack{m\in R^{\mathrm{orb}}_d\\ \rank(m)=\rank(\sigma)}}
+\mathcal O_{m,\sigma},
+\qquad
+\mathcal O_{m,\sigma}:=\mathcal O_m\cap \Gamma_{XY},
+\]
+and let $m_\ast$ be a cyclic rank pattern of maximal orbit dimension among those with $\rank(m)=\rank(\sigma)$.
+Then
+\begin{equation}\label{eq:codim-Cr-via-largest-orbit}
+\codim_{\Omega}(C_r)
+\;=\;
+\codim_{\mathcal Z}(\mathcal O_{m_\ast,\sigma})
+\;+\;
+r(d_0+d_L).
+\end{equation}
+Equivalently,
+\begin{equation}\label{eq:codim-Cr-via-min-orbit}
+\codim_{\Omega}(C_r)
+\;=\;
+\min_{\substack{m\in R^{\mathrm{orb}}_d\\ \rank(m)=\rank(\sigma)}}
+\codim_{\mathcal Z}(\mathcal O_{m,\sigma})
+\;+\;
+r(d_0+d_L).
+\end{equation}
+\end{proposition}
+\begin{proof}
+We fix the ambient affine space $\Omega$ for $C_r$ and the ambient affine space $\mathcal Z$ for $\Gamma_{XY}=\mathcal X_{r,\sigma}$, and we use
+Zariski codimension throughout:
+\[
+\codim_{\Omega}(S):=\dim(\Omega)-\dim(S),\qquad
+\codim_{\mathcal Z}(T):=\dim(\mathcal Z)-\dim(T),
+\]
+for constructible subsets $S\subseteq \Omega$, $T\subseteq \mathcal Z$.
+
+\medskip
+\noindent\textbf{Step 1: Reduce $\codim_{\Omega}(C_r)$ to $\codim_{\mathcal Z}(\mathcal X_{r,\sigma})$.}
+By Proposition~8.8 (codimension comparison between critical points and the residual constraint variety), on the principal slice locus one has
+\begin{equation}\label{eq:codim-Cr-vs-Xrsigma-proof}
+\codim_{\Omega}(C_r)
+=
+\codim_{\mathcal Z}(\mathcal X_{r,\sigma})
++
+r(d_0+d_L),
+\end{equation}
+where we use the standing hypothesis that $\codim_{\Omega}(C_r^\circ)=\codim_{\Omega}(C_r)$ so that the codimension can be computed on the principal locus.
+
+\medskip
+\noindent\textbf{Step 2: Compute $\codim_{\mathcal Z}(\mathcal X_{r,\sigma})$ from the orbit stratification.}
+By the hypothesis of the proposition, $\Gamma_{XY}$ is identified with $\mathcal X_{r,\sigma}$ as a subvariety of $\mathcal Z$. By Proposition~12.11 (orbit stratification by cyclic rank patterns), there is a finite disjoint union
+\begin{equation}\label{eq:orbit-strat-proof}
+\mathcal X_{r,\sigma}
+=
+\Gamma_{XY}
+=
+\bigsqcup_{\substack{m\in R_d^{\mathrm{orb}}\\ \rank(m)=\rank(\sigma)}}
+\mathcal O_{m,\sigma},
+\qquad
+\mathcal O_{m,\sigma}:=\mathcal O_m\cap \Gamma_{XY},
+\end{equation}
+and each nonempty $\mathcal O_{m,\sigma}$ is a single $G_\sigma$-orbit in $\Gamma_{XY}$; in particular each $\mathcal O_{m,\sigma}$ is a locally closed, irreducible, constructible subset of $\mathcal Z$.
+
+Since the index set in \eqref{eq:orbit-strat-proof} is finite, we have the general dimension identity for finite unions of constructible sets:
+\[
+\dim\!\left(\bigcup_{i=1}^N S_i\right) = \max_{1\le i\le N}\dim(S_i).
+\]
+Applying this with the family of strata $\{\mathcal O_{m,\sigma}\}$ gives
+\begin{equation}\label{eq:dim-X-maxorbit-proof}
+\dim(\mathcal X_{r,\sigma})
+=
+\max_{\substack{m\in R_d^{\mathrm{orb}}\\ \rank(m)=\rank(\sigma)}}
+\dim(\mathcal O_{m,\sigma}).
+\end{equation}
+(Indeed, taking Zariski closures yields
+$\overline{\mathcal X_{r,\sigma}}=\mathcal X_{r,\sigma}=\bigcup_m \overline{\mathcal O_{m,\sigma}}$, and the dimension of a finite union of closed sets equals the maximum of the dimensions of the closed sets; moreover $\dim\overline{\mathcal O_{m,\sigma}}=\dim(\mathcal O_{m,\sigma})$ because $\mathcal O_{m,\sigma}$ is irreducible and locally closed.)
+
+Now translate \eqref{eq:dim-X-maxorbit-proof} into codimensions inside $\mathcal Z$:
+\[
+\codim_{\mathcal Z}(\mathcal X_{r,\sigma})
+=
+\dim(\mathcal Z)-\dim(\mathcal X_{r,\sigma})
+=
+\dim(\mathcal Z)
+-
+\max_{\rank(m)=\rank(\sigma)} \dim(\mathcal O_{m,\sigma})
+=
+\min_{\rank(m)=\rank(\sigma)}
+\bigl(\dim(\mathcal Z)-\dim(\mathcal O_{m,\sigma})\bigr).
+\]
+Hence
+\begin{equation}\label{eq:codim-X-minorbit-proof}
+\codim_{\mathcal Z}(\mathcal X_{r,\sigma})
+=
+\min_{\substack{m\in R_d^{\mathrm{orb}}\\ \rank(m)=\rank(\sigma)}}
+\codim_{\mathcal Z}(\mathcal O_{m,\sigma}).
+\end{equation}
+Equivalently, if $m_\ast$ achieves the maximum orbit dimension in \eqref{eq:dim-X-maxorbit-proof}, then it achieves the minimum codimension in \eqref{eq:codim-X-minorbit-proof} and
+\begin{equation}\label{eq:codim-X-largestorbit-proof}
+\codim_{\mathcal Z}(\mathcal X_{r,\sigma})
+=
+\codim_{\mathcal Z}(\mathcal O_{m_\ast,\sigma}).
+\end{equation}
+
+\medskip
+\noindent\textbf{Step 3: Combine the two identities.}
+Substituting \eqref{eq:codim-X-minorbit-proof} into \eqref{eq:codim-Cr-vs-Xrsigma-proof} yields
+\[
+\codim_{\Omega}(C_r)
+=
+\min_{\substack{m\in R_d^{\mathrm{orb}}\\ \rank(m)=\rank(\sigma)}}
+\codim_{\mathcal Z}(\mathcal O_{m,\sigma})
++
+r(d_0+d_L),
+\]
+which is \eqref{eq:codim-Cr-via-min-orbit}. Substituting \eqref{eq:codim-X-largestorbit-proof} into
+\eqref{eq:codim-Cr-vs-Xrsigma-proof} yields
+\[
+\codim_{\Omega}(C_r)
+=
+\codim_{\mathcal Z}(\mathcal O_{m_\ast,\sigma})
++
+r(d_0+d_L),
+\]
+which is \eqref{eq:codim-Cr-via-largest-orbit}. This proves the proposition.
+\end{proof}
+
 \end{document}
