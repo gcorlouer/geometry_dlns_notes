@@ -1446,217 +1446,154 @@ A\in GL(r,\mathbb{R}),\;K_\ell\in GL(d_\ell-r,\mathbb{R})
 \end{equation}
 \end{definition}
 
-\begin{proposition}[Associated bundle model for $\Omega_r$]\label{prop:Omega_r-associated-bundle}
-Let $\Omega_r$ be as in Definition~\ref{def:Omega_r}, and let $H_r$ be as in
-Definition~\ref{def:Hr}. Define an action of $H_r$ on $G\times \mathcal Z$ by
-\begin{equation}\label{eq:Hr-action-on-GxZ}
-(g,Z)\cdot h \;:=\; \bigl(g h,\; h^{-1}\cdot Z\bigr),
+\begin{proposition}[Associated bundle model for $\Omega_r$]\label{prop:associated-bundle}
+Let $\Omega_r$ be as in Definition~8.1, and let $H_r$ be as in Definition~8.2. Define an action of $H_r$ on $G \times \mathcal{Z}$ by
+\begin{equation}\tag{5}
+(g, Z) \cdot h := \bigl(gh,\; h^{-1} \cdot Z\bigr),
 \end{equation}
-where for $h\in H_r$ written as in \eqref{eq:Hr-form},
-\begin{equation}\label{eq:Hr-action-on-Z}
-(h^{-1}\cdot Z)_\ell
-\;:=\;
-K_\ell^{-1}\, Z_\ell\, K_{\ell-1},
-\qquad \ell=1,\dots,L,
+where for $h \in H_r$ written as in~(4),
+\begin{equation}\tag{6}
+(h^{-1} \cdot Z)_\ell := K_\ell^{-1}\, Z_\ell\, K_{\ell-1}, \qquad \ell = 1, \dots, L,
 \end{equation}
-(and $A$ acts trivially on $\mathcal Z$).
-Let $G\times_{H_r}\mathcal Z$ denote the quotient of $G\times\mathcal Z$ by this right action.
+(and $A$ acts trivially on $\mathcal{Z}$). Let $G \times_{H_r} \mathcal{Z}$ denote the quotient of $G \times \mathcal{Z}$ by this right action.
 
 Define
-\begin{equation}\label{eq:Phi-def}
-\Phi:\; G\times \mathcal Z \to \Omega,
-\qquad
-\Phi(g,Z)\;:=\; g\cdot \iota(Z),
+\begin{equation}\tag{7}
+\Phi \colon G \times \mathcal{Z} \to \Omega, \qquad \Phi(g, Z) := g \cdot \iota(Z),
 \end{equation}
-with $\iota$ as in \eqref{eq:iota-embed} and the $G$-action as in \eqref{eq:gauge-action}.
-Then:
+with $\iota$ as in~(2) and the $G$-action as in~(1). Then:
 \begin{enumerate}
-\item $\Phi(G\times\mathcal Z)=\Omega_r$.
-\item $\Phi$ is $H_r$-invariant for the action \eqref{eq:Hr-action-on-GxZ}, hence descends to a well-defined map
-\[
-\overline\Phi:\; G\times_{H_r}\mathcal Z \to \Omega_r,\qquad \overline\Phi([g,Z])=\Phi(g,Z).
-\]
-\item $\overline\Phi$ is a bijection. Consequently, as sets,
-\begin{equation}\label{eq:Omega_r-isomorphic}
-\Omega_r \;\cong\; G\times_{H_r}\mathcal Z.
-\end{equation}
+    \item $\Phi(G \times \mathcal{Z}) = \Omega_r$.
+    \item $\Phi$ is $H_r$-invariant for the action~(5), hence descends to a well-defined map
+    \[
+        \bar\Phi \colon G \times_{H_r} \mathcal{Z} \longrightarrow \Omega_r, \qquad \bar\Phi([g, Z]) = \Phi(g, Z).
+    \]
+    Moreover, $\bar\Phi$ is surjective.
+    \item Define the \emph{principal stabilizer locus}
+    \[
+        \mathcal{Z}^{\circ} := \bigl\{ Z \in \mathcal{Z} \;\big|\; \operatorname{Stab}_G(\iota(Z)) = H_r \bigr\},
+    \]
+    i.e.\ the set of $Z$ for which the only elements of $G$ mapping $\iota(Z)$ back into $S_r$ are the block-diagonal elements in $H_r$. Let $\Omega_r^{\circ} := \Phi(G \times \mathcal{Z}^{\circ})$. Then the restriction
+    \[
+        \bar\Phi \colon G \times_{H_r} \mathcal{Z}^{\circ} \xrightarrow{\;\sim\;} \Omega_r^{\circ}
+    \]
+    is a bijection. In particular, on the principal stabilizer locus,
+    \begin{equation}\tag{8}
+        \Omega_r^{\circ} \;\cong\; G \times_{H_r} \mathcal{Z}^{\circ}.
+    \end{equation}
 \end{enumerate}
 \end{proposition}
 
 \begin{proof}
-Step 1 (Image equals $\Omega_r$).
-By definition \eqref{eq:Omega_r-def},
+\textbf{Step~1 (Image equals $\Omega_r$).} By definition~(3),
 \[
-\Omega_r \;=\; \{g\cdot \iota(Z): g\in G,\; Z\in\mathcal Z\}.
+\Omega_r = \{g \cdot \iota(Z) : g \in G,\; Z \in \mathcal{Z}\}.
 \]
-But $\Phi(g,Z)=g\cdot \iota(Z)$ by \eqref{eq:Phi-def}, hence $\Phi(G\times\mathcal Z)=\Omega_r$.
+But $\Phi(g, Z) = g \cdot \iota(Z)$ by~(7), hence $\Phi(G \times \mathcal{Z}) = \Omega_r$.
 
-\smallskip
-Step 2 ($H_r$-invariance).
-Take $(g,Z)\in G\times\mathcal Z$ and $h\in H_r$.
-Using \eqref{eq:Hr-action-on-GxZ}--\eqref{eq:Hr-action-on-Z},
+\medskip
+\textbf{Step~2 ($H_r$-invariance).} Take $(g, Z) \in G \times \mathcal{Z}$ and $h \in H_r$. Using (5)--(6),
 \[
-\Phi\bigl((g,Z)\cdot h\bigr)
-\;=\;
-\Phi\bigl(gh,\;h^{-1}\cdot Z\bigr)
-\;=\;
-(gh)\cdot \iota(h^{-1}\cdot Z).
+\Phi\bigl((g, Z) \cdot h\bigr) = \Phi\bigl(gh,\; h^{-1} \cdot Z\bigr) = (gh) \cdot \iota(h^{-1} \cdot Z).
 \]
-By the group action property \eqref{eq:gauge-action},
+By the group action property~(1),
 \[
-(gh)\cdot \iota(h^{-1}\cdot Z)
-\;=\;
-g\cdot\bigl(h\cdot \iota(h^{-1}\cdot Z)\bigr).
+(gh) \cdot \iota(h^{-1} \cdot Z) = g \cdot \bigl(h \cdot \iota(h^{-1} \cdot Z)\bigr).
 \]
 Thus it suffices to show
-\begin{equation}\label{eq:conjugacy-iota}
-h\cdot \iota(h^{-1}\cdot Z) \;=\; \iota(Z).
+\begin{equation}\tag{9}
+h \cdot \iota(h^{-1} \cdot Z) = \iota(Z).
 \end{equation}
-Write $h_\ell=\begin{pmatrix}A&0\\0&K_\ell\end{pmatrix}$ as in \eqref{eq:Hr-form}.
-Then, using \eqref{eq:gauge-action} and \eqref{eq:iota-embed},
+Write $h_\ell = \begin{psmallmatrix} A & 0 \\ 0 & K_\ell \end{psmallmatrix}$ as in~(4). Then, using (1) and (2),
 \[
-\bigl(h\cdot \iota(h^{-1}\cdot Z)\bigr)_\ell
-=
-h_\ell
-\begin{pmatrix}
-I_r & 0\\
-0 & (h^{-1}\cdot Z)_\ell
-\end{pmatrix}
-h_{\ell-1}^{-1}.
+\bigl(h \cdot \iota(h^{-1} \cdot Z)\bigr)_\ell
+= h_\ell \begin{pmatrix} I_r & 0 \\ 0 & (h^{-1} \cdot Z)_\ell \end{pmatrix} h_{\ell-1}^{-1}.
 \]
-Since $h_{\ell-1}^{-1}=\begin{pmatrix}A^{-1}&0\\0&K_{\ell-1}^{-1}\end{pmatrix}$ and $(h^{-1}\cdot Z)_\ell=K_\ell^{-1}Z_\ell K_{\ell-1}$ from \eqref{eq:Hr-action-on-Z}, we compute the block product explicitly:
+Since $h_{\ell-1}^{-1} = \begin{psmallmatrix} A^{-1} & 0 \\ 0 & K_{\ell-1}^{-1} \end{psmallmatrix}$ and $(h^{-1} \cdot Z)_\ell = K_\ell^{-1} Z_\ell K_{\ell-1}$ from~(6), we compute the block product explicitly:
 \[
-h_\ell
-\begin{pmatrix}
-I_r & 0\\
-0 & K_\ell^{-1}Z_\ell K_{\ell-1}
-\end{pmatrix}
-h_{\ell-1}^{-1}
-=
-\begin{pmatrix}
-A & 0\\
-0 & K_\ell
-\end{pmatrix}
-\begin{pmatrix}
-I_r & 0\\
-0 & K_\ell^{-1}Z_\ell K_{\ell-1}
-\end{pmatrix}
-\begin{pmatrix}
-A^{-1} & 0\\
-0 & K_{\ell-1}^{-1}
-\end{pmatrix}.
+\begin{pmatrix} A & 0 \\ 0 & K_\ell \end{pmatrix}
+\begin{pmatrix} I_r & 0 \\ 0 & K_\ell^{-1} Z_\ell K_{\ell-1} \end{pmatrix}
+\begin{pmatrix} A^{-1} & 0 \\ 0 & K_{\ell-1}^{-1} \end{pmatrix}.
 \]
 Multiplying the first two matrices gives
 \[
-\begin{pmatrix}
-A & 0\\
-0 & K_\ell
-\end{pmatrix}
-\begin{pmatrix}
-I_r & 0\\
-0 & K_\ell^{-1}Z_\ell K_{\ell-1}
-\end{pmatrix}
-=
-\begin{pmatrix}
-A & 0\\
-0 & Z_\ell K_{\ell-1}
-\end{pmatrix},
+\begin{pmatrix} A & 0 \\ 0 & K_\ell \end{pmatrix}
+\begin{pmatrix} I_r & 0 \\ 0 & K_\ell^{-1} Z_\ell K_{\ell-1} \end{pmatrix}
+= \begin{pmatrix} A & 0 \\ 0 & Z_\ell K_{\ell-1} \end{pmatrix},
 \]
 and multiplying by the third matrix yields
 \[
-\begin{pmatrix}
-A & 0\\
-0 & Z_\ell K_{\ell-1}
-\end{pmatrix}
-\begin{pmatrix}
-A^{-1} & 0\\
-0 & K_{\ell-1}^{-1}
-\end{pmatrix}
-=
-\begin{pmatrix}
-AA^{-1} & 0\\
-0 & Z_\ell K_{\ell-1}K_{\ell-1}^{-1}
-\end{pmatrix}
-=
-\begin{pmatrix}
-I_r & 0\\
-0 & Z_\ell
-\end{pmatrix}
-=
-\iota(Z)_\ell.
+\begin{pmatrix} A & 0 \\ 0 & Z_\ell K_{\ell-1} \end{pmatrix}
+\begin{pmatrix} A^{-1} & 0 \\ 0 & K_{\ell-1}^{-1} \end{pmatrix}
+= \begin{pmatrix} I_r & 0 \\ 0 & Z_\ell \end{pmatrix}
+= \iota(Z)_\ell.
 \]
-This proves \eqref{eq:conjugacy-iota}, hence
-$\Phi((g,Z)\cdot h)=\Phi(g,Z)$ for all $h\in H_r$. Therefore $\Phi$ is $H_r$-invariant and descends
-to a well-defined map $\overline\Phi:G\times_{H_r}\mathcal Z\to \Omega_r$.
+This proves~(9), hence $\Phi((g, Z) \cdot h) = \Phi(g, Z)$ for all $h \in H_r$. Therefore $\Phi$ is $H_r$-invariant and descends to a well-defined map $\bar\Phi \colon G \times_{H_r} \mathcal{Z} \to \Omega_r$.
 
-\smallskip
-Step 3 (Surjectivity of $\overline\Phi$).
-By Step 1, every element of $\Omega_r$ has the form $\Phi(g,Z)$ for some $(g,Z)$.
-Thus every element of $\Omega_r$ is in the image of $\overline\Phi$.
+\medskip
+\textbf{Step~3 (Surjectivity of $\bar\Phi$).} By Step~1, every element of $\Omega_r$ has the form $\Phi(g, Z)$ for some $(g, Z)$. Thus every element of $\Omega_r$ is in the image of $\bar\Phi$.
 
-\smallskip
-Step 4 (Injectivity of $\overline\Phi$).
-Assume $\overline\Phi([g,Z])=\overline\Phi([g',Z'])$.
-Then $\Phi(g,Z)=\Phi(g',Z')$, i.e.
-\begin{equation}\label{eq:equal-orbits}
-g\cdot \iota(Z) \;=\; g'\cdot \iota(Z').
+\medskip
+\textbf{Step~4 (Injectivity on the principal stabilizer locus).}
+Assume $\Phi([g, Z]) = \Phi([g', Z'])$ with $Z, Z' \in \mathcal{Z}^{\circ}$. Then $\Phi(g, Z) = \Phi(g', Z')$, i.e.
+\begin{equation}\tag{10}
+g \cdot \iota(Z) = g' \cdot \iota(Z').
 \end{equation}
-Let $h:=g^{-1}g'\in G$. Applying $g^{-1}$ to \eqref{eq:equal-orbits} and using the group action property gives
-\begin{equation}\label{eq:h-sends-slice-point}
-\iota(Z) \;=\; h\cdot \iota(Z').
+Let $h := g^{-1} g' \in G$. Applying $g^{-1}$ to~(10) and using the group action property gives
+\begin{equation}\tag{11}
+\iota(Z) = h \cdot \iota(Z').
 \end{equation}
-In particular, $h$ maps the slice point $\iota(Z')\in S_r$ back into the slice $S_r$.
-We now show that this forces $h\in H_r$ and that $Z$ and $Z'$ are related by \eqref{eq:Hr-action-on-Z}.
+In particular, $h$ maps the point $\iota(Z') \in S_r$ to the point $\iota(Z) \in S_r$.
 
-First, because \eqref{eq:h-sends-slice-point} holds for some $\iota(Z')\in S_r$ and both sides lie in $S_r$,
-the element $h$ belongs to the setwise stabilizer of $S_r$, i.e. $h\in H_r$ by Definition~\ref{def:Hr}.
-Hence $h$ has the block form \eqref{eq:Hr-form}:
-$h_\ell=\begin{pmatrix}A&0\\0&K_\ell\end{pmatrix}$.
+We now use the assumption that $Z' \in \mathcal{Z}^{\circ}$, i.e.\ $\operatorname{Stab}_G(\iota(Z')) = H_r$.  We claim that $h \in H_r$.  To see this, note that equation~(11) states that $h$ maps $\iota(Z')$ into $S_r$.  More precisely, we need to show that any $h \in G$ satisfying $h \cdot \iota(Z') \in S_r$ for some $Z' \in \mathcal{Z}^{\circ}$ must belong to $H_r$.
 
-Second, compute \eqref{eq:h-sends-slice-point} componentwise using \eqref{eq:gauge-action}:
+Write $h \cdot \iota(Z') = \iota(Z)$ for some $Z \in \mathcal{Z}$. Consider the one-parameter family $Z'(t) := Z' + t\,\delta Z$ for an arbitrary displacement $\delta Z \in \mathcal{Z}$, and define $W(t) := h \cdot \iota(Z'(t))$.  Expanding component-wise,
 \[
-\iota(Z)_\ell
-=
-\bigl(h\cdot \iota(Z')\bigr)_\ell
-=
-h_\ell
-\begin{pmatrix}
-I_r & 0\\
-0 & Z'_\ell
-\end{pmatrix}
-h_{\ell-1}^{-1}.
+W(t)_\ell = h_\ell \begin{pmatrix} I_r & 0 \\ 0 & Z'_\ell + t\,\delta Z_\ell \end{pmatrix} h_{\ell-1}^{-1}.
 \]
-Substituting $h_\ell=\begin{pmatrix}A&0\\0&K_\ell\end{pmatrix}$ and $h_{\ell-1}^{-1}=\begin{pmatrix}A^{-1}&0\\0&K_{\ell-1}^{-1}\end{pmatrix}$ and multiplying as in Step 2 yields
+At $t = 0$, this equals $\iota(Z)_\ell$ by~(11).  The derivative at $t = 0$ is
 \[
-\begin{pmatrix}
-I_r & 0\\
-0 & Z_\ell
-\end{pmatrix}
-=
-\begin{pmatrix}
-I_r & 0\\
-0 & K_\ell Z'_\ell K_{\ell-1}^{-1}
-\end{pmatrix},
+\frac{d}{dt}\Big|_{t=0} W(t)_\ell = h_\ell \begin{pmatrix} 0 & 0 \\ 0 & \delta Z_\ell \end{pmatrix} h_{\ell-1}^{-1}.
+\]
+Write $h_\ell$ in blocks compatible with the decomposition $\mathbb{R}^{d_\ell} = \mathbb{R}^r \oplus \mathbb{R}^{d_\ell - r}$:
+\[
+h_\ell = \begin{pmatrix} A_\ell & B_\ell \\ C_\ell & K_\ell \end{pmatrix}, \qquad
+h_{\ell-1}^{-1} = \begin{pmatrix} \alpha_{\ell-1} & \beta_{\ell-1} \\ \gamma_{\ell-1} & \kappa_{\ell-1} \end{pmatrix}.
+\]
+A direct computation shows
+\[
+h_\ell \begin{pmatrix} 0 & 0 \\ 0 & \delta Z_\ell \end{pmatrix} h_{\ell-1}^{-1}
+= \begin{pmatrix} B_\ell\, \delta Z_\ell\, \gamma_{\ell-1} & B_\ell\, \delta Z_\ell\, \kappa_{\ell-1} \\ K_\ell\, \delta Z_\ell\, \gamma_{\ell-1} & K_\ell\, \delta Z_\ell\, \kappa_{\ell-1} \end{pmatrix}.
+\]
+Now, $\iota(Z)_\ell$ has the block form $\begin{psmallmatrix} I_r & 0 \\ 0 & Z_\ell \end{psmallmatrix}$, so for $W(t)$ to remain in $S_r$ (i.e.\ have the same block structure) to first order for \emph{all} choices of $\delta Z_\ell$, both off-diagonal blocks of the derivative must vanish for all $\delta Z_\ell$.  The $(1,2)$-block condition $B_\ell\, \delta Z_\ell\, \kappa_{\ell-1} = 0$ for all $\delta Z_\ell$ forces $B_\ell = 0$ or $\kappa_{\ell-1} = 0$; but $h_{\ell-1}$ is invertible, so $\kappa_{\ell-1} \neq 0$, hence $B_\ell = 0$.  Similarly, the $(2,1)$-block condition gives $\gamma_{\ell-1} = 0$, which (since $h_{\ell-1}^{-1}$ invertible and $B_{\ell-1} = 0$ by induction) forces $C_{\ell-1} = 0$ as well.
+
+Applying this argument at every layer $\ell$ shows that each $h_\ell$ is block-diagonal:
+\[
+h_\ell = \begin{pmatrix} A_\ell & 0 \\ 0 & K_\ell \end{pmatrix},
+\]
+i.e.\ $h \in H_r$.  (This is exactly the content of the principal stabilizer condition: at $Z' \in \mathcal{Z}^{\circ}$ the slice $S_r$ is ``transverse enough'' that only block-diagonal elements can map $\iota(Z')$ back into $S_r$.)
+
+Having established $h \in H_r$, we now compute~(11) componentwise using~(1):
+\[
+\iota(Z)_\ell = \bigl(h \cdot \iota(Z')\bigr)_\ell = h_\ell \begin{pmatrix} I_r & 0 \\ 0 & Z'_\ell \end{pmatrix} h_{\ell-1}^{-1}.
+\]
+Substituting $h_\ell = \begin{psmallmatrix} A & 0 \\ 0 & K_\ell \end{psmallmatrix}$ and $h_{\ell-1}^{-1} = \begin{psmallmatrix} A^{-1} & 0 \\ 0 & K_{\ell-1}^{-1} \end{psmallmatrix}$ and multiplying as in Step~2 yields
+\[
+\begin{pmatrix} I_r & 0 \\ 0 & Z_\ell \end{pmatrix}
+= \begin{pmatrix} I_r & 0 \\ 0 & K_\ell Z'_\ell K_{\ell-1}^{-1} \end{pmatrix},
 \]
 so
-\begin{equation}\label{eq:Z-conjugacy}
-Z_\ell \;=\; K_\ell Z'_\ell K_{\ell-1}^{-1}
-\quad\Longleftrightarrow\quad
-Z'_\ell \;=\; K_\ell^{-1} Z_\ell K_{\ell-1}.
+\begin{equation}\tag{12}
+Z_\ell = K_\ell\, Z'_\ell\, K_{\ell-1}^{-1} \quad\iff\quad Z'_\ell = K_\ell^{-1}\, Z_\ell\, K_{\ell-1}.
 \end{equation}
-But \eqref{eq:Z-conjugacy} is exactly the relation $Z'=h^{-1}\cdot Z$ from \eqref{eq:Hr-action-on-Z}.
-Therefore $(g',Z')=(gh,\;h^{-1}\cdot Z)$, i.e. $(g',Z')=(g,Z)\cdot h$ in the right action
-\eqref{eq:Hr-action-on-GxZ}. Hence $[g',Z']=[g,Z]$ in $G\times_{H_r}\mathcal Z$, proving injectivity.
+But~(12) is exactly the relation $Z' = h^{-1} \cdot Z$ from~(6). Therefore $(g', Z') = (gh,\; h^{-1} \cdot Z)$, i.e.\ $(g', Z') = (g, Z) \cdot h$ in the right action~(5). Hence $[g', Z'] = [g, Z]$ in $G \times_{H_r} \mathcal{Z}^{\circ}$, proving injectivity on the principal stabilizer locus.
 
-\smallskip
-Step 5 (Conclusion).
-Steps 3 and 4 show that $\overline\Phi$ is bijective, hence \eqref{eq:Omega_r-isomorphic}.
+\medskip
+\textbf{Step~5 (Conclusion).} Steps~3 and~4 show that $\bar\Phi$ restricted to $G \times_{H_r} \mathcal{Z}^{\circ}$ is bijective onto $\Omega_r^{\circ}$, hence~(8). The global map $\bar\Phi \colon G \times_{H_r} \mathcal{Z} \to \Omega_r$ is surjective but may fail to be injective at points where the stabilizer of $\iota(Z')$ in $G$ strictly contains $H_r$.
 \end{proof}
 
 \begin{remark}[Hidden-layer gauge variant]
-If only hidden-layer changes of basis are allowed, replace $G$ by
-$G_h:=\prod_{\ell=1}^{L-1}GL(d_\ell,\mathbb{R})$ (i.e. fix $g_0,g_L$), and replace $H_r$ by $H_{r,h}:=H_r\cap G_h$.
-All statements and the proof above remain valid verbatim with this replacement.
+If only hidden-layer changes of basis are allowed, replace $G$ by $G_h := \prod_{\ell=1}^{L-1} \mathrm{GL}(d_\ell, \mathbb{R})$ (i.e.\ fix $g_0, g_L$), and replace $H_r$ by $H_{r,h} := H_r \cap G_h$. All statements and the proof above remain valid verbatim with this replacement, with $\mathcal{Z}^{\circ}$ redefined using $\operatorname{Stab}_{G_h}$ in place of $\operatorname{Stab}_G$.
 \end{remark}
 
 %------------------------------------------------------------
@@ -1770,123 +1707,148 @@ with the obvious endpoint conventions for $\ell=1$ and $\ell=L$ determined by th
 \eqref{eq:endpoints-slice}.
 By construction, $\mathcal X_{r,\sigma}\subset \mathcal Z$ is $H_{r,\sigma}$-stable (this is exactly the meaning of
 $h\cdot \mathcal S_{r,\sigma}=\mathcal S_{r,\sigma}$).
-
-\begin{theorem}[A precise replacement for $\mathcal C_r \cong G\otimes \Gamma/H$]\label{thm:Cr-associated-bundle}
-Let $\mathcal C_r\subset \Omega$ denote the set of rank-$r$ first-order critical points in the normal form of the DLN
-second-order characterization, i.e.\ the set described by the existence of residual blocks $Z=(Z_1,\dots,Z_L)$ such that
+\begin{theorem}[A precise replacement for $C_r \cong G \otimes \Gamma / H$]\label{thm:critical-bundle}
+Let $C_r \subset \Omega$ denote the set of rank-$r$ first-order critical points in the normal form of the DLN second-order characterisation, i.e.\ the set described by the existence of residual blocks $Z = (Z_1, \dots, Z_L)$ such that
 \[
-W_L=[U_S,U_QZ_L],\qquad
-W_\ell \sim \begin{pmatrix}I_r&0\\0&Z_\ell\end{pmatrix}\ (\ell=2,\dots,L-1),\qquad
-W_1=\begin{pmatrix}U_S^\top\Sigma_{YX}\Sigma_X^{-1}\\ Z_1\end{pmatrix},
-\qquad
-Z\in \Sigma^{d-r}_0\cap \Gamma_\sigma .
+W_L = [U_S,\, U_Q Z_L], \qquad
+W_\ell \sim \begin{pmatrix} I_r & 0 \\ 0 & Z_\ell \end{pmatrix}
+\;(\ell = 2, \dots, L{-}1), \qquad
+W_1 = \begin{pmatrix} U_S^\top \Sigma_{YX}\Sigma_X^{-1} \\ Z_1 \end{pmatrix},
+\qquad Z \in \Sigma_0^{d-r} \cap \Gamma_\sigma.
 \]
 Then the following hold.
 
-\smallskip
-\noindent\textbf{(1) Orbit-saturation description.}
-\begin{equation}\label{eq:Cr-saturation}
-\mathcal C_r \;=\; G_h\cdot \mathcal S_{r,\sigma}.
+\medskip\noindent
+\textbf{(1) Orbit-saturation description.}
+\begin{equation}\tag{22}
+C_r = G_h \cdot S_{r,\sigma}.
 \end{equation}
 
-\smallskip
-\noindent\textbf{(2) Associated bundle model (set-level).}
-Define $\Phi:G_h\times \mathcal X_{r,\sigma}\to \Omega$ by
-\begin{equation}\label{eq:Phi-Cr}
-\Phi(g,Z)\;:=\; g\cdot \iota(Z),
+\medskip\noindent
+\textbf{(2) Associated bundle model (set-level).}
+Define $\Phi \colon G_h \times X_{r,\sigma} \to \Omega$ by
+\begin{equation}\tag{23}
+\Phi(g, Z) := g \cdot \iota(Z),
 \end{equation}
-where $\iota$ is defined by \eqref{eq:iota-Z}--\eqref{eq:endpoints-slice}.
-Then $\Phi(G_h\times \mathcal X_{r,\sigma})=\mathcal C_r$ and $\Phi$ is invariant under the right action of
-$H_{r,\sigma}$ on $G_h\times \mathcal X_{r,\sigma}$ given by
-\begin{equation}\label{eq:right-action-Cr}
-(g,Z)\cdot h \;:=\; (g h,\; h^{-1}\cdot Z).
+where $\iota$ is defined by~(17)--(18).  Then $\Phi(G_h \times X_{r,\sigma}) = C_r$ and $\Phi$ is invariant under the right action of $H_{r,\sigma}$ on $G_h \times X_{r,\sigma}$ given by
+\begin{equation}\tag{24}
+(g, Z) \cdot h := (g h,\; h^{-1} \cdot Z).
 \end{equation}
-Hence $\Phi$ descends to a map
+Hence $\Phi$ descends to a surjective map
 \[
-\overline\Phi:\; G_h\times_{H_{r,\sigma}} \mathcal X_{r,\sigma} \longrightarrow \mathcal C_r.
+\bar\Phi \colon G_h \times_{H_{r,\sigma}} X_{r,\sigma} \longrightarrow C_r.
 \]
-Moreover, on the locus where the slice stabilizer equals $H_{r,\sigma}$ (equivalently: where there are no extra
-continuous symmetries beyond block-diagonal ones), the map $\overline\Phi$ is bijective. In particular, on the
-top-dimensional stratum of $\mathcal C_r$ one has a canonical identification
-\begin{equation}\label{eq:Cr-associated-bundle}
-\mathcal C_r \;\cong\; G_h\times_{H_{r,\sigma}} \mathcal X_{r,\sigma}
-\qquad\text{(on the principal stabilizer locus).}
+Define the \emph{transporter into the slice} at a point $Z' \in X_{r,\sigma}$ by
+\[
+\mathrm{Trans}_{G_h}\!\bigl(\iota(Z'),\, S_{r,\sigma}\bigr)
+:= \bigl\{ g \in G_h : g \cdot \iota(Z') \in S_{r,\sigma} \bigr\}.
+\]
+Define the \emph{principal slice locus}
+\[
+X_{r,\sigma}^{\circ} := \bigl\{ Z' \in X_{r,\sigma} \;\big|\;
+\mathrm{Trans}_{G_h}\!\bigl(\iota(Z'),\, S_{r,\sigma}\bigr) = H_{r,\sigma} \bigr\},
+\]
+and let $C_r^{\circ} := \Phi(G_h \times X_{r,\sigma}^{\circ})$.
+Then the restriction
+\[
+\bar\Phi \colon G_h \times_{H_{r,\sigma}} X_{r,\sigma}^{\circ}
+\xrightarrow{\;\sim\;} C_r^{\circ}
+\]
+is a bijection.  In particular, on the principal slice locus one has a canonical identification
+\begin{equation}\tag{25}
+C_r^{\circ} \;\cong\; G_h \times_{H_{r,\sigma}} X_{r,\sigma}^{\circ}
+\qquad\text{(on the principal slice locus).}
 \end{equation}
 
-\smallskip
-\noindent\textbf{(3) Quotient of critical points by hidden gauge.}
-On the same principal stabilizer locus,
-\begin{equation}\label{eq:Cr-quotient}
-\mathcal C_r/G_h \;\cong\; \mathcal X_{r,\sigma}/H_{r,\sigma}.
+\medskip\noindent
+\textbf{(3) Quotient of critical points by hidden gauge.}  On the same principal slice locus,
+\begin{equation}\tag{26}
+C_r^{\circ} / G_h \;\cong\; X_{r,\sigma}^{\circ} / H_{r,\sigma}.
 \end{equation}
 \end{theorem}
 
 \begin{proof}
 We proceed in explicit steps.
 
-\smallskip
-\noindent\textbf{Step 1: Proof of \eqref{eq:Cr-saturation}.}
-By the assumed DLN normal form for rank-$r$ critical points, $W\in\mathcal C_r$ if and only if there exists
-$Z\in\mathcal X_{r,\sigma}$ and a sequence of hidden invertible changes of basis
-$g=(g_1,\dots,g_{L-1})\in G_h$ such that the transformed weights satisfy the block gauge-fixed identities
-\eqref{eq:iota-Z}--\eqref{eq:endpoints-slice}. Equivalently, $g^{-1}\cdot W=\iota(Z)\in \mathcal S_{r,\sigma}$.
-Therefore $W=g\cdot \iota(Z)\in G_h\cdot \mathcal S_{r,\sigma}$, proving $\mathcal C_r\subseteq G_h\cdot \mathcal S_{r,\sigma}$.
-Conversely, if $W=g\cdot \iota(Z)$ with $Z\in\mathcal X_{r,\sigma}$, then $W$ has the required normal form up to the hidden
-reparametrization $g$, and since $Z$ satisfies both \eqref{eq:Sigma0-dr} and \eqref{eq:Gamma-sigma}, $W$ is critical.
-Thus $G_h\cdot \mathcal S_{r,\sigma}\subseteq \mathcal C_r$. This proves \eqref{eq:Cr-saturation}.
+\medskip
+\textbf{Step~1: Proof of~(22).}
+By the assumed DLN normal form for rank-$r$ critical points, $W \in C_r$ if and only if there exists $Z \in X_{r,\sigma}$ and a sequence of hidden invertible changes of basis $g = (g_1, \dots, g_{L-1}) \in G_h$ such that the transformed weights satisfy the block gauge-fixed identities~(17)--(18).  Equivalently, $g^{-1} \cdot W = \iota(Z) \in S_{r,\sigma}$.  Therefore $W = g \cdot \iota(Z) \in G_h \cdot S_{r,\sigma}$, proving $C_r \subseteq G_h \cdot S_{r,\sigma}$.  Conversely, if $W = g \cdot \iota(Z)$ with $Z \in X_{r,\sigma}$, then $W$ has the required normal form up to the hidden reparametrisation~$g$, and since $Z$ satisfies both~(14) and~(15), $W$ is critical.  Thus $G_h \cdot S_{r,\sigma} \subseteq C_r$.  This proves~(22).
 
-\smallskip
-\noindent\textbf{Step 2: Image of $\Phi$ equals $\mathcal C_r$.}
-By definition \eqref{eq:Phi-Cr}, $\Phi(g,Z)=g\cdot \iota(Z)\in G_h\cdot \mathcal S_{r,\sigma}=\mathcal C_r$ by Step 1.
-Hence $\Phi(G_h\times \mathcal X_{r,\sigma})\subseteq \mathcal C_r$.
-Conversely, Step 1 already shows every $W\in\mathcal C_r$ can be written $W=g\cdot \iota(Z)$ with $Z\in\mathcal X_{r,\sigma}$.
-Therefore $\Phi(G_h\times \mathcal X_{r,\sigma})=\mathcal C_r$.
+\medskip
+\textbf{Step~2: Image of $\Phi$ equals $C_r$.}
+By definition~(23), $\Phi(g, Z) = g \cdot \iota(Z) \in G_h \cdot S_{r,\sigma} = C_r$ by Step~1.  Hence $\Phi(G_h \times X_{r,\sigma}) \subseteq C_r$.  Conversely, Step~1 already shows every $W \in C_r$ can be written $W = g \cdot \iota(Z)$ with $Z \in X_{r,\sigma}$.  Therefore $\Phi(G_h \times X_{r,\sigma}) = C_r$.
 
-\smallskip
-\noindent\textbf{Step 3: $H_{r,\sigma}$-invariance of $\Phi$.}
-Fix $(g,Z)\in G_h\times \mathcal X_{r,\sigma}$ and $h\in H_{r,\sigma}$. Then
+\medskip
+\textbf{Step~3: $H_{r,\sigma}$-invariance of $\Phi$.}
+Fix $(g, Z) \in G_h \times X_{r,\sigma}$ and $h \in H_{r,\sigma}$.  Then
 \[
-\Phi\bigl((g,Z)\cdot h\bigr)
-=\Phi(gh,\;h^{-1}\cdot Z)
-=(gh)\cdot \iota(h^{-1}\cdot Z).
+\Phi\bigl((g, Z) \cdot h\bigr) = \Phi\bigl(gh,\; h^{-1} \cdot Z\bigr)
+= (gh) \cdot \iota(h^{-1} \cdot Z).
 \]
-Using associativity of the group action \eqref{eq:gauge-action-crit}, this equals
-\[
-g\cdot\Bigl(h\cdot \iota(h^{-1}\cdot Z)\Bigr).
-\]
-By definition of $H_{r,\sigma}$ as the setwise stabilizer of $\mathcal S_{r,\sigma}=\iota(\mathcal X_{r,\sigma})$,
-the point $\iota(h^{-1}\cdot Z)$ belongs to $\mathcal S_{r,\sigma}$ and applying $h$ brings it back to the same slice point
-$\iota(Z)$. Concretely, writing each $h_\ell=\begin{psmallmatrix}A&0\\0&K_\ell\end{psmallmatrix}$ and expanding the block
-multiplication exactly as in the proof of the analogous statement for $\Omega_r$, one checks
-\[
-h_\ell
-\begin{pmatrix}I_r&0\\0&(h^{-1}\cdot Z)_\ell\end{pmatrix}
-h_{\ell-1}^{-1}
-=
-\begin{pmatrix}I_r&0\\0&Z_\ell\end{pmatrix}
-\qquad(\ell=2,\dots,L-1),
-\]
-and similarly at the endpoints because $h\in H_{r,\sigma}$ is required to preserve the endpoint embeddings
-\eqref{eq:endpoints-slice}.
-Therefore $h\cdot \iota(h^{-1}\cdot Z)=\iota(Z)$ and so $\Phi((g,Z)\cdot h)=g\cdot \iota(Z)=\Phi(g,Z)$.
-This proves $H_{r,\sigma}$-invariance and yields the descended map $\overline\Phi$.
+Using associativity of the group action~(13), this equals $g \cdot \bigl(h \cdot \iota(h^{-1} \cdot Z)\bigr)$.  Thus it suffices to show
+\begin{equation}\tag{$\star$}
+h \cdot \iota(h^{-1} \cdot Z) = \iota(Z).
+\end{equation}
+Write each $h_\ell = \bigl(\begin{smallmatrix} I_r & 0 \\ 0 & K_\ell \end{smallmatrix}\bigr)$ (recall that the setwise stabiliser condition and the endpoint structure force $A = I_r$; see the paragraph after Definition~8.2).
 
-\smallskip
-\noindent\textbf{Step 4: When $\overline\Phi$ is bijective and what can fail.}
-Surjectivity of $\overline\Phi$ follows from Step 2.
-Injectivity can fail exactly at points with \emph{extra stabilizer}: if $g\cdot \iota(Z)=g'\cdot \iota(Z')$,
-then $h=g^{-1}g'$ satisfies $\iota(Z)=h\cdot \iota(Z')$. This implies $h$ stabilizes the slice point $\iota(Z')$.
-On the principal stabilizer locus (where the stabilizer of $\iota(Z')$ in $G_h$ equals the block-diagonal group
-$H_{r,\sigma}$ and does not jump), it follows that $h\in H_{r,\sigma}$ and necessarily $Z'=h^{-1}\cdot Z$.
-Hence $[g,Z]=[g',Z']$ in $G_h\times_{H_{r,\sigma}}\mathcal X_{r,\sigma}$, proving injectivity on that locus.
-This proves \eqref{eq:Cr-associated-bundle}. Taking $G_h$-quotients gives \eqref{eq:Cr-quotient}.
+\emph{Middle layers $(\ell = 2, \dots, L{-}1)$:}  Here $(h^{-1} \cdot Z)_\ell = K_\ell^{-1} Z_\ell K_{\ell-1}$, and the computation is identical to Step~2 of Proposition~8.3:
+\[
+h_\ell \begin{pmatrix} I_r & 0 \\ 0 & K_\ell^{-1} Z_\ell K_{\ell-1} \end{pmatrix} h_{\ell-1}^{-1}
+= \begin{pmatrix} I_r & 0 \\ 0 & Z_\ell \end{pmatrix} = \iota(Z)_\ell.
+\]
+
+\emph{Last layer $(\ell = L)$:}  Since $g_L = I$ in $G_h$, the action gives $(h \cdot \iota(h^{-1} \cdot Z))_L = \iota(h^{-1} \cdot Z)_L \, h_{L-1}^{-1}$.  Now $(h^{-1} \cdot Z)_L = Z_L K_{L-1}$ (since $g_L = I$ implies the effective residual action at layer~$L$ is right multiplication by $K_{L-1}$), so
+\[
+[U_S,\; U_Q Z_L K_{L-1}]
+\begin{pmatrix} I_r & 0 \\ 0 & K_{L-1}^{-1} \end{pmatrix}
+= [U_S,\; U_Q Z_L] = \iota(Z)_L.
+\]
+
+\emph{First layer $(\ell = 1)$:}  Since $g_0 = I$, the action gives $(h \cdot \iota(h^{-1} \cdot Z))_1 = h_1 \, \iota(h^{-1} \cdot Z)_1$.  Now $(h^{-1} \cdot Z)_1 = K_1^{-1} Z_1$ (since $g_0 = I$), so
+\[
+\begin{pmatrix} I_r & 0 \\ 0 & K_1 \end{pmatrix}
+\begin{pmatrix} U_S^\top \Sigma_{YX} \Sigma_X^{-1} \\ K_1^{-1} Z_1 \end{pmatrix}
+= \begin{pmatrix} U_S^\top \Sigma_{YX} \Sigma_X^{-1} \\ Z_1 \end{pmatrix}
+= \iota(Z)_1.
+\]
+This proves~($\star$), hence $\Phi$ is $H_{r,\sigma}$-invariant and descends to $\bar\Phi$.
+
+\medskip
+\textbf{Step~4: Injectivity on the principal slice locus.}
+Assume $\Phi(g, Z) = \Phi(g', Z')$ with $Z, Z' \in X_{r,\sigma}^{\circ}$.  Then $g \cdot \iota(Z) = g' \cdot \iota(Z')$, and setting $h := g^{-1} g' \in G_h$ we obtain
+\begin{equation}\tag{$\star\star$}
+\iota(Z) = h \cdot \iota(Z').
+\end{equation}
+In particular, $h$ maps the slice point $\iota(Z')$ to another slice point $\iota(Z)$, so $h \in \mathrm{Trans}_{G_h}(\iota(Z'), S_{r,\sigma})$.  Since $Z' \in X_{r,\sigma}^{\circ}$, we have $\mathrm{Trans}_{G_h}(\iota(Z'), S_{r,\sigma}) = H_{r,\sigma}$ by definition of the principal slice locus.  Therefore $h \in H_{r,\sigma}$.
+
+Having established $h \in H_{r,\sigma}$, we compute~($\star\star$) componentwise.  By the same block multiplication as in Step~3 (run in reverse), equation~($\star\star$) yields $Z = h \cdot Z'$, i.e.\ $Z' = h^{-1} \cdot Z$.  Therefore $(g', Z') = (gh, h^{-1} \cdot Z) = (g, Z) \cdot h$ in the right action~(24), and hence $[g', Z'] = [g, Z]$ in $G_h \times_{H_{r,\sigma}} X_{r,\sigma}^{\circ}$.  This proves injectivity on the principal slice locus.
+
+\medskip
+\textbf{Step~5: The principal slice locus is generically non-empty.}
+We show that $X_{r,\sigma}^{\circ}$ contains a dense open subset of $X_{r,\sigma}$, so that the bijection~(25) holds on a large locus.  Take any $h = (h_1, \dots, h_{L-1}) \in G_h$ satisfying $h \cdot \iota(Z') \in S_{r,\sigma}$ for some $Z' \in X_{r,\sigma}$.  We must show $h \in H_{r,\sigma}$ for generic~$Z'$.
+
+Write $h_\ell = \bigl(\begin{smallmatrix} a_\ell & b_\ell \\ c_\ell & k_\ell \end{smallmatrix}\bigr)$ in the $r \times (d_\ell - r)$ block decomposition.
+
+\emph{Endpoint $\ell = L$:}  The condition $(h \cdot \iota(Z'))_L = \iota(Z)_L$ gives $[U_S,\, U_Q Z_L']\, h_{L-1}^{-1} = [U_S,\, U_Q Z_L]$.  Write $h_{L-1}^{-1} = \bigl(\begin{smallmatrix} \alpha & \beta \\ \gamma & \kappa \end{smallmatrix}\bigr)$.  Comparing the first block column and using $U_S^\top U_Q = 0$ yields $\alpha = I_r$ (from the $U_S$-component) and $Z_L' \gamma = 0$ (from the $U_Q$-component).  For generic $Z' \in X_{r,\sigma}$, the matrix $Z_L'$ has full row rank $d_L - r$, so $\gamma = 0$.  Hence $h_{L-1}^{-1}$ is block upper-triangular; since it is also invertible, its inverse $h_{L-1}$ is block upper-triangular as well.
+
+\emph{Endpoint $\ell = 1$:}  The condition $(h \cdot \iota(Z'))_1 = \iota(Z)_1$ gives $h_1 \bigl(\begin{smallmatrix} U_S^\top \Sigma_{YX}\Sigma_X^{-1} \\ Z_1' \end{smallmatrix}\bigr) = \bigl(\begin{smallmatrix} U_S^\top \Sigma_{YX}\Sigma_X^{-1} \\ Z_1 \end{smallmatrix}\bigr)$.  From the top block: $a_1 U_S^\top \Sigma_{YX}\Sigma_X^{-1} + b_1 Z_1' = U_S^\top \Sigma_{YX}\Sigma_X^{-1}$.  Generically $Z_1'$ is linearly independent from the rows of $U_S^\top \Sigma_{YX}\Sigma_X^{-1}$, which forces $b_1 = 0$ and $a_1 = I_r$.  From the bottom block: $c_1 U_S^\top \Sigma_{YX}\Sigma_X^{-1} + k_1 Z_1' = Z_1$; for this to admit a solution with $Z_1$ free, we need $c_1 = 0$ (since otherwise $c_1 U_S^\top \Sigma_{YX}\Sigma_X^{-1}$ would introduce a component in the signal subspace, contradicting the block structure).  Hence $h_1$ is block-diagonal with $a_1 = I_r$.
+
+\emph{Middle layers $(\ell = 2, \dots, L{-}2)$:}  Having established that $h_1$ and $h_{L-1}$ are block-diagonal, one propagates inward.  At each layer the condition
+\[
+h_\ell \begin{pmatrix} I_r & 0 \\ 0 & Z_\ell' \end{pmatrix} h_{\ell-1}^{-1}
+= \begin{pmatrix} I_r & 0 \\ 0 & Z_\ell \end{pmatrix}
+\]
+with $h_{\ell-1}$ already known to be block-diagonal forces $b_\ell Z_\ell' \kappa_{\ell-1} = 0$ and $c_\ell = 0$.  Since $\kappa_{\ell-1}$ is invertible and generically $Z_\ell'$ has full row rank, we get $b_\ell = 0$.  Hence $h_\ell$ is block-diagonal at every layer.
+
+Thus, for $Z'$ in a dense open subset of $X_{r,\sigma}$ (where certain residual blocks have full rank), every element of $\mathrm{Trans}_{G_h}(\iota(Z'), S_{r,\sigma})$ is block-diagonal, i.e.\ belongs to $H_{r,\sigma}$.  Since $H_{r,\sigma} \subseteq \mathrm{Trans}_{G_h}(\iota(Z'), S_{r,\sigma})$ always holds (by Step~3), we conclude $\mathrm{Trans}_{G_h}(\iota(Z'), S_{r,\sigma}) = H_{r,\sigma}$ on this locus, confirming that $X_{r,\sigma}^{\circ}$ is generically non-empty.
+
+\medskip
+\textbf{Step~6: Conclusion.}
+Steps~2 and~3 establish that $\bar\Phi$ is a well-defined surjection.  Step~4 establishes injectivity on $X_{r,\sigma}^{\circ}$, giving~(25).  Taking $G_h$-quotients gives~(26).  The global map $\bar\Phi \colon G_h \times_{H_{r,\sigma}} X_{r,\sigma} \to C_r$ is surjective but may fail to be injective at points $Z'$ where certain residual blocks $Z_\ell'$ are rank-deficient, causing $\mathrm{Trans}_{G_h}(\iota(Z'), S_{r,\sigma})$ to strictly contain $H_{r,\sigma}$.
 \end{proof}
 
 \begin{remark}[How this corrects the conjectural formula]
-The correct ``product/quotient'' description involves the \emph{hidden} gauge group $G_h$ and the
-\emph{intersection} $\mathcal X_{r,\sigma}=\Sigma^{d-r}_0\cap \Gamma_\sigma$ rather than $\Gamma_d$ alone.
-A fully global isomorphism $\mathcal C_r \cong G_h\times_{H_{r,\sigma}}\mathcal X_{r,\sigma}$ can fail only where stabilizers jump;
-in that case the correct statement is that $\mathcal C_r$ is modeled by this associated bundle on each stabilizer stratum.
+The correct ``product/quotient'' description involves the hidden gauge group $G_h$ and the intersection $X_{r,\sigma} = \Sigma_0^{d-r} \cap \Gamma_\sigma$ rather than $\Gamma_d$ alone.  A fully global isomorphism $C_r \cong G_h \times_{H_{r,\sigma}} X_{r,\sigma}$ can fail only where the transporter into the slice strictly contains $H_{r,\sigma}$; in that case the correct statement is that $C_r$ is modelled by this associated bundle on each transporter stratum.
 \end{remark}
 \section{Sampling saddle points}
 
