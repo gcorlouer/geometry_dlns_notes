@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1772117059.21647 "/Users/guime/projects/deep_linear_networks/geometry_dln_notes/geometry_dlns.tex" "geometry_dlns.pdf" "geometry_dlns" 1772117060.52423 0
-  "%OUTDIR%/geometry_dlns.aux" 1772117060.38775 24189 c6ba589a2de6010ccff0712e3557f3a8 "pdflatex"
-  "%OUTDIR%/geometry_dlns.out" 1772117060.38929 9720 259dc6d79586ead64dbd55d56cc143aa "pdflatex"
-  "/Users/guime/projects/deep_linear_networks/geometry_dln_notes/geometry_dlns.tex" 1772117059.07955 225614 1b0a38f9c38c13f095e28b502c1a1da3 ""
+["pdflatex"] 1772121228.94253 "/Users/guime/projects/deep_linear_networks/geometry_dln_notes/geometry_dlns.tex" "geometry_dlns.pdf" "geometry_dlns" 1772121230.09234 0
+  "%OUTDIR%/geometry_dlns.aux" 1772121229.97693 24325 f01db380b0b1e0a78459bc843bb410f7 "pdflatex"
+  "%OUTDIR%/geometry_dlns.out" 1772121229.97848 9720 259dc6d79586ead64dbd55d56cc143aa "pdflatex"
+  "/Users/guime/projects/deep_linear_networks/geometry_dln_notes/geometry_dlns.tex" 1772121228.82164 227503 539b8c77247b8efa63ff10ec7872a77b ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -195,7 +195,7 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1749050915 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1749050869 3345728 6e9d6b4ca934c854c1520d15fef27576 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "geometry_dlns.tex" 1772117059.07955 225614 1b0a38f9c38c13f095e28b502c1a1da3 ""
+  "geometry_dlns.tex" 1772121228.82164 227503 539b8c77247b8efa63ff10ec7872a77b ""
   (generated)
   "%OUTDIR%/geometry_dlns.aux"
   "%OUTDIR%/geometry_dlns.log"
