@@ -938,6 +938,43 @@ Acting on $\phi_S$ via the hidden subgroup $G_h$ yields:
     \nabla_l L(g\phi_S) = g_l^t\nabla_l L(\phi_S) g_{l-1}^t = 0
 \end{equation*}
 Since $\nabla_l L(\phi_S) = 0$ for all $l$.
+\section{Motivation}
+We want to understand the complexity of partial solutions selected by SGD during the training of deep neural networks. We use deep linear networks (DLNs) trained by gradient flow as a toy modl of learning dynamics in DNNS. There has been a lot of work on the convergence of gradient flow in DLNs and the geometry of global minima. We also understand the different regimes of learning dynamics in DLNs and in particular the saddle to saddle regime is relatively well understood. It has been shown that gradient flow has an implicit biases toward simpler solutions by approximating the target function by a low rank solution and increasing the rank in a stagewise manner. We also know that SGD with small initialization approaches non strict saddles points. Furthermore SGD selects the non-strict saddles that correspond to the smallest possible rank for each matrix of the network. However the higher order geometry of these saddle points is not well understood. More specifically, we want to investigate that the saddle points corresponding to a particular critical loci selected by SGD correspond to the saddles points with the largest basin of attractation. This could be measured by some notion of local learning coefficient (LLC). We know that the LLC of global minima is related to the codimension of the greatest orbit under the action of $GL_d$ on the fiber of the multiplication map. We want to investigate whether a similar relation holds for saddle points and whether the saddle points with the largest codimension are selected by SGD. For saddle points, it is not clear wether their volume is well captured by the codimension but it provides us with an upper bound of the volume of the basin of attraction. By measuring the LLC and the Hessian degeneracies at these saddle points and comparing them with the codimesnion, we should also be able to figure out how singular these saddles points are. Some key questions:
+\begin{itemize}
+    \item How far are saddle points of DLNs from being Morse-Bott? How far is codimension from number of degenerate components of the Hessian along the normal space of the critical loci?
+    \item Can we define some notion of volume scaling by LLC around saddle points
+    \item Does SGD select saddle points with the largest codimension and volume? Does this correspond to the simplest ones as measured by some version of rank patterns?
+    \item What are novel observables that we can extract form this analysis and would they be useful to track in more complicated models?
+    \item What is the distribution of saddle points w.r.t to their volume? How much larger is the broadest saddle points compared with others?
+\end{itemize}
+For now, we first attempt to derive the codimension of the saddle points, we make the following assumptions:
+\begin{itemize}
+    \item The teacher matrix is full rank and non degenerate
+    \item There are no bottlenecks in the DLN i.e. DLN is realizable
+    \item Infinite data, arbitrary depth and width
+    \item The saddle to saddle dynamics in DLNs in this setup is a useful model of stagewise learning in more realistic models
+    \item It is interesting to measure the volume of partial solutions at critical loci and it shapes the learning dynamics of SGD during stagewise development of DNNS
+\end{itemize}
+\paragraph{Why is it an interesting problem to work on?} This is an interesting problem if it partially captures learning partial solutions during training of LLMs, in particular pre-training. A bull case for this work is understanding how to measure the complexity of partial solutions and extracting observables that help us understand how partial solutions would generalise. Since LLMs are not typically trained to convergence we are more interested in generalization properties intermediary critical points rather than global minima. Example of such observables could be rank patterns, codimension of critical loci, Hessian degeneracies which give information about the complexity of partial solutions and relate them to loss-landscape geometry.
+\paragraph{What are the failure modes of this direction}
+One of the main failure mode that i'm worried about is that the saddle to saddle dynamics is a very particular regime in DLNs corresponding to small initialization. In general it is reasonable that modes are learned at different time scales and that simpler solutions need to be learned first to learn more complex ones. There is a lot of evidence for the latter view. However it is possible that the broadness of basins around saddle points is not that relevant because for generic initialization SGD nevers approaches saddle points and that locally the losss landscape always look like some kind of river-valley geometry. But it is still possible that the basin braodness has some influence over the learning dynamics since partial solutions learned first correspond to critical points that are far away from SGD but are the broadest. This is what we see in a mixed regime in DLNs even though the separation of time scale is not perfect. More generally, gradient flow on DLNs is a very simplified model of learning dynamics, e.g. it cannot learn non-linear hierachical functions. It is possible that results don't transfer to more general models although we have evidence that the stagewise mode learning is also present in LLMs but the particular observables that we derive in DLNs might be less relevant in more complicated models. Still, I would argue that starting with simple models as a baseline and making progress from there can be a useful strategy although it might be more impactful to work out effective theories on more realistic models first and come back to really toy models if we are stuck. In summary big failure modes:
+\begin{itemize}
+    \item Pretraining is interesting to understand but there are more important regime to understand such as RL training as they are more directly related to misalignment failures. 
+    \item The saddle to saddle dynamics is not a good model of learning dynamics in more realistic models
+    \item In particular the broadness of basins around saddle points is not relevant for learning dynamics
+    \item Training dynamics in DLNs (with our assumptions) is too remote from realistic models or the most interesting aspects of learning in pretraining LLMs is not captured by DLNs
+\end{itemize} 
+\paragraph{What are key assumptions that we can challenge quickly?}
+We could do some rank pattern analysis to check that the simplest solutions are selected first by SGD in saddle to saddle (from Saxe work i think that we know it is correct but the full rank pattern would confirm this). 
+\\
+\\
+We could do a Hessian analysis to check that the saddle points selected by SGD are the most degenerate, we could compute the LLC to check if the saddle points are Morse-Bott. 
+\\
+\\
+We could check if under generic initialization the partial solutions learned first correspond to saddle points with the largest codimension or volume. We could compute the distance of SGD with the largest saddle points for a solution of a given rank and check that it is most attracted by high volume saddles points even if it does not approach them directly. If not true that would already show that the picture of saddle to saddle is not a good model of generic learning dynamics even in DLNs. Although it could become a good model in more complex models that learn genuine hierachical functions and where the separation of time scale is happenning. 
+\\
+\\
+Could do a literature review of stagewise learning in more realistic models to see if the evidence is favourable to that picture. More generally do a literature review on how good DLNs are as a model of learning dynamics in more realistic models.  
 \section{Hessian analysis}
 The Hessian of the loss function encodes the local curvature of the parameter space and therefore provides a second-order description of the geometry of the optimization landscape. Its eigenvalues quantify curvature along different parameter directions: large eigenvalues correspond to stiff, highly identifiable directions, while small or zero eigenvalues indicate flat or redundant directions. The rank of the Hessian thus measures the effective local dimensionality of the model and reveals structural degeneracies induced by overparameterization or symmetries. In regular models, the Hessian is full rank and the local learning coefficient (LLC) equals half the parameter dimension. In singular models, however, the presence of degenerate Hessian directions reflects non-identifiability and constrains the asymptotic behavior of the marginal likelihood; in particular, the Hessian rank provides an upper bound on twice the LLC and characterizes the quadratic part of the loss that determines the leading-order contribution to the real log canonical threshold.
 \subsection{Hessian Decomposition: Outer-Product and Functional Terms}
@@ -4215,5 +4252,6 @@ r(d_0+d_L),
 \]
 which is \eqref{eq:codim-Cr-via-largest-orbit}. This proves the proposition.
 \end{proof}
+\subsection{Voight Lemma for cyclic quivers}
 
 \end{document}
