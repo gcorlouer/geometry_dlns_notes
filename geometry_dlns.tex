@@ -975,6 +975,82 @@ We could check if under generic initialization the partial solutions learned fir
 \\
 \\
 Could do a literature review of stagewise learning in more realistic models to see if the evidence is favourable to that picture. More generally do a literature review on how good DLNs are as a model of learning dynamics in more realistic models.  
+\paragraph{Important questions to figure out:}
+\begin{itemize}
+    \item How useful is it to understand the learning dynamics during pretraining to understand alignment? It's useful because pretraining strongly shape the prior of the model e.g. emergent misalignment happens because the model has learned evil personal in pretraining and fine-tuning can trigger them. Pre-training is a first stepping stone toward more complicated regime (e.g. online learning).
+    \item How good of a model is stagewise learning during pretraining? \textit{See literature review. While stagewise learning is perhaps not such a great name, the emerging picture is that model progressively learn more complicated functions by learning simpler function first. Evidence for this in LLMs looking at the spectra of weight matrices and the quanta hypothesis.} 
+    \item How good of a model of training DLNs are for understanind learning dynamics in more realistic models? \textit{Capture progressively increasing the rank of solutions throughout training and how this depends on initialization. We have simplicity bias paper by Saxe recently that shows this progressive increase in complexity also happenning in attention only transformers but we don't capture non linear functions.}
+    \item How good of a model is the saddle to saddle dynamics in DLNs for stagewise learning? Is it still helpful for generic initializasions? Even if SGD does not approach the saddles points, do their geometry still have influence on the learning dynamics or is it dominated by the local geometry which is blind to saddle points geometry? \textit{I feel this is less clear to me. I do think the increasing complexity picture is useful and that the increasing rank patterns also is so perhaps not such a big crux.}
+    \item If the saddle to saddle dynamics is a good models, how useful is it to track basin broadness of saddle points to characterize the partial solutions selected by SGD and understand their generalization beyond what we already know from the growth rate of singular values which govern the timescale of learning of different modes? What concrete, testable prediction does the codimension/orbit-structure analysis make that differs from or refines the predictions of existing dynamical analyses (e.g., Saxe et al. singular value dynamics), and is there an experimentally accessible regime where these predictions diverge? \textit{I think this is perhaps the biggest crux that is in general SGD will continuously improve the complexity of the solution by improving upon low complexity solutions. However, this does not have to happen via a saddle to saddle dynamics and the saddle's local geometry might in fact be irrelevant. I feel that resolving this question could be quite impactful.}
+    \item If basin braodness is relevant, is it well captured by the codimension of the critical loci? How much more information do we get by computing that codimension relative to some Hessian analysis and some naive LLC estimation? Can the local learning coefficient (or an appropriate analogue) be rigorously defined at saddle points, and if so, does it retain its interpretation as a measure of effective dimensionality/complexity? \textit{Interesting questions that only matter if the basin braodness is relevant}
+    \item How useful are these geometric quantities relative to dynamical information such as the growth rate of singular values and what we already know from learning dynamics analysis in DLNs with ODEs? What is the precise relationship between the codimension of a critical locus and the dynamical quantities that govern SGD's behavior near it (dwell time, transition probabilities)? \textit{Important question that is in fact also somewhat related to the question about the relevance of the local geometry of saddles on the training dynamics}
+    \item How critical are the assumptions of data non degeneracies and full rank teacher matrix? \textit{Not as relevant as others, more narrow and technical question}
+    \item Do the observables that we extract from this DLN analysis transfer to more realistic models and are how useful to track in those models? \textit{Have evidence that tracking spectra of weight is useful in more realistic models.}
+\end{itemize}
+Overall I feel comfortable assuming that understanding pre-training is very important (although might not be the most impactful to work on), that continous progressive learning of increasingly complex solutions with SGD is a productive perspective. I also feel comfortable assuming gradient flow as a model of optimizer during pretraining (see work on Golden path hypothesis). My main crux is that the local geometry of the saddles might not be so relevant and that other observables (e.g. river-valley picture, effective dimension, curvature, growth rate of singular values etc) characterizing the local geometry that SGD is sensitive to during progressive learning are more relevant than the basin braodness of saddle might. I think confirming that would probably be the most productive question to work on. I guess overall exciting questions are do the critical locus structure constrain the training dynamics of the loss regions that SGD visit under generic init.? Can we predict novel things that the Saxe framework tracking singular values growth rate cannot with saddle points geometry?
+\section{Literature Review: Stagewise Learning and DLN Theory}
+Large language models exhibit discrete, phase-transition-like jumps during pretraining, but the picture is far more nuanced than a clean sequence of stages. The strongest empirical evidence shows that specific circuits (induction heads, syntactic attention structures) form abruptly at precise training steps, sometimes visible as bumps or drops in the loss curve. Yet mechanistic analyses consistently reveal that these apparent discontinuities mask continuous, gradual internal restructuring that only becomes visible when evaluation thresholds are crossed. The saddle-to-saddle framework from deep linear network (DLN) theory provides a surprisingly good qualitative scaffold for this phenomenology---incremental rank growth, progressive sharpening, and low-rank weight dynamics have all been confirmed in transformers---but the theory breaks down for transformer-specific mechanisms like induction head formation and fails to predict the full complexity of nonlinear feature learning. The emerging consensus is that LLM pretraining is best described as \emph{many overlapping micro-transitions} driven by a simplicity-to-complexity gradient, where the macro-level appearance of discrete stages depends heavily on what you measure and how you measure it.
+
+\subsection{The case for phase transitions during pretraining}
+
+The most compelling evidence for stagewise learning comes from Anthropic's discovery that \textbf{induction heads}---attention heads completing the pattern $[A][B]\ldots[A]\to[B]$---emerge at a precise point during training, coinciding with a sudden increase in in-context learning ability and a visible ``bump'' in the loss curve. Olsson et al.~\cite{olsson2022incontext} documented this across 34 transformers with over 50,000 ablation experiments, showing that architectural perturbations shifting the timing of induction head formation simultaneously shift when in-context learning appears. For small attention-only models, the causal evidence is strong; for larger models with MLPs, the relationship is correlational.
+
+Chen et al.~\cite{chen2024sudden} provided the strongest causal evidence for a genuine phase transition, demonstrating that BERT models abruptly acquire \emph{Syntactic Attention Structure (SAS)} during a brief window concurrent with a steep loss drop. Internal syntactic structure emerges first, followed by external grammatical capabilities---and when SAS is artificially suppressed during the transition via regularization, grammatical capabilities never develop. This ``critical period'' sensitivity suggests the transition is a genuine structural reorganization, not merely a threshold crossing.
+
+Du et al.~\cite{du2024emergent} extended this picture by training over 30 language models from 1.5B to 32B parameters and showing that emergent abilities appear when pretraining loss crosses task-specific thresholds---regardless of model size or data quantity. Critically, this threshold effect persists even under continuous evaluation metrics, partially countering the ``metric artifact'' critique. More recently, Ge et al.~\cite{ge2025evolution} used crosscoders on Pythia models to identify a \emph{statistical learning phase} followed by a \emph{feature learning phase}, with simpler unigram/bigram features emerging before compositional patterns. Li et al.~\cite{li2025grokking} provided the first evidence of grokking---delayed generalization after loss convergence---in practical-scale LLM pretraining (OLMoE-7B), finding that different data domains undergo memorization-to-generalization transitions asynchronously.
+
+\subsection{Why the stagewise picture is substantially overstated}
+
+The counter-evidence is equally compelling. Schaeffer, Miranda, and Koyejo~\cite{schaeffer2023mirage} demonstrated that over 92\% of claimed emergent abilities on BIG-Bench appear under just two discontinuous metrics (Multiple Choice Grade and Exact String Match). Switching to continuous metrics while keeping model outputs fixed makes ``emergence'' disappear---performance improves smoothly and predictably. While their paper primarily addressed scaling-law emergence rather than training-step emergence, the metric-choice argument applies directly: if discontinuous metrics create apparent transitions across model sizes, they create identical artifacts across training steps.
+
+The deepest challenge to the stagewise narrative comes from \textbf{hidden progress} research. Nanda et al.~\cite{nanda2023progress} fully reverse-engineered the algorithm learned during grokking on modular addition and found that the generalizing Fourier circuit forms \emph{gradually and continuously} during a long plateau phase, well before the sudden test accuracy jump. The grokking transition occurs during a ``cleanup'' phase where weight decay removes memorization components---the dramatic phase transition is an expression of already-complete learning, not the learning event itself. Barak et al.~\cite{barak2022hidden} formalized this as ``hidden progress,'' showing that features relevant to sparse parity tasks are gradually amplified throughout training despite a completely flat accuracy curve. The hurdle analogy is apt: an athlete's jump height improves continuously, but a ``did they clear the hurdle?'' metric shows a sudden phase transition.
+
+Michaud, Liu, Girit, and Tegmark~\cite{michaud2023quantization} proposed the \textbf{quantization model}, where capabilities are decomposed into discrete ``quanta'' learned in order of decreasing use frequency. Smooth power-law scaling curves arise from averaging over many small, overlapping discrete jumps rather than a few large sequential stages. Per-sample scaling curves show enormous diversity---some capabilities depend on single quanta (appearing to emerge suddenly), while others depend on many (improving gradually). This framework suggests the aggregate learning process is composed of countless micro-transitions rather than a few macro-stages.
+
+Belrose et al.~\cite{belrose2024neural} demonstrated \emph{distributional simplicity bias}---networks learn low-order statistics before high-order correlations---but crucially showed this progression is gradual and overlapping, a continuous complexity gradient rather than discrete steps. Together with Biderman et al.'s~\cite{biderman2023pythia} finding that memorization in Pythia models follows a Poisson point process over training steps, the evidence suggests capability development is stochastic and continuous rather than staged and deterministic.
+
+\subsection{The DLN saddle-to-saddle framework}
+
+The theoretical foundation begins with Saxe, McClelland, and Ganguli~\cite{saxe2014exact}, who showed that despite computing only linear functions, deep linear networks exhibit nonlinear gradient dynamics producing long plateaus followed by rapid transitions. Under whitened inputs and balanced initialization, each singular value mode of the input-output correlation follows an independent sigmoidal trajectory, with modes learned sequentially from largest to smallest. Jacot et al.~\cite{jacot2022saddle} formalized the \textbf{saddle-to-saddle conjecture}: with vanishing initialization, gradient flow visits a sequence of saddle points corresponding to rank-$0$, rank-$1$, rank-$2$, $\ldots$ approximations. Pesme and Flammarion~\cite{pesme2023saddle} provided the first fully rigorous proof of the complete saddle-to-saddle trajectory for diagonal linear networks, showing the limiting gradient flow successively jumps between saddles until reaching the minimum $\ell_1$-norm solution.
+
+The mathematical structure is precise: at each rank-$k$ saddle, the Hessian has negative eigenvalues pointing toward higher-rank solutions. The escape direction is determined by the next-largest singular value of the residual. Depth amplifies this effect---Arora et al.~\cite{arora2019implicit} showed the evolution rate of each singular value scales as $\sigma^{2-2/N}$ for depth $N$, creating a stronger ``winner-take-all'' dynamic that sharpens the sequential learning pattern. Critical conditions include vanishing initialization (large initialization leads instead to the NTK/lazy regime with smooth, non-stagewise dynamics), balanced layer weights, and approximately whitened inputs.
+
+Three key limitations constrain DLN theory's applicability: DLNs cannot perform \textbf{feature learning} (they compute only linear maps, making multi-layer DLNs expressively equivalent to single-layer networks); they cannot build \textbf{compositional representations} (hidden representations are SVD-aligned subspaces, not the hierarchical features of real networks); and the clean analytical results are sensitive to assumptions that rarely hold exactly in practice---whitened inputs, balanced initialization, and gradient flow rather than discrete SGD.
+
+\subsection{Empirical transfer to nonlinear networks}
+
+The most critical question is whether DLN predictions hold in realistic architectures. The answer is a qualified yes for several core predictions.
+
+\paragraph{Incremental rank growth.} This has been directly confirmed in transformers. Boix-Adser\`a et al.~\cite{boixadsera2023transformers} proved that transformer attention heads undergo incremental rank increase under simplifying assumptions, and verified experimentally that ViT trained on ImageNet shows gradual rank growth even without those simplifications---the normalized spectra of attention weight products $W_K W_Q^\top$ display progressive rank increases during training. Yunis et al.~\cite{yunis2024spectral} conducted the most comprehensive cross-architecture study, showing that optimization is consistently biased toward effective rank minimization across ConvNets, UNets, LSTMs, and Transformers, with top singular values growing disproportionately faster---exactly as DLN theory predicts. They also found that consecutive weight matrices align during training even with nonlinearities between layers, consistent with DLN balancedness assumptions.
+
+\paragraph{Progressive sharpening.} Another DLN prediction, this has been confirmed up to 7B parameter LLMs during pretraining. A simple 2-layer linear network (the ``UV model'') reproduces all essential Hessian sharpness phenomenology: progressive sharpening, edge of stability, sharpness reduction, and even period-doubling routes to chaos~\cite{chen2024universal}. Scalable curvature measurements on OLMo-2 models confirmed these dynamics persist at LLM scale~\cite{scalablecurvature2025}.
+
+\paragraph{Low-rank weight dynamics.} These receive strong indirect support from LoRA~\cite{hu2021lora}, which achieves near-full-model fine-tuning performance on GPT-3 175B using adaptation matrices of rank 1--2 out of a full rank of 12,288. If weight updates during fine-tuning are intrinsically low-rank, this is consistent with DLN predictions that gradient descent produces incremental, low-rank changes.
+
+\paragraph{Cross-architecture saddle-to-saddle dynamics.} \v{S}im\v{s}ek et al.~\cite{simsek2025saddle} demonstrated saddle-to-saddle dynamics across architectures---linear networks, ReLU networks, quadratic/cubic nonlinearities, and linear self-attention---showing that fixed points of smaller networks are recursively embedded as saddles of larger ones. However, the transfer has clear boundaries: for smooth nonlinearities (tanh, sin), the theory predicts only the first abrupt loss drop but ``cannot predict the dynamics anymore'' afterward. For ReLU networks, achieving distinct plateaus requires both small initialization \emph{and} large depth, unlike DLNs which need only small initialization. Bantzis et al.~\cite{bantzis2025relu} showed that the layer-wise rank structure during the first saddle escape differs qualitatively from DLNs: in deep ReLU networks, most layers are rank-1 with possibly a few high-rank layers near the input.
+
+Critical failures of DLN transfer include continual learning (DLN catastrophic forgetting predictions break down for nonlinear networks), plasticity (DLNs provably maintain it; nonlinear networks lose it), and all attention-specific dynamics---rank collapse in key-query products, induction head formation, and condensation phenomena have no DLN analog and require transformer-specific theory~\cite{wang2024condensation}.
+
+\subsection{Alternative frameworks}
+
+\paragraph{Singular Learning Theory.} SLT provides the most mathematically ambitious alternative. Neural networks are singular statistical models where many parameter values implement identical functions, violating classical statistical assumptions. The Real Log Canonical Threshold (RLCT) replaces parameter count as effective dimension, and phase transitions occur when the accuracy-complexity tradeoff shifts discontinuously. Hoogland et al.~\cite{hoogland2024slt} showed that in-context learning emerges in transformers in discrete developmental stages tracked by the local learning coefficient (LLC). SLT is more general than DLN theory but currently less dynamically specific---it predicts \emph{what} phases exist rather than the explicit trajectory between them, and bridging the Bayesian framework to SGD dynamics remains an open problem.
+
+\paragraph{Information Bottleneck.} The Information Bottleneck theory~\cite{shwartzziv2017ib} predicted two phases---fitting then compression---but was significantly weakened by Saxe et al.'s~\cite{saxe2018information} demonstration that ReLU networks do not compress yet generalize perfectly, and that compression when present is an artifact of saturating nonlinearities rather than a learning mechanism.
+
+\paragraph{Edge of Stability.} The Edge of Stability framework~\cite{cohen2021gradient} describes a distinct type of phase transition---progressive sharpening followed by oscillation at $2/\eta$---that is orthogonal to feature-learning stages. It captures optimization dynamics rather than capability acquisition and interacts with but is conceptually separate from the DLN stagewise picture.
+
+\paragraph{Unified saddle-to-saddle framework.} Kunin et al.~\cite{simsek2025saddle} proposed a unified saddle-to-saddle framework showing that simplicity bias across architectures---rank in linear networks, kink count in ReLU networks, kernel count in CNNs, head count in self-attention---arises from the same invariant-manifold dynamics. This represents the most direct attempt to extend DLN theory to a general principle, though the full trajectory proof exists only for diagonal linear networks.
+
+\subsection{Synthesis}
+
+The literature converges on a nuanced resolution. Learning proceeds along a \emph{continuous complexity gradient}---from low-rank to high-rank representations, from low-order to high-order statistics, from simple circuits to compositional mechanisms. This gradient is not arbitrary but is governed by loss landscape geometry: saddle points corresponding to simple solutions are encountered first, and the dynamics of escaping each saddle naturally produce plateaus followed by transitions. The DLN saddle-to-saddle framework captures the correct qualitative structure of this process.
+
+However, the macro-level appearance of discrete stages is substantially shaped by three confounding factors. First, \textbf{evaluation metrics} with discontinuous thresholds convert smooth progress into apparent phase transitions. Second, \textbf{hidden progress}---continuous internal restructuring that precedes visible capability changes---means the timing of apparent emergence reflects threshold-crossing rather than learning onset. Third, the \textbf{quantization model} suggests learning comprises many overlapping micro-transitions whose aggregate is smooth, with apparent macro-stages emerging only when a few high-impact ``quanta'' happen to coincide.
+
+The DLN framework is best understood as a \emph{first-order approximation} to LLM pretraining dynamics. It correctly predicts incremental rank growth, separation of timescales, low-rank bias, and progressive sharpening---all confirmed empirically in transformers up to billions of parameters. It provides mechanistic intuition for why simplicity-first staging occurs. But it fundamentally cannot capture feature learning, compositional representation building, or transformer-specific dynamics like induction head formation. For these, the field needs---and is beginning to develop---transformer-native theories that incorporate attention bilinear structure, skip connections, and the full richness of nonlinear feature interactions.
+
+\paragraph{Summary.} Three key takeaways emerge. First, stagewise learning in LLMs is real but not as discrete as it appears---the strongest evidence (induction heads, syntactic attention structures) shows genuine structural reorganizations, but these are better described as rapid crossovers within a continuous process than true phase transitions. Second, DLN saddle-to-saddle theory transfers to nonlinear networks and transformers more successfully than might be expected from a model that computes only linear functions: incremental rank growth, plateau-then-transition dynamics, low-rank weight updates, and progressive sharpening hold across architectures and scales up to 7B+ parameters. Third, no single theoretical framework adequately explains LLM pretraining dynamics. DLN theory provides the dynamical mechanism; SLT provides the statistical geometry; the quantization model provides the right level of granularity; and mechanistic interpretability provides the empirical ground truth. The transformer-specific dynamics that matter most for LLM pretraining---how attention heads specialize, how circuits compose across layers, how in-context learning mechanisms emerge---remain largely beyond the reach of existing theory.
+
 \section{Hessian analysis}
 The Hessian of the loss function encodes the local curvature of the parameter space and therefore provides a second-order description of the geometry of the optimization landscape. Its eigenvalues quantify curvature along different parameter directions: large eigenvalues correspond to stiff, highly identifiable directions, while small or zero eigenvalues indicate flat or redundant directions. The rank of the Hessian thus measures the effective local dimensionality of the model and reveals structural degeneracies induced by overparameterization or symmetries. In regular models, the Hessian is full rank and the local learning coefficient (LLC) equals half the parameter dimension. In singular models, however, the presence of degenerate Hessian directions reflects non-identifiability and constrains the asymptotic behavior of the marginal likelihood; in particular, the Hessian rank provides an upper bound on twice the LLC and characterizes the quadratic part of the loss that determines the leading-order contribution to the real log canonical threshold.
 \subsection{Hessian Decomposition: Outer-Product and Functional Terms}
@@ -4253,5 +4329,144 @@ r(d_0+d_L),
 which is \eqref{eq:codim-Cr-via-largest-orbit}. This proves the proposition.
 \end{proof}
 \subsection{Voight Lemma for cyclic quivers}
+
+\begin{thebibliography}{99}
+
+\bibitem{olsson2022incontext}
+C.~Olsson, N.~Elhage, S.~Nanda, N.~Joseph, N.~DasSarma, T.~Henighan, B.~Mann, A.~Askell, Y.~Bai, A.~Chen, T.~Conerly, D.~Drain, D.~Ganguli, Z.~Hatfield-Dodds, D.~Hernandez, S.~Johnston, A.~Jones, J.~Kernion, L.~Lovitt, K.~Ndousse, D.~Amodei, T.~Brown, J.~Clark, J.~Kaplan, S.~McCandlish, and C.~Olah.
+\newblock In-context learning and induction heads.
+\newblock \emph{Transformer Circuits Thread}, 2022.
+
+\bibitem{chen2024sudden}
+Y.~Chen, R.~Schwartz-Ziv, A.~Kamath, and Y.~LeCun.
+\newblock Sudden drops in the loss: Syntax acquisition, phase transitions, and simplicity bias in {MLMs}.
+\newblock In \emph{ICLR}, 2024. (Spotlight)
+
+\bibitem{du2024emergent}
+Z.~Du, A.~Zeng, Y.~Dong, and J.~Tang.
+\newblock Understanding emergent abilities of language models from the loss perspective.
+\newblock In \emph{NeurIPS}, 2024.
+
+\bibitem{ge2025evolution}
+S.~Ge et al.
+\newblock Evolution of concepts in language model pre-training.
+\newblock \emph{arXiv preprint arXiv:2509.17196}, 2025.
+
+\bibitem{li2025grokking}
+Z.~Li et al.
+\newblock Where to find grokking in {LLM} pretraining? {Monitor} memorization-to-generalization without test.
+\newblock \emph{arXiv preprint arXiv:2506.21551}, 2025.
+
+\bibitem{schaeffer2023mirage}
+R.~Schaeffer, B.~Miranda, and S.~Koyejo.
+\newblock Are emergent abilities of large language models a mirage?
+\newblock In \emph{NeurIPS}, 2023. (Outstanding Paper Award)
+
+\bibitem{nanda2023progress}
+N.~Nanda, L.~Chan, T.~Lieberum, J.~Smith, and J.~Steinhardt.
+\newblock Progress measures for grokking via mechanistic interpretability.
+\newblock In \emph{ICLR}, 2023. (Oral)
+
+\bibitem{barak2022hidden}
+B.~Barak, B.~Edelman, S.~Goel, S.~Kakade, E.~Malach, and C.~Zhang.
+\newblock Hidden progress in deep learning: {SGD} learns parities near the computational limit.
+\newblock In \emph{NeurIPS}, 2022.
+
+\bibitem{michaud2023quantization}
+E.~J.~Michaud, Z.~Liu, U.~Girit, and M.~Tegmark.
+\newblock The quantization model of neural scaling.
+\newblock In \emph{NeurIPS}, 2023.
+
+\bibitem{belrose2024neural}
+N.~Belrose, Q.~Chevalier, and T.~Ringer.
+\newblock Neural networks learn statistics of increasing complexity.
+\newblock In \emph{ICML}, 2024.
+
+\bibitem{biderman2023pythia}
+S.~Biderman, H.~Schoelkopf, Q.~Anthony, H.~Bradley, K.~O'Brien, E.~Hallahan, M.~A.~Khan, S.~Purohit, U.~S.~Prashanth, E.~Raff, A.~Skowron, L.~Sutawika, and O.~van~der~Wal.
+\newblock Pythia: A suite for analyzing large language models across training and scaling.
+\newblock In \emph{ICML}, 2023.
+
+\bibitem{saxe2014exact}
+A.~M.~Saxe, J.~L.~McClelland, and S.~Ganguli.
+\newblock Exact solutions to the nonlinear dynamics of learning in deep linear neural networks.
+\newblock In \emph{ICLR}, 2014. (Journal version: \emph{PNAS}, 2019.)
+
+\bibitem{jacot2022saddle}
+A.~Jacot, F.~Ged, B.~\c{S}im\c{s}ek, C.~Hongler, and F.~Gabriel.
+\newblock Saddle-to-saddle dynamics in deep linear networks: Small initialization training, symmetry, and sparsity.
+\newblock \emph{arXiv preprint arXiv:2106.15933}, 2021.
+
+\bibitem{pesme2023saddle}
+S.~Pesme and N.~Flammarion.
+\newblock Saddle-to-saddle dynamics in diagonal linear networks.
+\newblock In \emph{NeurIPS}, 2023.
+
+\bibitem{arora2019implicit}
+S.~Arora, N.~Cohen, W.~Hu, and Y.~Luo.
+\newblock Implicit regularization in deep matrix factorization.
+\newblock In \emph{NeurIPS}, 2019.
+
+\bibitem{boixadsera2023transformers}
+E.~Boix-Adser\`a, E.~Littwin, E.~Abbe, S.~Bengio, and J.~Susskind.
+\newblock Transformers learn through gradual rank increase.
+\newblock In \emph{NeurIPS}, 2023.
+
+\bibitem{yunis2024spectral}
+D.~Yunis, K.~Patel, S.~Diao, A.~Kwan, Q.~Lei, R.~Ranganath, and M.~Brudno.
+\newblock Approaching deep learning through the spectral dynamics of weights.
+\newblock \emph{arXiv preprint arXiv:2408.11804}, 2024.
+
+\bibitem{chen2024universal}
+Y.~Chen et al.
+\newblock Universal sharpness dynamics in neural network training: Fixed point analysis, edge of stability, and route to chaos.
+\newblock \emph{arXiv preprint arXiv:2311.02076}, 2023.
+
+\bibitem{scalablecurvature2025}
+Anonymous.
+\newblock A scalable measure of loss landscape curvature for analyzing the training dynamics of {LLMs}.
+\newblock \emph{arXiv preprint arXiv:2601.16979}, 2025.
+
+\bibitem{hu2021lora}
+E.~J.~Hu, Y.~Shen, P.~Wallis, Z.~Allen-Zhu, Y.~Li, S.~Wang, L.~Wang, and W.~Chen.
+\newblock {LoRA}: Low-rank adaptation of large language models.
+\newblock In \emph{ICLR}, 2022.
+
+\bibitem{simsek2025saddle}
+B.~\v{S}im\v{s}ek, N.~Kunin, D.~Kunin, A.~Jacot, and S.~Ganguli.
+\newblock Saddle-to-saddle dynamics explains a simplicity bias across neural network architectures.
+\newblock \emph{arXiv preprint arXiv:2512.20607}, 2024.
+
+\bibitem{bantzis2025relu}
+A.~Bantzis, E.~Littwin, and E.~Boix-Adser\`a.
+\newblock Saddle-to-saddle dynamics in deep {ReLU} networks: Low-rank bias in the first saddle escape.
+\newblock \emph{arXiv preprint arXiv:2505.21722}, 2025.
+
+\bibitem{wang2024condensation}
+Y.~Wang et al.
+\newblock From condensation to rank collapse: A two-stage analysis of transformer training dynamics.
+\newblock \emph{arXiv preprint arXiv:2510.06954}, 2024.
+
+\bibitem{hoogland2024slt}
+J.~Hoogland, G.~Kujanp\"a\"a, A.~Lau, T.~Sander, and D.~Murfet.
+\newblock Using physics-inspired singular learning theory to understand grokking and other phase transitions in modern neural networks.
+\newblock \emph{arXiv preprint arXiv:2512.00686}, 2024.
+
+\bibitem{shwartzziv2017ib}
+R.~Shwartz-Ziv and N.~Tishby.
+\newblock Opening the black box of deep neural networks via information.
+\newblock \emph{arXiv preprint arXiv:1703.00810}, 2017.
+
+\bibitem{saxe2018information}
+A.~M.~Saxe, Y.~Bansal, J.~Dapello, M.~Advani, A.~Kolchinsky, B.~D.~Tracey, and D.~D.~Cox.
+\newblock On the information bottleneck theory of deep learning.
+\newblock In \emph{ICLR}, 2018.
+
+\bibitem{cohen2021gradient}
+J.~M.~Cohen, S.~Kaur, Y.~Li, J.~Z.~Kolter, and A.~Talwalkar.
+\newblock Gradient descent on neural networks typically occurs at the edge of stability.
+\newblock In \emph{ICLR}, 2021.
+
+\end{thebibliography}
 
 \end{document}

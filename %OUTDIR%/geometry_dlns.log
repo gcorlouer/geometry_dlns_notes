@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.4)  26 FEB 2026 11:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.4)  26 FEB 2026 14:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -776,31 +776,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 968--978
 
 [19]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1137.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1137.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1137.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1137.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1137.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1137.
-
-
-
 [20]
 
 [21]
@@ -808,383 +783,408 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [22]
 
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 1305--1309
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1318--1323
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1329--1334
-
- []
-
-
 
 [24]
-Overfull \hbox (23.9825pt too wide) detected at line 1399
+
+[25]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1213.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1213.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1213.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1213.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1213.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1213.
+
+
+
+[26]
+
+[27]
+
+[28]
+
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 1381--1385
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1394--1399
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1405--1410
+
+ []
+
+
+
+[30]
+Overfull \hbox (23.9825pt too wide) detected at line 1475
 \OMS/cmsy/m/n/10 C[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 W \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/10 
 \OML/cmm/m/it/10 ; Z[] \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 R[]\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 W[] \OT1/cmr/m/n/10 = [\OML/cmm/m/it/10 U[]; U[]Z[]\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 ; W[] \OMS/cmsy/m/n/10 ^^X [] \OML/cmm/m/it/10 ; W[] \OT1/cmr/m/n/10 = [\OML/cmm/m/it/10 U[]\OT1/cmr/m/n/10 ^^F[]^^F[]\OML/cmm/m/it/10 ; Z[]\OT1/cmr/m/n/10 ][]\OML/cmm/m/it/10 ; Z[] \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/10 ^^@[]\OMS/cmsy/m/n/10 g
  []
 
 
 
-[25]
+[31]
 
-[26]
+[32]
 
-[27
+[33
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1538 \]
+l.1614 \]
          
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1538 \]
+l.1614 \]
          
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1538 \]
+l.1614 \]
          ]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1540 \begin{equation}
+l.1616 \begin{equation}
                        \tag{9}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1540 \begin{equation}
+l.1616 \begin{equation}
                        \tag{9}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1540 \begin{equation}
+l.1616 \begin{equation}
                        \tag{9}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1540 \begin{equation}
+l.1616 \begin{equation}
                        \tag{9}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1575 \begin{equation}
+l.1651 \begin{equation}
                        \tag{10}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1575 \begin{equation}
+l.1651 \begin{equation}
                        \tag{10}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1575 \begin{equation}
+l.1651 \begin{equation}
                        \tag{10}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1575 \begin{equation}
+l.1651 \begin{equation}
                        \tag{10}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1579 \begin{equation}
+l.1655 \begin{equation}
                        \tag{11}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1579 \begin{equation}
+l.1655 \begin{equation}
                        \tag{11}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1579 \begin{equation}
+l.1655 \begin{equation}
                        \tag{11}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1579 \begin{equation}
+l.1655 \begin{equation}
                        \tag{11}
 
-[28]
+[34]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1622 \begin{equation}
+l.1698 \begin{equation}
                        \tag{12}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1622 \begin{equation}
+l.1698 \begin{equation}
                        \tag{12}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1622 \begin{equation}
+l.1698 \begin{equation}
                        \tag{12}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1622 \begin{equation}
+l.1698 \begin{equation}
                        \tag{12}
 
-[29]
+[35]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1636.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Gamma' on input line 1636.
+(hyperref)                removing `math shift' on input line 1712.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1636.
+(hyperref)                removing `\Gamma' on input line 1712.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1712.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1650 \begin{equation}
+l.1726 \begin{equation}
                        \label{eq:gauge-action-crit}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1650 \begin{equation}
+l.1726 \begin{equation}
                        \label{eq:gauge-action-crit}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1650 \begin{equation}
+l.1726 \begin{equation}
                        \label{eq:gauge-action-crit}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1650 \begin{equation}
+l.1726 \begin{equation}
                        \label{eq:gauge-action-crit}
 
-[30]
-Overfull \hbox (61.302pt too wide) detected at line 1733
+[36]
+Overfull \hbox (61.302pt too wide) detected at line 1809
 [][][]\OML/cmm/m/it/10 H[]  \OT1/cmr/m/n/10 :=  [] \OML/cmm/m/it/10 :
  []
 
 
-Overfull \hbox (30.62372pt too wide) detected at line 1754
+Overfull \hbox (30.62372pt too wide) detected at line 1830
 \OML/cmm/m/it/10 W[] \OT1/cmr/m/n/10 = [\OML/cmm/m/it/10 U[];  U[]Z[]\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 ;  W[] \OMS/cmsy/m/n/10 ^^X []  \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ` \OT1/cmr/m/n/10 = 2\OML/cmm/m/it/10 ; [] ; L[]\OT1/cmr/m/n/10 1)\OML/cmm/m/it/10 ;  W[] \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 ;  Z \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/10 ^^F[] \OMS/cmsy/m/n/10 \ \OT1/cmr/m/n/10 ^^@[]\OML/cmm/m/it/10 :
  []
 
 
 
-[31]
+[37]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1794 \begin{equation}
+l.1870 \begin{equation}
                        \tag{25}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1794 \begin{equation}
+l.1870 \begin{equation}
                        \tag{25}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1794 \begin{equation}
+l.1870 \begin{equation}
                        \tag{25}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1794 \begin{equation}
+l.1870 \begin{equation}
                        \tag{25}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1801 \begin{equation}
+l.1877 \begin{equation}
                        \tag{26}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1801 \begin{equation}
+l.1877 \begin{equation}
                        \tag{26}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1801 \begin{equation}
+l.1877 \begin{equation}
                        \tag{26}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1801 \begin{equation}
+l.1877 \begin{equation}
                        \tag{26}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1824 \begin{equation}
+l.1900 \begin{equation}
                        \tag{$\star$}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1824 \begin{equation}
+l.1900 \begin{equation}
                        \tag{$\star$}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1824 \begin{equation}
+l.1900 \begin{equation}
                        \tag{$\star$}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1824 \begin{equation}
+l.1900 \begin{equation}
                        \tag{$\star$}
 
-[32
+[38
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1833 \]
+l.1909 \]
          
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1833 \]
+l.1909 \]
          ]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1854 \begin{equation}
+l.1930 \begin{equation}
                        \tag{$\star\star$}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1854 \begin{equation}
+l.1930 \begin{equation}
                        \tag{$\star\star$}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1854 \begin{equation}
+l.1930 \begin{equation}
                        \tag{$\star\star$}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1854 \begin{equation}
+l.1930 \begin{equation}
                        \tag{$\star\star$}
 
-[33]
-Overfull \hbox (8.43506pt too wide) in paragraph at lines 1878--1879
+[39]
+Overfull \hbox (8.43506pt too wide) in paragraph at lines 1954--1955
 \OT1/cmr/m/n/10 e-ment of $[][](\OML/cmm/m/it/10 ^^S\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Z[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; S[]\OT1/cmr/m/n/10 )$ is block-diagonal, i.e. be-longs to $\OML/cmm/m/it/10 H[]$\OT1/cmr/m/n/10 . Since $\OML/cmm/m/it/10 H[] \OMS/cmsy/m/n/10 ^^R [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^S\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Z[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; S[]\OT1/cmr/m/n/10 )$
  []
 
 
 
-[34]
+[40]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1943 \begin{equation}
+l.2019 \begin{equation}
                        \label{eq:codim-Cr-vs-Xrsigma}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1943 \begin{equation}
+l.2019 \begin{equation}
                        \label{eq:codim-Cr-vs-Xrsigma}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1943 \begin{equation}
+l.2019 \begin{equation}
                        \label{eq:codim-Cr-vs-Xrsigma}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1943 \begin{equation}
+l.2019 \begin{equation}
                        \label{eq:codim-Cr-vs-Xrsigma}
-Overfull \hbox (42.31621pt too wide) detected at line 1964
+Overfull \hbox (42.31621pt too wide) detected at line 2040
 [] \OT1/cmr/m/n/10 
  = [] \OML/cmm/m/it/10 d[]d[];  [] \OMS/cmsy/m/n/10 Z \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 d[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 r\OT1/cmr/m/n/10 )(\OML/cmm/m/it/10 d[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 r\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ;  [] G[] \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 d[];  [] H[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 r[] \OT1/cmr/m/n/10 + [](\OML/cmm/m/it/10 d[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 r\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 :
  []
 
 
 
-[35]
-
-[36]
-
-[37]
-
-[38]
-
-[39]
-
-[40]
-
 [41]
 
 [42]
 
 [43]
-Overfull \hbox (21.42809pt too wide) in paragraph at lines 2491--2495
-\OT1/cmr/m/n/10 be the ori-ented path of length $\OML/cmm/m/it/10 L$ \OT1/cmr/m/n/10 go-ing once around the cy-cle and omit-ting $\OML/cmm/m/it/10 a[]$\OT1/cmr/m/n/10 . Set $\OML/cmm/m/it/10 A \OT1/cmr/m/n/10 := \OML/cmm/m/it/10 kQ=\OMS/cmsy/m/n/10 h\OML/cmm/m/it/10 p[]; [] ; p[]\OMS/cmsy/m/n/10 i$\OT1/cmr/m/n/10 .
- []
-
-
 
 [44]
-Overfull \hbox (13.95831pt too wide) in paragraph at lines 2517--2518
-[][]\OT1/cmr/bx/n/10 Lemma 11.31 \OT1/cmr/m/n/10 (En-do-mor-phisms of $\OML/cmm/m/it/10 M\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 i; `\OT1/cmr/m/n/10 )$)\OT1/cmr/bx/n/10 . []\OT1/cmr/m/n/10 For ev-ery $\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 Q[]$ \OT1/cmr/m/n/10 and $1 \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/it/10 ` \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/it/10 L$\OT1/cmr/m/n/10 , one has $[][][]\OML/cmm/m/it/10 M\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 i; `\OT1/cmr/m/n/10 )[] []
- []
-
-
-Overfull \hbox (18.48273pt too wide) in paragraph at lines 2555--2556
-[]\OT1/cmr/m/n/10 By Lemma []11.29[], each $\OML/cmm/m/it/10 M\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 i; `\OT1/cmr/m/n/10 )$ is a well-defined finite-dimensional $\OML/cmm/m/it/10 A$\OT1/cmr/m/n/10 -module, and by Lemma []11.30[]
- []
-
-
 
 [45]
-Overfull \hbox (80.23628pt too wide) detected at line 2595
-[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A\OT1/cmr/m/n/10 ) = [][]\OML/cmm/m/it/10 V \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 k[][]k[][]:
- []
-
-
 
 [46]
 
 [47]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2754.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Gamma' on input line 2754.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2754.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2754.
-
-
-
 [48]
 
 [49]
+Overfull \hbox (21.42809pt too wide) in paragraph at lines 2567--2571
+\OT1/cmr/m/n/10 be the ori-ented path of length $\OML/cmm/m/it/10 L$ \OT1/cmr/m/n/10 go-ing once around the cy-cle and omit-ting $\OML/cmm/m/it/10 a[]$\OT1/cmr/m/n/10 . Set $\OML/cmm/m/it/10 A \OT1/cmr/m/n/10 := \OML/cmm/m/it/10 kQ=\OMS/cmsy/m/n/10 h\OML/cmm/m/it/10 p[]; [] ; p[]\OMS/cmsy/m/n/10 i$\OT1/cmr/m/n/10 .
+ []
+
+
 
 [50]
+Overfull \hbox (13.95831pt too wide) in paragraph at lines 2593--2594
+[][]\OT1/cmr/bx/n/10 Lemma 12.31 \OT1/cmr/m/n/10 (En-do-mor-phisms of $\OML/cmm/m/it/10 M\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 i; `\OT1/cmr/m/n/10 )$)\OT1/cmr/bx/n/10 . []\OT1/cmr/m/n/10 For ev-ery $\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 Q[]$ \OT1/cmr/m/n/10 and $1 \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/it/10 ` \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/it/10 L$\OT1/cmr/m/n/10 , one has $[][][]\OML/cmm/m/it/10 M\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 i; `\OT1/cmr/m/n/10 )[] []
+ []
+
+
+Overfull \hbox (18.48273pt too wide) in paragraph at lines 2631--2632
+[]\OT1/cmr/m/n/10 By Lemma []12.29[], each $\OML/cmm/m/it/10 M\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 i; `\OT1/cmr/m/n/10 )$ is a well-defined finite-dimensional $\OML/cmm/m/it/10 A$\OT1/cmr/m/n/10 -module, and by Lemma []12.30[]
+ []
+
+
 
 [51]
+Overfull \hbox (80.23628pt too wide) detected at line 2671
+[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A\OT1/cmr/m/n/10 ) = [][]\OML/cmm/m/it/10 V \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 k[][]k[][]:
+ []
+
+
 
 [52]
 
 [53]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2830.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Gamma' on input line 2830.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 2830.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2830.
+
+
 
 [54]
 
@@ -1194,127 +1194,143 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [57]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3473.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3473.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 3473.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\simeq' on input line 3473.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3473.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 3473.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3473.
-
-
-
 [58]
 
 [59]
-Overfull \hbox (26.93253pt too wide) in paragraph at lines 3606--3617
-[]\OT1/cmr/m/n/10 Decompose the cor-re-spond-ing mod-ule as a di-rect sum of in-de-com-pos-ables: $\OMS/cmsy/m/n/10 M [] [][] \OML/cmm/m/it/10 M\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a; b\OT1/cmr/m/n/10 )[]$.
- []
-
-
 
 [60]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3764.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Gamma' on input line 3764.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3764.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3764.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3764.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 3764.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3764.
-
-
-
 [61]
 
-Package amsfonts Warning: Obsolete command \Bbb; \mathbb should be used instead on input line 3799.
-
-
-
 [62]
-Overfull \hbox (58.71146pt too wide) detected at line 3884
-\OML/cmm/m/it/10 ^^O\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 i; j\OT1/cmr/m/n/10 ) = 1  \OMS/cmsy/m/n/10 ([])  []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 L \OMS/cmsy/m/n/10 ! \OT1/cmr/m/n/10 0)[][\OML/cmm/m/it/10 i \U/msa/m/n/10   \OML/cmm/m/it/10 j\OT1/cmr/m/n/10 ][]\OML/cmm/m/it/10 :
- []
-
-
-Overfull \hbox (23.04402pt too wide) in paragraph at lines 3898--3904
-[]\OT1/cmr/m/n/10 Decompose the cor-re-spond-ing mod-ule as a di-rect sum of in-de-com-pos-ables: $\OMS/cmsy/m/n/10 M [] [][] \OML/cmm/m/it/10 M\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 i; j\OT1/cmr/m/n/10 )[]$.
- []
-
-
 
 [63]
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3549.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 3549.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 3549.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\simeq' on input line 3549.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 3549.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 3549.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3549.
+
+
+
 [64]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4005.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 4005.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4005.
-
-
-
 [65]
-Overfull \hbox (23.27638pt too wide) detected at line 4095
-[][]\OT1/cmr/m/n/10 (^^@[])  =  [](^^@[]) \OMS/cmsy/m/n/10 ^^@ [] []\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 O[]\OT1/cmr/m/n/10 )  =  [][][](^^@[]) \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 O[]\OT1/cmr/m/n/10 )[]  =  [] [][](\OMS/cmsy/m/n/10 O[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ;
+Overfull \hbox (26.93253pt too wide) in paragraph at lines 3682--3693
+[]\OT1/cmr/m/n/10 Decompose the cor-re-spond-ing mod-ule as a di-rect sum of in-de-com-pos-ables: $\OMS/cmsy/m/n/10 M [] [][] \OML/cmm/m/it/10 M\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a; b\OT1/cmr/m/n/10 )[]$.
  []
 
 
 
 [66]
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3840.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Gamma' on input line 3840.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 3840.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3840.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3840.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sigma' on input line 3840.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3840.
+
+
+
 [67]
-Overfull \hbox (65.29851pt too wide) detected at line 4218
+
+Package amsfonts Warning: Obsolete command \Bbb; \mathbb should be used instead on input line 3875.
+
+
+
+[68]
+Overfull \hbox (58.71146pt too wide) detected at line 3960
+\OML/cmm/m/it/10 ^^O\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 i; j\OT1/cmr/m/n/10 ) = 1  \OMS/cmsy/m/n/10 ([])  []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 L \OMS/cmsy/m/n/10 ! \OT1/cmr/m/n/10 0)[][\OML/cmm/m/it/10 i \U/msa/m/n/10   \OML/cmm/m/it/10 j\OT1/cmr/m/n/10 ][]\OML/cmm/m/it/10 :
+ []
+
+
+Overfull \hbox (23.04402pt too wide) in paragraph at lines 3974--3980
+[]\OT1/cmr/m/n/10 Decompose the cor-re-spond-ing mod-ule as a di-rect sum of in-de-com-pos-ables: $\OMS/cmsy/m/n/10 M [] [][] \OML/cmm/m/it/10 M\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 i; j\OT1/cmr/m/n/10 )[]$.
+ []
+
+
+
+[69]
+
+[70]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4081.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 4081.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4081.
+
+
+
+[71]
+Overfull \hbox (23.27638pt too wide) detected at line 4171
+[][]\OT1/cmr/m/n/10 (^^@[])  =  [](^^@[]) \OMS/cmsy/m/n/10 ^^@ [] []\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 O[]\OT1/cmr/m/n/10 )  =  [][][](^^@[]) \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 O[]\OT1/cmr/m/n/10 )[]  =  [] [][](\OMS/cmsy/m/n/10 O[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ;
+ []
+
+
+
+[72]
+
+[73]
+Overfull \hbox (65.29851pt too wide) detected at line 4294
 [][]\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 X[]\OT1/cmr/m/n/10 ) = [](\OMS/cmsy/m/n/10 Z\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 X[]\OT1/cmr/m/n/10 ) = [](\OMS/cmsy/m/n/10 Z\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ [] []\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 O[]\OT1/cmr/m/n/10 ) = [][][](\OMS/cmsy/m/n/10 Z\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 O[]\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 :
  []
 
 
 
-[68] (%OUTDIR%/geometry_dlns.aux)
+[74]
+
+[75]
+
+[76] (%OUTDIR%/geometry_dlns.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1324,21 +1340,21 @@ L3 programming layer <2025-01-18>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `geometry_dlns.out' has not changed.
-(rerunfilecheck)             Checksum: 0E2B4300445809D2E7EB891A420165A2;7948.
+(rerunfilecheck)             Checksum: 259DC6D79586EAD64DBD55D56CC143AA;9720.
  ) 
 Here is how much of TeX's memory you used:
- 24637 strings out of 473190
- 454655 string characters out of 5715801
- 844806 words of memory out of 5000000
- 47164 multiletter control sequences out of 15000+600000
+ 24729 strings out of 473190
+ 456243 string characters out of 5715801
+ 845887 words of memory out of 5000000
+ 47203 multiletter control sequences out of 15000+600000
  569974 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,20n,91p,2028b,832s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on %OUTDIR%/geometry_dlns.pdf (68 pages, 581925 bytes).
+Output written on %OUTDIR%/geometry_dlns.pdf (76 pages, 613367 bytes).
 PDF statistics:
- 968 PDF objects out of 1000 (max. 8388607)
- 834 compressed objects within 9 object streams
- 337 named destinations out of 1000 (max. 500000)
- 269 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1106 PDF objects out of 1200 (max. 8388607)
+ 963 compressed objects within 10 object streams
+ 390 named destinations out of 1000 (max. 500000)
+ 325 words of extra memory for PDF output out of 10000 (max. 10000000)
 
