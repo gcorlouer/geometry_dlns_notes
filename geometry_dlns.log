@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.4)  26 FEB 2026 17:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.4)  27 FEB 2026 11:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -555,7 +555,7 @@ File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count337
 \l__pdf_internal_box=\box71
-) (%OUTDIR%/geometry_dlns.aux)
+) (./geometry_dlns.aux)
 \openout1 = `geometry_dlns.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
@@ -630,7 +630,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring OFF on input line 37.
-(%OUTDIR%/geometry_dlns.out) (%OUTDIR%/geometry_dlns.out)
+(./geometry_dlns.out) (./geometry_dlns.out)
 \@outlinefile=\write5
 \openout5 = `geometry_dlns.out'.
 
@@ -820,13 +820,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [28]
 
 [29]
+
+[30]
 Underfull \hbox (badness 10000) in paragraph at lines 1395--1399
 
  []
 
 
-
-[30]
 Underfull \hbox (badness 10000) in paragraph at lines 1408--1413
 
  []
@@ -854,23 +854,38 @@ Overfull \hbox (23.9825pt too wide) detected at line 1489
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1643 \]
+l.1628 \]
          
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1643 \]
+l.1628 \]
          
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1643 \]
-         
-pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.1643 \]
+l.1628 \]
          ]
+pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1630 \begin{equation}
+                       \tag{9}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1630 \begin{equation}
+                       \tag{9}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1630 \begin{equation}
+                       \tag{9}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1630 \begin{equation}
+                       \tag{9}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -934,6 +949,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) h
 l.1712 \begin{equation}
                        \tag{12}
 
+[36]
+
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1726.
 
@@ -946,8 +963,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1726.
 
 
-
-[36]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -981,17 +996,27 @@ Overfull \hbox (30.62372pt too wide) detected at line 1844
 
 
 
-[38
+[38]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.1887 \end{equation}
-                     
+<to be read again> 
+                   \relax 
+l.1884 \begin{equation}
+                       \tag{25}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.1887 \end{equation}
-                     ]
+<to be read again> 
+                   \relax 
+l.1884 \begin{equation}
+                       \tag{25}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1884 \begin{equation}
+                       \tag{25}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1884 \begin{equation}
+                       \tag{25}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -1037,7 +1062,12 @@ l.1914 \begin{equation}
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1938 \]
+l.1923 \]
+         
+pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1923 \]
          ]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
 <to be read again> 
@@ -1059,35 +1089,35 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) 
                    \relax 
 l.1944 \begin{equation}
                        \tag{$\star\star$}
+
+[40]
 Overfull \hbox (8.43506pt too wide) in paragraph at lines 1968--1969
 \OT1/cmr/m/n/10 e-ment of $[][](\OML/cmm/m/it/10 ^^S\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Z[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; S[]\OT1/cmr/m/n/10 )$ is block-diagonal, i.e. be-longs to $\OML/cmm/m/it/10 H[]$\OT1/cmr/m/n/10 . Since $\OML/cmm/m/it/10 H[] \OMS/cmsy/m/n/10 ^^R [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^S\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Z[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; S[]\OT1/cmr/m/n/10 )$
  []
 
 
 
-[40]
-pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2033 \begin{equation}
-                       \label{eq:codim-Cr-vs-Xrsigma}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2033 \begin{equation}
-                       \label{eq:codim-Cr-vs-Xrsigma}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2033 \begin{equation}
-                       \label{eq:codim-Cr-vs-Xrsigma}
-pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2033 \begin{equation}
-                       \label{eq:codim-Cr-vs-Xrsigma}
-
 [41]
+pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2033 \begin{equation}
+                       \label{eq:codim-Cr-vs-Xrsigma}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2033 \begin{equation}
+                       \label{eq:codim-Cr-vs-Xrsigma}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2033 \begin{equation}
+                       \label{eq:codim-Cr-vs-Xrsigma}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.14}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2033 \begin{equation}
+                       \label{eq:codim-Cr-vs-Xrsigma}
 Overfull \hbox (42.31621pt too wide) detected at line 2054
 [] \OT1/cmr/m/n/10 
  = [] \OML/cmm/m/it/10 d[]d[];  [] \OMS/cmsy/m/n/10 Z \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 d[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 r\OT1/cmr/m/n/10 )(\OML/cmm/m/it/10 d[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 r\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ;  [] G[] \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 d[];  [] H[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 r[] \OT1/cmr/m/n/10 + [](\OML/cmm/m/it/10 d[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 r\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 :
@@ -1117,13 +1147,13 @@ Overfull \hbox (21.42809pt too wide) in paragraph at lines 2581--2585
  []
 
 
+
+[51]
 Overfull \hbox (13.95831pt too wide) in paragraph at lines 2607--2608
 [][]\OT1/cmr/bx/n/10 Lemma 13.31 \OT1/cmr/m/n/10 (En-do-mor-phisms of $\OML/cmm/m/it/10 M\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 i; `\OT1/cmr/m/n/10 )$)\OT1/cmr/bx/n/10 . []\OT1/cmr/m/n/10 For ev-ery $\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 Q[]$ \OT1/cmr/m/n/10 and $1 \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/it/10 ` \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/it/10 L$\OT1/cmr/m/n/10 , one has $[][][]\OML/cmm/m/it/10 M\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 i; `\OT1/cmr/m/n/10 )[] []
  []
 
 
-
-[51]
 Overfull \hbox (18.48273pt too wide) in paragraph at lines 2645--2646
 []\OT1/cmr/m/n/10 By Lemma []13.29[], each $\OML/cmm/m/it/10 M\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 i; `\OT1/cmr/m/n/10 )$ is a well-defined finite-dimensional $\OML/cmm/m/it/10 A$\OT1/cmr/m/n/10 -module, and by Lemma []13.30[]
  []
@@ -1176,6 +1206,8 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [63]
 
+[64]
+
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3563.
 
@@ -1205,16 +1237,14 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[64]
-
 [65]
+
+[66]
 Overfull \hbox (26.93253pt too wide) in paragraph at lines 3696--3707
 []\OT1/cmr/m/n/10 Decompose the cor-re-spond-ing mod-ule as a di-rect sum of in-de-com-pos-ables: $\OMS/cmsy/m/n/10 M [] [][] \OML/cmm/m/it/10 M\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a; b\OT1/cmr/m/n/10 )[]$.
  []
 
 
-
-[66]
 
 [67]
 
@@ -1246,11 +1276,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3854.
 
 
+
+[68]
+
 Package amsfonts Warning: Obsolete command \Bbb; \mathbb should be used instead on input line 3889.
 
 
-
-[68]
 
 [69]
 Overfull \hbox (58.71146pt too wide) detected at line 3974
@@ -1266,6 +1297,8 @@ Overfull \hbox (23.04402pt too wide) in paragraph at lines 3988--3994
 
 [70]
 
+[71]
+
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 4095.
 
@@ -1279,27 +1312,27 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[71]
+[72]
 Overfull \hbox (23.27638pt too wide) detected at line 4185
 [][]\OT1/cmr/m/n/10 (^^@[])  =  [](^^@[]) \OMS/cmsy/m/n/10 ^^@ [] []\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 O[]\OT1/cmr/m/n/10 )  =  [][][](^^@[]) \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 O[]\OT1/cmr/m/n/10 )[]  =  [] [][](\OMS/cmsy/m/n/10 O[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ;
  []
 
 
 
-[72]
-
 [73]
+
+[74]
 Overfull \hbox (65.29851pt too wide) detected at line 4308
 [][]\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 X[]\OT1/cmr/m/n/10 ) = [](\OMS/cmsy/m/n/10 Z\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 X[]\OT1/cmr/m/n/10 ) = [](\OMS/cmsy/m/n/10 Z\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ [] []\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 O[]\OT1/cmr/m/n/10 ) = [][][](\OMS/cmsy/m/n/10 Z\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 O[]\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 :
  []
 
 
 
-[74]
-
 [75]
 
-[76] (%OUTDIR%/geometry_dlns.aux)
+[76]
+
+[77] (./geometry_dlns.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1309,21 +1342,21 @@ L3 programming layer <2025-01-18>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `geometry_dlns.out' has not changed.
-(rerunfilecheck)             Checksum: E873BB664E6E5CCD5BAC134BB7F7765B;10168.
+(rerunfilecheck)             Checksum: E6AA85C64CD186898B27D061F313ECB2;9927.
  ) 
 Here is how much of TeX's memory you used:
  24732 strings out of 473190
- 456276 string characters out of 5715801
- 845888 words of memory out of 5000000
+ 456192 string characters out of 5715801
+ 844887 words of memory out of 5000000
  47204 multiletter control sequences out of 15000+600000
  569974 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,20n,91p,2028b,832s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on %OUTDIR%/geometry_dlns.pdf (76 pages, 615489 bytes).
+Output written on geometry_dlns.pdf (77 pages, 616141 bytes).
 PDF statistics:
- 1112 PDF objects out of 1200 (max. 8388607)
- 969 compressed objects within 10 object streams
- 392 named destinations out of 1000 (max. 500000)
+ 1116 PDF objects out of 1200 (max. 8388607)
+ 972 compressed objects within 10 object streams
+ 393 named destinations out of 1000 (max. 500000)
  333 words of extra memory for PDF output out of 10000 (max. 10000000)
 
